@@ -1,0 +1,134 @@
+library(mgcv)
+
+#### MODELS #####
+## data_sst is the main output of the previous file: Data preparation
+
+# This is the most simple model that I want to fit
+
+mod1 = glm(richness ~ Year + area + SST, data = data_sst, family = poisson)
+mod2 = glm(richness ~ Year + offset(area) + SST, data = data_sst, family = gaussian)
+
+par(mfrow = c(2,2)); plot(mod1)
+par(mfrow = c(2,2)); plot(mod2) 
+
+# The area is way better included as an explanatory variable and not offset. 
+# The offset is basically an explanatory variable with coefficient = 1. This makes sense normally, but not 
+# here because more area does not necessarily mean more species if the smaller area is enough to sample
+# the area. In this case, we do not observe a linear increase of species records with sampled area, neither
+# does it make theoretical sense. (If all species area recorded, more area will not increase the number of species recorded)
+
+# I check for overdispersion 
+
+deviance(mod1)/mod1$df.residual
+dispersiontest(mod1) # overdispersed! I try with negative binomial
+
+mod3 = glm.nb(richness ~ Year + area + SST, data = data_sst)
+summary(mod3)
+par(mfrow = c(2,2)); plot(mod3) 
+
+# The following points are highly influential
+
+influencePlot(mod3)
+data_sst[c(2782, 3059),] # Very high swept area... but this should be ok when applying gam 
+summary(data_sst)
+
+# All the highly influential values are so because of extremely high swept area. 
+# Also, gathering aroung 1 degree of longitude and latitude improves the model substainaby 
+# and then I do not have to account for spatial autocorrelation, neither for temporal, in my opinion
+# (spatially and temporally not close)
+
+# I should fit a poisson distribution but the data is overdispersed. I fit a nb()
+boxplot(area ~ Year, data_sst)
+boxplot(area ~ area, data_sst)
+
+simple_gam_1 = gam(richness ~ s(Year) + s(SST) + s(area), data = data_sst, family = quasipoisson) # Best model
+simple_gam_2 = gam(richness ~ s(Year) + s(SST) + s(area), data = data_sst, family = nb()) 
+simple_gam_3 = gam(richness ~ s(Year) + s(area), data = data_sst, family = gaussian) 
+simple_gam_4 = gam(richness ~ s(Year) + s(area) + s(SST), data = data_sst, family = gaussian) # This should be the correct model but the residuals area a bit weird. 
+
+summary(simple_gam_1)
+summary(simple_gam_2)
+summary(simple_gam_3)
+summary(simple_gam_4)
+
+par(mfrow = c(2,2))
+
+gam.check(simple_gam_1, type = "pearson")
+gam.check(simple_gam_2, type = "pearson")
+gam.check(simple_gam_3, type = "pearson") # Gaussian not adecuate, as expected. Resid vs linear p looks bad
+gam.check(simple_gam_4, type = "pearson") # Gaussian not adecuate, as expected. Resid vs linear p looks bad
+
+gratia::draw(simple_gam_1)
+acf(residuals(simple_gam_1))
+pacf(residuals(simple_gam_1))
+
+# I add a spatiotemporal autocorrelation component to check if I can reduce the acf, 
+# although I think that the residuals are very good and it is not actually a requirement of 
+# the model. 
+
+# This step can take a long time
+
+simple_gam_cor_area_sst_2 = gamm(richness ~ s(Year) + s(swept_area) + s(SST),
+                               #correlation = corAR1(form = ~ Year|new_longit + new_latit),method = "GSL",
+                               correlation = corAR1(form = ~ Year | ID),
+                               #control = list(msMaxIter = 50, msMaxEval = 50),
+                               family = poisson,
+                               random = list(Latitude = ~ 1),
+                               data = data_sst_no_gath)
+
+simple_gam_cor_area_sst_3 = gamm(richness ~ s(Year) + s(swept_area) + s(SST),
+                                 #correlation = corAR1(form = ~ Year|new_longit + new_latit),method = "GSL",
+                                 correlation = corAR1(form = ~ Site | ),
+                                 #control = list(msMaxIter = 50, msMaxEval = 50),
+                                 family = poisson,
+                                 random = list(Site = ~ 1),
+                                 data = data_sst_no_gath)
+
+
+acf(residuals(simple_gam_cor_area_sst$lme))
+acf(residuals(simple_gam_cor_area_sst_2$lme))
+
+summary(simple_gam_cor_area_sst$gam)
+summary(simple_gam_cor_area_sst$lme)
+
+par(mfrow = c(2,2))
+gam.check(simple_gam_cor_area_sst$gam, type = "pearson")
+gam.check(simple_gam_1, type = "pearson")
+
+anova(simple_gam_cor_area_sst$gam)
+
+
+# Temporal autocorrelation is hard to check here, because not all my points are 
+# different in time... (many points for 1 year, because of spatial variation)
+# In any case, I try with acf() with a model without this component, and with a model with
+# a temporal autocorrelation component. The difference is almost inexistent. 
+
+acf(residuals(simple_gam_cor_area_sst$lme)) 
+acf(residuals(simple_gam_1))
+pacf(residuals(simple_gam_1))
+pacf(residuals(simple_gam_cor_area_sst$gam))
+
+# Visualisation of the GAM model 
+
+plot_model(simple_gam_1,type = "pred", 
+           terms = c("Year"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across time")
+
+plot_model(simple_gam_1, type = "pred", 
+           terms = c("SST"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across temperature")
+
+plot_model(simple_gam_1, type = "pred", 
+           terms = c("area"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across temperature")
+
+pdf("gam_temp_year_richness.pdf", height = 3.5, width = 7)
+plot_model(simple_gam_1,type = "pred", 
+           terms = c("Year","SST"), show.data = T, dot.alpha = 1) +
+  scale_colour_continuous() + ggtitle("Richness across time")
+
+dev.off()
+
+plot_model(simple_gam_1,type = "pred", 
+           terms = c("Year","area[50,100]"), show.data = T, dot.alpha = 1) +
+  scale_colour_continuous() + ggtitle("Richness across time")
