@@ -229,3 +229,10 @@ data_sst %>% group_by(Year) %>% summarise(rich_mean = mean(richness),
 
 unique(data_sst$Site)
 dim(data_sst)
+
+boxplot(data_sst$area ~ data_sst$Year)
+unique(data_sst$Site)
+range(table(data_sst$Year))
+
+# After addition of SST, the total number of sites has been slightly reduced because some sites did not contain SST information and where dropped. 
+
