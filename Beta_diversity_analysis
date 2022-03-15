@@ -1,0 +1,79 @@
+### Library
+library(tidyverse)
+library(mgcv)
+library(sjPlot)
+library(vegan)
+library(adespatial)
+
+orig_data = read_csv("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Final analysis/data_filtered_seas.csv")
+orig_data = orig_data %>% group_by(Longitude, Latitude, Year) %>% mutate(Bot_depth = mean(Bot_depth),swept_area = mean(swept_area)) %>% ungroup()
+
+head(orig_data)
+plot(Latitude ~ Longitude, data = orig_data)
+# To gather all points at one degree of latitude, I eliminate the points that are alone and far away by 
+# removing points western than longitude -4
+orig_data <- orig_data %>% filter(Longitude > -4)
+
+# Now I round all longitue and latitude coordinates and paste them to make a variable site. Also,
+# I add another variable called Abund, to be 1, in order to make the Beta diversity calculations with PA data. 
+
+orig_data_cords_one = orig_data %>% dplyr::mutate(Long_one = round(Longitude), Lat_one = round(Latitude)) %>% dplyr::mutate(Site = paste(Long_one, Lat_one), Abund = 1)
+
+# This line of code allows me to check how many species are found every year. This may be useful 
+# as part of the exploratory analysis
+
+orig_data_cords %>% ungroup() %>% select(valid_name, Year) %>% distinct() %>% group_by(Year) %>% count()
+
+# The sum of the effort at each site does not change so much across years, while the mean of the effort at each site, does.
+# Because I am adding all species found at each degree of longitude and latitude, it makes sense to consider the sum of the swept area
+# In this sense, the median of swept area per site, has not changed significantly across time (visually, at least). 2003-2004 and 2010-2011
+# are years to keep in mind for some change. 
+
+orig_data_cords_one %>% ungroup() %>% select(Site, swept_area, Year) %>% distinct() %>% group_by(Site, Year) %>% summarise(area = sum(swept_area)) %>% ggplot(.,aes(x = as.factor(Year), y = area)) + geom_boxplot() + ylim(0,1000000)
+orig_data_cords_one %>% ungroup() %>% select(Site, swept_area, Year) %>% distinct() %>% group_by(Site, Year) %>% summarise(area = mean(swept_area)) %>% ggplot(.,aes(x = as.factor(Year), y = area)) + geom_boxplot() + ylim(0,200000)
+
+# This line of code allows me to see how many sites are considered each year. Also, I will limit the beta calculations to the 
+# number of sites of the year with less sites, which is 1989 with 197. 
+points_year = orig_data_cords_one %>% ungroup() %>% select(Long_one, Lat_one, Year) %>% distinct() %>% group_by(Year) %>% count()
+plot(n ~ Year, points_year)
+
+
+# Calculation of beta diversity
+
+
+results_total = list()
+iterations = 50
+
+for (k in 1:iterations) {
+  results = list()
+  for (i in 1989:2020) {
+    data =
+      orig_data_cords_one %>%
+      ungroup() %>% 
+      filter(Year == i)
+    
+    sites = unique(data$Site)
+    sites_sel = sample(sites, 197)
+    data_mat = data %>% filter(Site %in% sites_sel)
+    mat_data = xtabs(Abund ~ Site + valid_name, data_mat)
+    
+    results[[i]] = data.frame(Beta = beta.div.comp(mat_data, coef = "S", quant = FALSE)$part[1],
+                            Turnover = beta.div.comp(mat_data, coef = "S", quant = FALSE)$part[4],
+                            Nestedness = beta.div.comp(mat_data, coef = "S", quant = FALSE)$part[5],
+                            Year = i, 
+                            rep = k)
+    print(i)
+  }
+  results_total[[k]] = do.call(rbind,results)
+  print(paste("Iteration cicle", k))
+}
+
+# Integration of the 50 iterations into the same data frame
+total_results = do.call(rbind, results_total)
+rownames(total_results) = NULL
+
+# Visualisation of the results
+
+boxplot(Beta ~ Year, data = total_results)
+boxplot(Turnover ~ Year, data = total_results)
+boxplot(Nestedness ~ Year, data = total_results)
