@@ -94,8 +94,8 @@ sites_per_new_site_one =
   group_by(Long_one, Lat_one, Year) %>% 
   count()
 
-richness_pure = full_dataset %>% ungroup()  %>% dplyr::select(valid_name, Longitude, Latitude, Year, swept_area) %>% 
-  distinct() %>% group_by(Longitude, Latitude, Year, swept_area) %>% summarise(richness = n())
+richness_pure = full_dataset %>% ungroup()  %>% dplyr::select(valid_name, Longitude, Latitude, Year, swept_area, Bot_depth) %>% 
+  distinct() %>% group_by(Longitude, Latitude, Year, swept_area, Bot_depth) %>% summarise(richness = n())
 
 sites_pure = full_dataset %>% ungroup() %>% select(Longitude, Latitude, Year) %>% distinct()
 
