@@ -161,5 +161,158 @@ e = ggplot(richness_effort_data, aes(x = as.factor(Year), y = Long_one)) + geom_
 grid.arrange(a,b,c,d,e, ncol = 2)
 
 write.csv(richness_effort_data, "richness_in_1x1_cells.csv", row.names = F)
-# The exploratory and preparation section is over. Now its time to add SST
-# The changes of richness with time, with temperature. 
+
+# The data is now ready for exploratory statistical modelling. 
+# I want to model how has richness changed at each cell with time and latitude. 
+# For this, I need a Poisson distribution family (richness --> Count data)
+# And I need to include area (effort) as an explanatory variable
+
+#### MODELS #####
+
+richness_effort_data$ID = sample(1:nrow(richness_effort_data)) # I may needed later
+
+# This is the most simple model that I want to fit
+
+mod1 = glm(richness ~ Year + area + Lat_one, data = richness_effort_data, family = poisson)
+mod2 = glm(richness ~ Year + log(area) + Lat_one, data = richness_effort_data, family = poisson)
+mod3 = glm(richness ~ Year + Lat_one + offset(log(area)), data = richness_effort_data, family = poisson)
+
+par(mfrow = c(2,2)); plot(mod1) # Some strong otuliers, probably because super high sampled area in those cells
+par(mfrow = c(2,2)); plot(mod2) # There is heteroscedasticity at high predicted values
+par(mfrow = c(2,2)); plot(mod3) # Bad model 
+
+# The area is way better included as an explanatory variable and not as an offset. 
+# The offset is basically an explanatory variable with coefficient = 1. This makes sense normally, but not 
+# here because more area does not necessarily mean more species if the smaller area is enough to sample
+# the area. In this case, we do not observe a linear increase of species records with sampled area, neither
+# does it make theoretical sense. (If all species area recorded, more area will not increase the number of species recorded)
+
+# I check for overdispersion 
+
+deviance(mod2)/mod2$df.residual
+dispersiontest(mod2) # A little overdispersed but not too much. I could try nb() to see if clear improvement
+
+mod4 = glm.nb(richness ~ Year + log(area) + Lat_one, data = richness_effort_data)
+summary(mod4)
+par(mfrow = c(2,2)); plot(mod4) #  Not clear improvement
+
+# The following points are highly influential
+
+influencePlot(mod2)
+richness_effort_data[c(3577, 4837, 4868, 6574, 7619, 7953),] # Some have very high swept area... but this should be ok when applying gam 
+summary(richness_effort_data)
+
+# GAM modeling to fit non linear relationship mainly of area, to richness. A log scale in glm() is not enough
+
+boxplot(area ~ Year, richness_effort_data)
+
+simple_gam_1 = gam(richness ~ Year + Lat_one + s(area), data = richness_effort_data, family = poisson) 
+
+summary(simple_gam_1) 
+
+par(mfrow = c(2,2)); gam.check(simple_gam_1, type = "pearson")
+
+# There is strong heteroscedasticity, maybe because I am not considering the random effect of the Site, which would 
+# refer to the spatial autocorrelation. 
+
+simple_gam_cor_site = gamm(richness ~ Year + s(area, k = 5) + Lat_one,
+                               family = poisson,
+                               random = list(Long_one = ~ 1),
+                               data = richness_effort_data)
+
+summary(simple_gam_cor_site$gam)
+summary(simple_gam_cor_area_sst$lme)
+
+par(mfrow = c(2,2)); gam.check(simple_gam_cor_site$gam, type = "pearson") # The residuals improva a little, less conic shape. 
+anova(simple_gam_cor_area_sst$gam)
+
+# I add interaction terms and a smooth term for year. The effect of area and latitude in richness
+# may have differed with time
+
+simple_gam_cor_site_2 = gamm(richness ~ 
+                               s(Year, k = 5) + 
+                               s(area, k = 5) +
+                               Lat_one +
+                               ti(Year, area) +
+                               ti(Year, Lat_one),
+                           family = poisson,
+                           random = list(Long_one = ~ 1),
+                           data = richness_effort_data)
+
+summary(simple_gam_cor_site_2$gam) 
+par(mfrow = c(2,2));gam.check(simple_gam_cor_site_2$gam) # Less conic shape. 
+
+#  I try adding an atuocorrelation term with time and site
+
+simple_gam_autocorcor_site_ = gamm(richness ~ 
+                               s(Year, k = 5) + 
+                               s(area, k = 5) +
+                               Lat_one +
+                               ti(Year, area) +
+                               ti(Year, Lat_one),
+                               correlation = corAR1(form = ~ Year | ID),
+                               family = poisson,
+                               random = list(Long_one = ~ 1),
+                               data = richness_effort_data)
+
+summary(simple_gam_autoccor_site_2$gam) 
+par(mfrow = c(2,2));gam.check(simple_gam_autocor_site_2$gam) # Nothing changes
+
+## The inclusion of an autocorrelation term does not really improve the model.
+#  After adding tensor products, maybe it is no longer needed to have Latitude and Year as effects. 
+#  If I eliminate Latitude and Year, I loose a lot of r2, but the residuals are better. 
+#  If I include Year but eliminate Latitude, the residuals get a little better but I almot not loose r2.
+
+simple_gam_cor_site_4 = gamm(richness ~ 
+                               s(Year, k = 6) + 
+                               s(area, k = 5)+
+                               #s(Lat_one) ,
+                               #ti(Year, area) +
+                               ti(Year,Lat_one),
+                             family = poisson,
+                             random = list(Long_one = ~ 1),
+                             data = richness_effort_data)
+
+summary(simple_gam_cor_site_4$gam)
+par(mfrow = c(2,2));
+gam.check(simple_gam_cor_site_4$gam) 
+abline(1,1, col = "red") # my model underestimates at high values and overestimates a little at low values, but its pretty good. 
+
+
+# The best model is therefore simple_gam_cor_site_4, which has a random element on Longitude
+# And includes an interaction term between year and latitude. 
+# If area is not included in the model, the model fulfills all the assumptions, though looses r2. 
+# However, the inclusion of swept area is compulsory in order to understand changes in richness with time. 
+# This is the case because there exists a pattern of swept area with time which needs to be included in the model. 
+
+#### GAM visualisation ### ####
+draw(simple_gam_cor_site_4$gam)
+
+a = plot_model(simple_gam_cor_site_4,type = "pred", 
+           terms = c("Year"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across time")
+
+b = plot_model(simple_gam_cor_site_4, type = "pred", 
+           terms = c("Lat_one"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across temperature")
+
+c = plot_model(simple_gam_cor_site_4, type = "pred", 
+           terms = c("area"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+  scale_colour_continuous() + ggtitle("Richness across temperature")
+
+# Graph of richness changes across time and Latitude
+
+pdf("gam_temp_year_richness.pdf", height = 3.5, width = 7)
+plot_model(simple_gam_cor_site_4,type = "pred", 
+           terms = c("Year", "Lat_one"), show.data = T, dot.alpha = 1, dot.size = 0.9)  +
+  scale_colour_continuous() + ggtitle("Richness across time")
+
+dev.off()
+
+
+# Graph of response variables
+pdf("predictors_gam_richness.pdf", height = 2.5, width = 8)
+
+grid.arrange(a,b,c, ncol = 3)
+
+dev.off()
