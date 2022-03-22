@@ -19,9 +19,24 @@ se <- function(x) {sqrt(variance(x))/sqrt(length(x))}
 
 ### Exploratory analysis and some further cleaning ### ####
 
+# The whole data analysis is done using two approaches. On the one hand, I analyse the raw data
+# considering each trawling event as a singular sampling site, and look at the change of 
+# species richness found per sampling event, with time and latitude. This way considers n = 26 038 sites
+# From these, there is more than 1 swept area for some sites, because more than 1 event occurred in a year (this happens only in 45 sites) 
 # Load data, unselect max_length and min_length, because they contain many NAs and not needed for the analysis
 
-full_dataset = read_csv("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Final analysis/data_filtered_seas.csv")
+# On the other hand, if I group by 1x1 cells of longitude and latitude, the picture changes a little and 
+# the models are better fit, but I lose information. Also, I lose points close to the coast, which are highly relevant. 
+
+# The data frame with richness at each trawling will be called "richness_pure", with the sites being "sites_pure"
+
+# The data frame with richness at 1x1 lat long cell will be called " richness_cells" with the sites being "sites_cells" 
+
+# START #
+
+## Data load and remove of useless columns with NAs
+
+full_dataset = read_csv("data_filtered_seas.csv")
 full_dataset = full_dataset %>% select(- Max_length, - Min_length)
 
 # Swept area transformation to Km2 instead of m2, and exploration of effort distribution with time, and range 
@@ -63,7 +78,7 @@ sel_cells_one # 416 sites with 5 or more years of data
 plot(Lat_one ~ Long_one, data = sel_cells_one)
 
 # This gives me the number of original sites within each new defined site
-sites = orig_data_cords_one %>%
+sites_cells = orig_data_cords_one %>%
   ungroup() %>% 
   mutate(site = paste(Long_one, Lat_one)) %>%
   filter(site %in% sel_cells_one$site) %>% select(Long_one, Lat_one, Year) %>% distinct()
@@ -78,6 +93,11 @@ sites_per_new_site_one =
   distinct() %>% 
   group_by(Long_one, Lat_one, Year) %>% 
   count()
+
+richness_pure = full_dataset %>% ungroup()  %>% dplyr::select(valid_name, Longitude, Latitude, Year, swept_area) %>% 
+  distinct() %>% group_by(Longitude, Latitude, Year, swept_area) %>% summarise(richness = n())
+
+sites_pure = full_dataset %>% ungroup() %>% select(Longitude, Latitude, Year) %>% distinct()
 
 # I gather all the species found (Presence data) within each degree of Lat Long, 
 # And I sum all the effort (swept area) from all the trawling events at each degree of long lat.
@@ -101,7 +121,7 @@ effort_new_site =
                                                   trawls = n())
 
   
-richness_effort_data = merge(richness_new_site, effort_new_site, by = c("Long_one", "Lat_one", "Year"))  # A total of 7905 sites across 32 years
+richness_cells = merge(richness_new_site, effort_new_site, by = c("Long_one", "Lat_one", "Year"))  # A total of 8426 sites across 32 years
 
 # Before adding temperature, I have 8426 cells distributed across 32 years. 
 
@@ -109,19 +129,29 @@ richness_effort_data = merge(richness_new_site, effort_new_site, by = c("Long_on
 # lambda +- 1.96 * sqrt(lambda/n)
 # 1.96 is the value of the 95% probability edge in a poisson distribution. 
 
-lambda_CI = richness_effort_data %>% group_by(Year) %>%
+lambda_CI = richness_cells %>% group_by(Year) %>%
   summarise(lambda = mean(richness),
             n = n()) %>%
   mutate(lower_edge = lambda - 1.96 * sqrt(lambda / n),
          higher_edge = lambda + 1.96 * sqrt(lambda/n)) %>%
   print(n = 32)
 
-cor(lambda_CI$lambda, lambda_CI$n)
+original_CI = richness_pure %>% group_by(Year) %>%
+  summarise(lambda = mean(richness),
+            n = n()) %>%
+  mutate(lower_edge = lambda - 1.96 * sqrt(lambda / n),
+         higher_edge = lambda + 1.96 * sqrt(lambda/n)) %>%
+  print(n = 32)
+
+cor.test(lambda_CI$lambda, lambda_CI$n)
 plot(lambda_CI$lambda, lambda_CI$n) 
 
-# There is a correlation between number of cells per year (n), and species richness per cell (lambda). 
-# I do not have an explanation for this, but there should not be causality between the number of species found 
-# at each cell, and the total number of cells per year. 
+cor.test(original_CI$lambda, original_CI$n)
+plot(original_CI$lambda, original_CI$n) 
+
+# There is a correlation between number of cells per year (n), and species richness per cell (lambda) when grouping
+# in 1x1 lat long cells. I do not have an explanation for this, but there should not be causality 
+# between the number of species found at each cell, and the total number of cells per year. 
 
 
 # When gathering the trawlings in 1x1 lat long cells, some cells contain several trawls. 
@@ -131,12 +161,12 @@ plot(lambda_CI$lambda, lambda_CI$n)
 # years, not only more than 5 years of data but maybe 15. 
 
 
-boxplot(area ~ Year, richness_effort_data) # Quite similar area across time! However, a lot of variability
+boxplot(area ~ Year, richness_cells) # Quite similar area across time! However, a lot of variability
 
-plot(table(richness_effort_data$Year)) # More cells in the last years.
+plot(table(richness_cells$Year)) # More cells in the last years.
 boxplot(n ~ Year, sites_per_new_site_one)
 boxplot(n ~ Year, sites_per_new_site_one, ylim = c(0,50)) # Quite homogeneous distribution of #trawls/cell, though some big outliers (a cell with >100 trawls in 2004)
-boxplot(area ~ Year, richness_effort_data, ylim = c(0,50)) # Less area from 2011 onwards
+boxplot(area ~ Year, richness_cells, ylim = c(0,50)) # Less area from 2011 onwards
 
 # This trend needs to be considered. First 10 years have less points in the whole area,
 # but each point does not contain less trawling, neither less area! (Actually contains more area)
@@ -146,165 +176,171 @@ boxplot(area ~ Year, richness_effort_data, ylim = c(0,50)) # Less area from 2011
 # Novel spatial organisation also deserves a plot per year
 
 #pdf("data_across_sites_novel.pdf", height = 20, width = 20)
-#ggplot(richness_effort_data, aes(x = Long_one, y = Lat_one)) + geom_point() + facet_wrap(.~ Year)
+#ggplot(richness_cells, aes(x = Long_one, y = Lat_one)) + geom_point() + facet_wrap(.~ Year)
 #dev.off()
 
 # Here all the plots for data exploration
 
-a = ggplot(sites, aes(x = Year)) + geom_bar() + xlab("Year")
+a = ggplot(sites_cells, aes(x = Year)) + geom_bar() + xlab("Year")
 b = ggplot(sites_per_new_site_one, aes(as.factor(Year), y = n)) + geom_boxplot(outlier.size = 0.1) + xlab("Year") + ylim(0,50)
-c = ggplot(richness_effort_data, aes(x = as.factor(Year), y = area)) + geom_boxplot(outlier.size = 0.1) + ylim (0,200)+ xlab("Year")
-d = ggplot(richness_effort_data, aes(x = as.factor(Year), y = Lat_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
-e = ggplot(richness_effort_data, aes(x = as.factor(Year), y = Long_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+c = ggplot(richness_cells, aes(x = as.factor(Year), y = area)) + geom_boxplot(outlier.size = 0.1) + ylim (0,200)+ xlab("Year")
+d = ggplot(richness_cells, aes(x = as.factor(Year), y = Lat_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+e = ggplot(richness_cells, aes(x = as.factor(Year), y = Long_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+
+# All plots for data exploration without gathering in 1x1 cells
+
+f = ggplot(sites_pure, aes(x = Year)) + geom_bar() + xlab("Year")
+g = ggplot(richness_pure, aes(x = as.factor(Year), y = swept_area)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+h = ggplot(richness_pure, aes(x = as.factor(Year), y = Latitude)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+i = ggplot(richness_pure, aes(x = as.factor(Year), y = Longitude)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+
 
 
 grid.arrange(a,b,c,d,e, ncol = 2)
 
-write.csv(richness_effort_data, "richness_in_1x1_cells.csv", row.names = F)
+grid.arrange(f,g,h,i, ncol = 2)
+
+write.csv(richness_cells, "richness_in_1x1_cells.csv", row.names = F)
+write.csv(richness_pure, "richness_all_sites.csv", row.names = F)
 
 # The data is now ready for exploratory statistical modelling. 
-# I want to model how has richness changed at each cell with time and latitude. 
+# I want to model how has richness changed at each trawling with time and latitude. 
 # For this, I need a Poisson distribution family (richness --> Count data)
 # And I need to include area (effort) as an explanatory variable
 
+# I will do the analysis on the richness_pure, because in my opinion it makes no sense to transform the data 
+# for now.  
+
 #### MODELS #####
 
-richness_effort_data$ID = sample(1:nrow(richness_effort_data)) # I may needed later
+richness_cells$ID = sample(1:nrow(richness_cells)) # I may needed later
+richness_pure$ID = sample(1:nrow(richness_pure)) # I may needed later
 
-# This is the most simple model that I want to fit
+# Model selection 
 
-mod1 = glm(richness ~ Year + area + Lat_one, data = richness_effort_data, family = poisson)
-mod2 = glm(richness ~ Year + log(area) + Lat_one, data = richness_effort_data, family = poisson)
-mod3 = glm(richness ~ Year + Lat_one + offset(log(area)), data = richness_effort_data, family = poisson)
+mod1 = glm(richness ~ Year + area + Lat_one, data = richness_cells, family = poisson)
+mod2 = glm(richness ~ Year + log(area) + Lat_one, data = richness_cells, family = poisson)
+mod3 = glm(richness ~ Year + Lat_one + offset(log(area)), data = richness_cells, family = poisson)
 
-par(mfrow = c(2,2)); plot(mod1) # Some strong otuliers, probably because super high sampled area in those cells
-par(mfrow = c(2,2)); plot(mod2) # There is heteroscedasticity at high predicted values
-par(mfrow = c(2,2)); plot(mod3) # Bad model 
+mod1_p = glm(richness ~ Year + offset(log(swept_area)), data = richness_pure, family = poisson)
+mod2_p = glm(richness ~ Year + swept_area, data = richness_pure, family = poisson)
+mod3_p = glm(richness ~ Year + swept_area + Latitude + Year:Latitude, data = richness_pure, family = poisson)
+mod4_p = glm(richness ~ Year + log(swept_area) + Latitude, data = richness_pure, family = poisson)
+mod5_p = glm(richness ~ Year + Latitude + offset(log(swept_area)), data = richness_pure, family = poisson)
 
-# The area is way better included as an explanatory variable and not as an offset. 
-# The offset is basically an explanatory variable with coefficient = 1. This makes sense normally, but not 
-# here because more area does not necessarily mean more species if the smaller area is enough to sample
-# the area. In this case, we do not observe a linear increase of species records with sampled area, neither
-# does it make theoretical sense. (If all species area recorded, more area will not increase the number of species recorded)
+
+summary(mod1_p)
+summary(mod2_p)
+summary(mod3_p)
+summary(mod4_p)
+summary(mod5_p)
+
+par(mfrow = c(2,2)); plot(mod1_p) # 
+par(mfrow = c(2,2)); plot(mod2_p) # Pretty good model. It is better to include the swept area as an explanatory variable, not as an offset 
+par(mfrow = c(2,2)); plot(mod3_p) # Pretty good model, thought the residuals vs leverage not perfect 
+par(mfrow = c(2,2)); plot(mod4_p) # Pretty good model 
+par(mfrow = c(2,2)); plot(mod5_p)
+
+# I try to fit a gam model: 
+  
+  # - Year could have a non linear effect to richness
+  # - Swept area should be ok with a logarithmic scale fit, but its not. 
+  # - However, a smooth term for latitude makes no biological sense
+  # - Though an interaction term between Year and Latitude with a small number of knots 
+  #   could help to see if annual change of richness changes between latitudes. 
+
+mod4_p =  gam(richness ~ s(swept_area) + s(Year, by = Latitude), data = richness_pure, family = poisson)
+
+summary(mod4_p)
+par(mfrow = c(2,2)); gam.check(mod4_p, type = "pearson")
+abline(1,1, col = "red")
+
+mod5_p =  gam(richness ~ s(Year, k = 5) + s(Year, by = Latitude) + Latitude + s(swept_area), data = richness_pure, family = poisson)
+
+summary(mod5_p)
+par(mfrow = c(2,2)); gam.check(mod5_p, type = "pearson")
+abline(1,1, col = "red")
+
+
+mod6_p =  gam(richness ~ s(Year, k = 4) + s(Year, by = Latitude, k = 3) + s(swept_area) + ti(Latitude, Longitude),
+              data = richness_pure,
+              family = poisson)
+
+summary(mod6_p)
+par(mfrow = c(2,2)); gam.check(mod6_p, type = "pearson")
+abline(1,1, col = "red")
+
+cor.test(predict(mod6_p), richness_pure$richness)
+
+gam.fit(mod6_p)
+mod6_p =  gam(richness ~ s(Year, k = 4) + s(Year, by = Latitude, k = 3) + s(swept_area) + ti(Latitude, Longitude),
+              data = richness_pure,fit = T,
+              family = poisson)
+
+summary(mod6_p)
+par(mfrow = c(2,2)); gam.check(mod6_p, type = "pearson")
+abline(1,1, col = "red")
+
+gam.fit(mod7_p)
+mod7_p =  gam(richness ~ s(Year, k = 4) + s(swept_area) + ti(Latitude, Longitude),
+              data = richness_pure,
+              family = poisson) 
+
+summary(mod7_p)
+par(mfrow = c(2,2)); gam.check(mod7_p, type = "pearson")
+abline(1,1, col = "red")
+
+mod8_p =  gam(richness ~ s(Year, k = 4) + ti(Latitude, Longitude),
+              data = richness_pure,
+              family = poisson) 
+
+summary(mod8_p)
+par(mfrow = c(2,2)); gam.check(mod8_p, type = "pearson")
+abline(1,1, col = "red")
+
+cor.test(predict(mod1_p), richness_pure$richness)
+cor.test(predict(mod2_p), richness_pure$richness)
+cor.test(predict(mod3_p), richness_pure$richness)
+cor.test(predict(mod4_p), richness_pure$richness)
+cor.test(predict(mod5_p), richness_pure$richness)
+cor.test(predict(mod6_p), richness_pure$richness) # Best model in terms of correlation, but more complex and just slightly model. 
+cor.test(predict(mod7_p), richness_pure$richness) # Best model --> Model very similar to the previous one, but simpler 
+cor.test(predict(mod8_p), richness_pure$richness) # Interestingly, the removal of swept area does not affect the model so much
+
+summary(mod1_p)
+summary(mod2_p)
+summary(mod3_p)
+summary(mod4_p)
+summary(mod5_p)
+summary(mod6_p)
+summary(mod7_p)
+
+
+
+# mod7_p is the best model that I can get without data transformation and without including environmental data. 
+# Year has a clear positive effect in species richness with time, which does not change much with Latitude. 
 
 # I check for overdispersion 
 
-deviance(mod2)/mod2$df.residual
-dispersiontest(mod2) # A little overdispersed but not too much. I could try nb() to see if clear improvement
+deviance(mod7_p)/mod7_p$df.residual
+dispersiontest(mod7_p) # Not overdispersed :) 
 
-mod4 = glm.nb(richness ~ Year + log(area) + Lat_one, data = richness_effort_data)
-summary(mod4)
-par(mfrow = c(2,2)); plot(mod4) #  Not clear improvement
+### GAM visualisation ### ####
+draw(mod7_p)
 
-# The following points are highly influential
-
-influencePlot(mod2)
-richness_effort_data[c(3577, 4837, 4868, 6574, 7619, 7953),] # Some have very high swept area... but this should be ok when applying gam 
-summary(richness_effort_data)
-
-# GAM modeling to fit non linear relationship mainly of area, to richness. A log scale in glm() is not enough
-
-boxplot(area ~ Year, richness_effort_data)
-
-simple_gam_1 = gam(richness ~ Year + Lat_one + s(area), data = richness_effort_data, family = poisson) 
-
-summary(simple_gam_1) 
-
-par(mfrow = c(2,2)); gam.check(simple_gam_1, type = "pearson")
-
-# There is strong heteroscedasticity, maybe because I am not considering the random effect of the Site, which would 
-# refer to the spatial autocorrelation. 
-
-simple_gam_cor_site = gamm(richness ~ Year + s(area, k = 5) + Lat_one,
-                               family = poisson,
-                               random = list(Long_one = ~ 1),
-                               data = richness_effort_data)
-
-summary(simple_gam_cor_site$gam)
-summary(simple_gam_cor_area_sst$lme)
-
-par(mfrow = c(2,2)); gam.check(simple_gam_cor_site$gam, type = "pearson") # The residuals improva a little, less conic shape. 
-anova(simple_gam_cor_area_sst$gam)
-
-# I add interaction terms and a smooth term for year. The effect of area and latitude in richness
-# may have differed with time
-
-simple_gam_cor_site_2 = gamm(richness ~ 
-                               s(Year, k = 5) + 
-                               s(area, k = 5) +
-                               Lat_one +
-                               ti(Year, area) +
-                               ti(Year, Lat_one),
-                           family = poisson,
-                           random = list(Long_one = ~ 1),
-                           data = richness_effort_data)
-
-summary(simple_gam_cor_site_2$gam) 
-par(mfrow = c(2,2));gam.check(simple_gam_cor_site_2$gam) # Less conic shape. 
-
-#  I try adding an atuocorrelation term with time and site
-
-simple_gam_autocorcor_site_ = gamm(richness ~ 
-                               s(Year, k = 5) + 
-                               s(area, k = 5) +
-                               Lat_one +
-                               ti(Year, area) +
-                               ti(Year, Lat_one),
-                               correlation = corAR1(form = ~ Year | ID),
-                               family = poisson,
-                               random = list(Long_one = ~ 1),
-                               data = richness_effort_data)
-
-summary(simple_gam_autoccor_site_2$gam) 
-par(mfrow = c(2,2));gam.check(simple_gam_autocor_site_2$gam) # Nothing changes
-
-## The inclusion of an autocorrelation term does not really improve the model.
-#  After adding tensor products, maybe it is no longer needed to have Latitude and Year as effects. 
-#  If I eliminate Latitude and Year, I loose a lot of r2, but the residuals are better. 
-#  If I include Year but eliminate Latitude, the residuals get a little better but I almot not loose r2.
-
-simple_gam_cor_site_4 = gamm(richness ~ 
-                               s(Year, k = 6) + 
-                               s(area, k = 5)+
-                               #s(Lat_one) ,
-                               #ti(Year, area) +
-                               ti(Year,Lat_one),
-                             family = poisson,
-                             random = list(Long_one = ~ 1),
-                             data = richness_effort_data)
-
-summary(simple_gam_cor_site_4$gam)
-par(mfrow = c(2,2));
-gam.check(simple_gam_cor_site_4$gam) 
-abline(1,1, col = "red") # my model underestimates at high values and overestimates a little at low values, but its pretty good. 
-
-
-# The best model is therefore simple_gam_cor_site_4, which has a random element on Longitude
-# And includes an interaction term between year and latitude. 
-# If area is not included in the model, the model fulfills all the assumptions, though looses r2. 
-# However, the inclusion of swept area is compulsory in order to understand changes in richness with time. 
-# This is the case because there exists a pattern of swept area with time which needs to be included in the model. 
-
-#### GAM visualisation ### ####
-draw(simple_gam_cor_site_4$gam)
-
-a = plot_model(simple_gam_cor_site_4,type = "pred", 
-           terms = c("Year"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+a = plot_model(mod7_p,type = "pred", 
+               terms = c("Year"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
   scale_colour_continuous() + ggtitle("Richness across time")
 
-b = plot_model(simple_gam_cor_site_4, type = "pred", 
-           terms = c("Lat_one"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
-  scale_colour_continuous() + ggtitle("Richness across temperature")
-
-c = plot_model(simple_gam_cor_site_4, type = "pred", 
-           terms = c("area"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
+b = plot_model(mod7_p, type = "pred", 
+               terms = c("swept_area"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
   scale_colour_continuous() + ggtitle("Richness across temperature")
 
 # Graph of richness changes across time and Latitude
 
 pdf("gam_temp_year_richness.pdf", height = 3.5, width = 7)
-plot_model(simple_gam_cor_site_4,type = "pred", 
-           terms = c("Year", "Lat_one"), show.data = T, dot.alpha = 1, dot.size = 0.9)  +
+plot_model(mod7_p,type = "pred", 
+           terms = c("Year"), show.data = T, dot.alpha = 1, dot.size = 0.9)  +
   scale_colour_continuous() + ggtitle("Richness across time")
 
 dev.off()
