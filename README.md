@@ -1,7 +1,6 @@
-# Norwegian_sp
+# Atlantic Arctic demersal fish biodiversity
 
-
-# This are the different scripts used for the analysis of the Norwegian bottom trawling database of the IMR. There are 4 scripts:
+# These are the different scripts used for the analysis of the Norwegian bottom trawling database of the IMR. There are 4 scripts:
 
 
 1. The first script to look at is the "Data exploration" --> In it, I try to investigate the characteristics of the database 
