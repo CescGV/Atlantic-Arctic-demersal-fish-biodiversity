@@ -6,7 +6,9 @@ library(AER)
 library(MASS)
 library(raster)
 library(tidyverse)
+library(gridExtra)
 
+# My functions
 
 round_05 <- function(x) {
   if (round(x) > x) {round(x) - 0.5}
@@ -14,19 +16,18 @@ round_05 <- function(x) {
 }
 variance <- function(x){sum((x-mean(x))^2)/length(x)}
 se <- function(x) {sqrt(variance(x))/sqrt(length(x))}
+
 ### Exploratory analysis and some further cleaning ### ####
 
-# Cleaned data
+# Load data, unselect max_length and min_length, because they contain many NAs and not needed for the analysis
 
 full_dataset = read_csv("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Final analysis/data_filtered_seas.csv")
-full_dataset = full_dataset %>% group_by(Longitude, Latitude, Year) %>% mutate(Bot_depth = mean(Bot_depth),swept_area = mean(swept_area)) %>% ungroup()
 full_dataset = full_dataset %>% select(- Max_length, - Min_length)
 
-# Swept area transformation to Km2 instead of m2, and posterior exploration of range 
+# Swept area transformation to Km2 instead of m2, and exploration of effort distribution with time, and range 
+
 full_dataset$swept_area = full_dataset$swept_area / 10000 
-
-boxplot(full_dataset$swept_area ~ full_dataset$Year)
-
+boxplot(swept_area ~ Year, data = full_dataset)
 range(full_dataset$swept_area) # From 0.5 to 28.5 Km2
 
 # Figure of the geographical distribution of the effort, this figure could be added to the supplementary material to report the survey area across years. 
@@ -35,37 +36,44 @@ pdf("data_across_sites.pdf", height = 20, width = 20)
 ggplot(full_dataset, aes(x = Longitude, y = Latitude)) + geom_point() + facet_wrap(.~ Year)
 dev.off()
 
-#Now the idea is to get two extra columns so that I keep the identity of each trawling but also get a 
-#way to add them together in 1x1 degrees of lat long. However, I round to 0.5 because afterwards, the SST is at each 0.5 
+# Now the idea is to get an extra column with coordinates round to 0.5, so that I keep the identity of each trawling
+# but also get a way to add them together in 1x1 degrees of lat long. 
+# However, I round to 0.5 because afterwards, the SST is at each 0.5 
 
 orig_data_cords_one = full_dataset %>% dplyr::mutate(Long_one = round_05(Longitude), Lat_one = round_05(Latitude))
 
-# To do a temporal analysis, I select only those sites with more than 15 years of data
+# To do a temporal analysis, I select only those sites with 5 or more years of data
 
 # Total number of sites
 
 orig_data_cords_one %>% ungroup() %>% dplyr::select(Long_one, Lat_one) %>% distinct() # Total of 562 sites
 
-# Of these, the median number of years per each site is 15.
+# Of these, the median number of years per each site is 14.
 orig_data_cords_one %>% ungroup() %>% dplyr::select(Year, Long_one, Lat_one) %>% distinct() %>% group_by(Long_one, Lat_one) %>% count() %>% summary()
 
 # I keep sites with more than 5 years of data
 
-sel_sites_one = 
+sel_cells_one = 
   orig_data_cords_one %>%
   ungroup() %>% dplyr::select(Year, Long_one, Lat_one) %>%
   distinct() %>% group_by(Long_one, Lat_one) %>% count() %>%
-  filter(n > 5) %>% mutate(site = paste(Long_one, Lat_one))
+  filter(n > 4) %>% mutate(site = paste(Long_one, Lat_one))
 
-plot(Lat_one ~ Long_one, data = sel_sites_one)
+sel_cells_one # 416 sites with 5 or more years of data 
+plot(Lat_one ~ Long_one, data = sel_cells_one)
 
 # This gives me the number of original sites within each new defined site
-
+sites = orig_data_cords_one %>%
+  ungroup() %>% 
+  mutate(site = paste(Long_one, Lat_one)) %>%
+  filter(site %in% sel_cells_one$site) %>% select(Long_one, Lat_one, Year) %>% distinct()
+  
+  
 sites_per_new_site_one =   
   orig_data_cords_one %>% 
   ungroup() %>%
   mutate(site = paste(Long_one, Lat_one)) %>% 
-  filter(site %in% sel_sites_one$site) %>% 
+  filter(site %in% sel_cells_one$site) %>% 
   dplyr::select(Long_one, Lat_one, Longitude, Latitude, Year) %>% 
   distinct() %>% 
   group_by(Long_one, Lat_one, Year) %>% 
@@ -79,7 +87,7 @@ sites_per_new_site_one =
 richness_new_site = 
   orig_data_cords_one %>% ungroup() %>%
   mutate(site = paste(Long_one, Lat_one)) %>% 
-  filter(site %in% sel_sites_one$site) %>% # I keep only the sites with more than 5 years of data. 
+  filter(site %in% sel_cells_one$site) %>% # I keep only the sites with more than 5 years of data. 
   dplyr::select(Long_one, Lat_one, Year,valid_name) %>% distinct() %>% 
   group_by(Long_one, Lat_one, Year) %>% summarise(richness = n())
 
@@ -87,34 +95,53 @@ richness_new_site =
 effort_new_site = 
   orig_data_cords_one %>% ungroup() %>%
   mutate(site = paste(Long_one, Lat_one)) %>% 
-  filter(site %in% sel_sites_one$site) %>% # I keep only the sites with more than 5 years of data. 
+  filter(site %in% sel_cells_one$site) %>% # I keep only the sites with more than 5 years of data. 
   dplyr::select(Long_one, Lat_one, Year, swept_area) %>% distinct() %>% 
-  group_by(Long_one, Lat_one, Year) %>% summarise(area = sum(swept_area))
+  group_by(Long_one, Lat_one, Year) %>% summarise(area = sum(swept_area),
+                                                  trawls = n())
 
   
-richness_effort_data = merge(richness_new_site, effort_new_site, by = c("Long_one", "Lat_one", "Year"))  # A total of 8366 sites across 32 years
+richness_effort_data = merge(richness_new_site, effort_new_site, by = c("Long_one", "Lat_one", "Year"))  # A total of 7905 sites across 32 years
 
-# Before adding temperature, I hace 8366 Sites distributed across 32 years. 
+# Before adding temperature, I have 8426 cells distributed across 32 years. 
 
-table(richness_effort_data$Year)
-range(table(richness_effort_data$Year))
+# To calculate the 95% CI around the mean of a poisson distributed data, I need to find lambda (the mean) and 
+# lambda +- 1.96 * sqrt(lambda/n)
+# 1.96 is the value of the 95% probability edge in a poisson distribution. 
+
+lambda_CI = richness_effort_data %>% group_by(Year) %>%
+  summarise(lambda = mean(richness),
+            n = n()) %>%
+  mutate(lower_edge = lambda - 1.96 * sqrt(lambda / n),
+         higher_edge = lambda + 1.96 * sqrt(lambda/n)) %>%
+  print(n = 32)
+
+cor(lambda_CI$lambda, lambda_CI$n)
+plot(lambda_CI$lambda, lambda_CI$n) 
+
+# There is a correlation between number of cells per year (n), and species richness per cell (lambda). 
+# I do not have an explanation for this, but there should not be causality between the number of species found 
+# at each cell, and the total number of cells per year. 
 
 
-# To gather the data summing the sites, there are some points of 1x1 long lat that contain many sites
-# This increases the area a lot, though! Also, it looks as if there was less area per each site from 2011
-# onwards, although there are more sites. This trend would diminish if I selected points with even more
+# When gathering the trawlings in 1x1 lat long cells, some cells contain several trawls. 
+# This increases the area a lot in these cells, and this needs to be considered when looking for potential biases. 
+# Also, it looks as if there was less area per each site from 2011 onwards, although there were more cells.
+# This trend would diminish if I selected points with even more
 # years, not only more than 5 years of data but maybe 15. 
 
 
 boxplot(area ~ Year, richness_effort_data) # Quite similar area across time! However, a lot of variability
 
-plot(table(richness_effort_data$Year))
-boxplot(n ~ Year, sites_per_new_site_one, ylim = c(0,10))
+plot(table(richness_effort_data$Year)) # More cells in the last years.
+boxplot(n ~ Year, sites_per_new_site_one)
+boxplot(n ~ Year, sites_per_new_site_one, ylim = c(0,50)) # Quite homogeneous distribution of #trawls/cell, though some big outliers (a cell with >100 trawls in 2004)
 boxplot(area ~ Year, richness_effort_data, ylim = c(0,50)) # Less area from 2011 onwards
 
 # This trend needs to be considered. First 10 years have less points in the whole area,
 # but each point does not contain less trawling, neither less area! (Actually contains more area)
-
+# Even if there is an overall decline in swept area, this would imply that our results would be exacerbated, 
+# therefore we are staying on the conservative side of the interpretation. 
 
 # Novel spatial organisation also deserves a plot per year
 
@@ -122,97 +149,17 @@ boxplot(area ~ Year, richness_effort_data, ylim = c(0,50)) # Less area from 2011
 #ggplot(richness_effort_data, aes(x = Long_one, y = Lat_one)) + geom_point() + facet_wrap(.~ Year)
 #dev.off()
 
+# Here all the plots for data exploration
 
-# The exploratory and preparation section is over. Now I want to add temperature to model
-# The changes of richness with time, with temperature. However, the ammount of 
-
-### Add temperature to create a model with SST as well ### ####
-library(raster)
-SST_hadl = read.csv("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Final analysis/Hadl_SST_1989_2020.csv")
-head(SST_hadl)
-points = richness_effort_data %>% ungroup() %>% dplyr::select(Long_one, Lat_one) %>% distinct()
-points_no_gath = richness_all_sites_no_group %>% ungroup() %>% dplyr::select(Longitude, Latitude) %>% distinct()
-
-coordinates(points) = points[,1:2]; crs(points) <- "+proj=longlat"
-coordinates(points_no_gath) = points_no_gath[,1:2]; crs(points_no_gath) <- "+proj=longlat"
-
-# I transform the SST_hadl dataframe into an spatial object, to further select those within the pres_buf area
-coords <- data.frame(SST_hadl$longitude, SST_hadl$latitude)
-coords <- coordinates(coords)
-coords <- SpatialPoints(coords,proj4string=CRS("+proj=longlat +datum=WGS84 +ellps=WGS84"))
+a = ggplot(sites, aes(x = Year)) + geom_bar() + xlab("Year")
+b = ggplot(sites_per_new_site_one, aes(as.factor(Year), y = n)) + geom_boxplot(outlier.size = 0.1) + xlab("Year") + ylim(0,50)
+c = ggplot(richness_effort_data, aes(x = as.factor(Year), y = area)) + geom_boxplot(outlier.size = 0.1) + ylim (0,200)+ xlab("Year")
+d = ggplot(richness_effort_data, aes(x = as.factor(Year), y = Lat_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
+e = ggplot(richness_effort_data, aes(x = as.factor(Year), y = Long_one)) + geom_boxplot(outlier.size = 0.1) + xlab("Year")
 
 
+grid.arrange(a,b,c,d,e, ncol = 2)
 
-pres_buff <- raster::buffer(points, width = 100000, dissolve = TRUE)
-
-pres_buff_no_gath <- raster::buffer(points_no_gath, width = 100000, dissolve = TRUE)
-
-# I select only the SST points within the area of which I have data, which is the pres_buff polygon
-
-points_sel_SST   <- SST_hadl[!is.na(over(coords, geometry(pres_buff))),]
-points_sel_SST_no_gath   <- SST_hadl[!is.na(over(coords, geometry(pres_buff_no_gath))),]
-
-
-points_final = separate(points_sel_SST, into = c("Year", "Other"),time, sep = "-") %>% filter(sst > -10)
-points_final_no_gath = separate(points_sel_SST_no_gath, into = c("Year", "Other"),time, sep = "-") %>% filter(sst > -10)
-
-# I have to calculate the mean of sst across the whole year, since the satellite data has higher temporal resolution
-points_final = points_final %>% group_by(Year, latitude, longitude) %>% summarise(sst = mean(sst))
-points_final = points_final %>% filter(sst> -200) %>% # NA points are included as -200 degrees, I eliminate them. 
-  dplyr::select(Year, latitude, longitude, sst) %>% 
-  dplyr::mutate(Event = paste(latitude, longitude, Year))
-
-
-points_final_no_gath = points_final_no_gath %>% group_by(Year, latitude, longitude) %>% summarise(sst = mean(sst))
-points_final_no_gath = points_final_no_gath %>% filter(sst> -200) %>% # NA points are included as -200 degrees, I eliminate them. 
-  dplyr::select(Year, latitude, longitude, sst) %>% 
-  dplyr::mutate(Event = paste(latitude, longitude, Year))
-
-
-
-# After rounding, it seems as if the same point had different depths, but it is not the same point but the same point after loosing spatial resolution
-
-data_sp_round = richness_effort_data %>% ungroup()  %>% 
-  mutate(Event = paste( Lat_one, Long_one, Year))
-
-data_sp_round_no_gath = richness_all_sites_no_group %>% ungroup()  %>% 
-  mutate(Event = paste( Lat_05, Long_05, Year))
-
-
-str(data_sp_round) ; str(points_final)
-
-data_sst = right_join(points_final, data_sp_round, by = c("Event"))
-data_sst_no_gath = left_join(points_final_no_gath, data_sp_round_no_gath, by = c("Event"))
-
-data_sst_no_gath = na.omit(data_sst_no_gath)
-
-
-data_sst$sst = as.numeric(data_sst$sst)
-
-data_sst = data_sst %>% ungroup() %>% dplyr::select(- Event, -Year.x, -latitude, -longitude) %>% rename(Year = Year.y, SST = sst) %>% filter(SST > -50)
-data_sst_no_gath = data_sst_no_gath %>% ungroup() %>% dplyr::select(- Event, -Year.x, -latitude, -longitude) %>% rename(Year = Year.y, SST = sst) %>% filter(SST > -50)
-
-
-data_sst$ID = 1:nrow(data_sst)
-data_sst_no_gath$ID = 1:nrow(data_sst_no_gath)
-
-data_sst$Site = as.factor(paste(data_sst$Long_one, data_sst$Lat_one))
-data_sst_no_gath$Site = as.factor(paste(data_sst_no_gath$Longitude, data_sst_no_gath$Latitude))
-
-data_sst_saved = data_sst
-
-# mean and sd across time
-
-# I take sites as 1 x 1 Lon Lat agrupations of trawls 
-data_sst %>% group_by(Year) %>% summarise(rich_mean = mean(richness),
-                                          se = se(richness)) %>% print(n = 32)
-
-unique(data_sst$Site)
-dim(data_sst)
-
-boxplot(data_sst$area ~ data_sst$Year)
-unique(data_sst$Site)
-range(table(data_sst$Year))
-
-# After addition of SST, the total number of sites has been slightly reduced because some sites did not contain SST information and where dropped. 
-
+write.csv(richness_effort_data, "richness_in_1x1_cells.csv", row.names = F)
+# The exploratory and preparation section is over. Now its time to add SST
+# The changes of richness with time, with temperature. 
