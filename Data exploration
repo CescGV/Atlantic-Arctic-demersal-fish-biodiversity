@@ -1,4 +1,4 @@
-### Library
+### 1. Library ### ####
 library(tidyverse)
 library(mgcv)
 library(sjPlot)
@@ -8,7 +8,7 @@ library(raster)
 library(tidyverse)
 library(gridExtra)
 
-# My functions
+### 2. My functions ### ####
 
 round_05 <- function(x) {
   if (round(x) > x) {round(x) - 0.5}
@@ -17,7 +17,7 @@ round_05 <- function(x) {
 variance <- function(x){sum((x-mean(x))^2)/length(x)}
 se <- function(x) {sqrt(variance(x))/sqrt(length(x))}
 
-### Exploratory analysis and some further cleaning ### ####
+### 3. Exploratory analysis and some further cleaning ### ####
 
 # The whole data analysis is done using two approaches. On the one hand, I analyse the raw data
 # considering each trawling event as a singular sampling site, and look at the change of 
@@ -57,7 +57,7 @@ dev.off()
 
 orig_data_cords_one = full_dataset %>% dplyr::mutate(Long_one = round_05(Longitude), Lat_one = round_05(Latitude))
 
-# To do a temporal analysis, I select only those sites with 5 or more years of data
+# I could retain only sites with 5 or more years of data (or any other threshold)
 
 # Total number of sites
 
