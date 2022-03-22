@@ -4,8 +4,7 @@
 
 
 1. The first script to look at is the "Data exploration" --> In it, I try to investigate the characteristics of the database 
-in terms of temporal and spatial distribution of the data. At the end, I fit a GAM model to study how has the species richness changed with time, considering
-that the effort is different at each trawl, with a negative trend with time. 
+in terms of potential biases of the data and calculation of richness at each site. I check the temporal distribution of longitude and latitude, as well as the number of trawls per year and the effort at each trawl, per year. There is a negative trend of swept_effort per trawl, with time, which needs to be accounted. I fit a GAM model to study how has the species richness changed with time, considering that the effort is different at each trawl, with a negative trend with time. 
 
 2. Alpha diversity --> Once understood that the species richness at each site (alpha diversity) has declined with time, I would like investigate
 the environmental drivers of this change, which afterwards allow for a spatial modelling of the alpha diversity. 
