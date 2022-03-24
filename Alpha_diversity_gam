@@ -1,134 +1,480 @@
+###### Library ###### ####
+library(tidyverse)
+library(sf)
+library(rgeos)
+library(sp)
+library(rgdal)
+library(SoDA)
+library(Hmisc)
+library(corrplot)
 library(mgcv)
+library(dismo)
+library(conflicted)
+library(raster)
+library(ggplot2)
+library(ggsci)
+library(gbm)
+library(devEMF)
 
-#### MODELS #####
-## data_sst is the main output of the previous file: Data preparation
+conflict_prefer("select", "dplyr")
+conflict_prefer("filter", "dplyr")
+conflict_prefer("summarize", "dplyr")
+conflict_prefer("mask", "raster")
+conflict_prefer("select", "dplyr")
+conflict_prefer("mutate", "dplyr")
 
-# This is the most simple model that I want to fit
+richness_data = read_csv("richness_all_sites.csv")
 
-mod1 = glm(richness ~ Year + area + SST, data = data_sst, family = poisson)
-mod2 = glm(richness ~ Year + offset(area) + SST, data = data_sst, family = gaussian)
+#### BRT ANALYSIS ######
 
-par(mfrow = c(2,2)); plot(mod1)
-par(mfrow = c(2,2)); plot(mod2) 
+# Once looked at changes in richness with time and latitude, I want to create a model to project changes
+# spatially. To do so, I will make use of BRT, with several environmental variables
+# Because the environmental data that I found is limited to the period 1993-2020, I loose the first 4
+# years of data
 
-# The area is way better included as an explanatory variable and not offset. 
-# The offset is basically an explanatory variable with coefficient = 1. This makes sense normally, but not 
-# here because more area does not necessarily mean more species if the smaller area is enough to sample
-# the area. In this case, we do not observe a linear increase of species records with sampled area, neither
-# does it make theoretical sense. (If all species area recorded, more area will not increase the number of species recorded)
+### 1. Add environmental data to the richness data frame ### ####
+richness_data = richness_data %>% filter(Year > 1992, Year < 2020)
+richness_data = richness_data %>% filter(Bot_depth < 700) # 557 points eliminated, but way better model. 
+summary(richness_data$Bot_depth)
+quantile(richness_data$Bot_depth, 0.99)
 
-# I check for overdispersion 
+# Load environmental data from Bio Oracle and manually created #
 
-deviance(mod1)/mod1$df.residual
-dispersiontest(mod1) # overdispersed! I try with negative binomial
+dis <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Dist_coast/distance_to_coast.tif")
+layers <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Bio-Oracle/layers.grd")
+no_balt = readOGR("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Dist_coast/dist_coast.shp")
+names(layers) = c("Bathymetry","Salinity","Currents","DO"," Sea.Ice","Iron","Nitrate","Prod.Bottom","Prod.Surface", "Temp.Bottom", "Surface.Temp","Temp.Range")
 
-mod3 = glm.nb(richness ~ Year + area + SST, data = data_sst)
-summary(mod3)
-par(mfrow = c(2,2)); plot(mod3) 
+# Crop and mask layers to eliminate the baltic sea area, and to standardise them
 
-# The following points are highly influential
+layers <- crop(layers, no_balt)
+layers <- raster::mask(layers, no_balt)
 
-influencePlot(mod3)
-data_sst[c(2782, 3059),] # Very high swept area... but this should be ok when applying gam 
-summary(data_sst)
+dis <- raster::projectRaster(dis, layers[[1]], method = "bilinear")
+dis[is.na(dis)] <-0
 
-# All the highly influential values are so because of extremely high swept area. 
-# Also, gathering aroung 1 degree of longitude and latitude improves the model substainaby 
-# and then I do not have to account for spatial autocorrelation, neither for temporal, in my opinion
-# (spatially and temporally not close)
+layers_p = stack(layers, dis)
 
-# I should fit a poisson distribution but the data is overdispersed. I fit a nb()
-boxplot(area ~ Year, data_sst)
-boxplot(area ~ area, data_sst)
+## Load temporal data from Copernicus ##
 
-simple_gam_1 = gam(richness ~ s(Year) + s(SST) + s(area), data = data_sst, family = quasipoisson) # Best model
-simple_gam_2 = gam(richness ~ s(Year) + s(SST) + s(area), data = data_sst, family = nb()) 
-simple_gam_3 = gam(richness ~ s(Year) + s(area), data = data_sst, family = gaussian) 
-simple_gam_4 = gam(richness ~ s(Year) + s(area) + s(SST), data = data_sst, family = gaussian) # This should be the correct model but the residuals area a bit weird. 
+SST <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SST/SST_mean_area.tif")
+SBT <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SBT/SBT_mean_area.tif")
+SSS <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SSS/SSS_mean_area.tif")
+NWC <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/NWC/NWC_mean_area.tif")
+EWC <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/EWC/EWC_mean_area.tif")
+ICC <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/ICE_CON/ICC_mean_area.tif")
+ICT <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/ICE_THICK/ICT_mean_area.tif")
 
-summary(simple_gam_1)
-summary(simple_gam_2)
-summary(simple_gam_3)
-summary(simple_gam_4)
+#crs(NWC) = "+proj=longlat +datum=WGS84 +no_defs"
+#crs(EWC) = "+proj=longlat +datum=WGS84 +no_defs"
+#crs(SSS) = "+proj=longlat +datum=WGS84 +no_defs"
 
-par(mfrow = c(2,2))
-
-gam.check(simple_gam_1, type = "pearson")
-gam.check(simple_gam_2, type = "pearson")
-gam.check(simple_gam_3, type = "pearson") # Gaussian not adecuate, as expected. Resid vs linear p looks bad
-gam.check(simple_gam_4, type = "pearson") # Gaussian not adecuate, as expected. Resid vs linear p looks bad
-
-gratia::draw(simple_gam_1)
-acf(residuals(simple_gam_1))
-pacf(residuals(simple_gam_1))
-
-# I add a spatiotemporal autocorrelation component to check if I can reduce the acf, 
-# although I think that the residuals are very good and it is not actually a requirement of 
-# the model. 
-
-# This step can take a long time
-
-simple_gam_cor_area_sst_2 = gamm(richness ~ s(Year) + s(swept_area) + s(SST),
-                               #correlation = corAR1(form = ~ Year|new_longit + new_latit),method = "GSL",
-                               correlation = corAR1(form = ~ Year | ID),
-                               #control = list(msMaxIter = 50, msMaxEval = 50),
-                               family = poisson,
-                               random = list(Latitude = ~ 1),
-                               data = data_sst_no_gath)
-
-simple_gam_cor_area_sst_3 = gamm(richness ~ s(Year) + s(swept_area) + s(SST),
-                                 #correlation = corAR1(form = ~ Year|new_longit + new_latit),method = "GSL",
-                                 correlation = corAR1(form = ~ Site | ),
-                                 #control = list(msMaxIter = 50, msMaxEval = 50),
-                                 family = poisson,
-                                 random = list(Site = ~ 1),
-                                 data = data_sst_no_gath)
+#NWC = raster::projectRaster(NWC, layers[[1]], method = "bilinear")
+#EWC = raster::projectRaster(EWC, layers[[1]], method = "bilinear")
+#SSS = raster::projectRaster(SSS, layers[[1]], method = "bilinear")
+#SST = raster::projectRaster(SST, layers[[1]], method = "bilinear")
+#SBT = raster::projectRaster(SBT, layers[[1]], method = "bilinear")
+#ICC = raster::projectRaster(ICC, layers[[1]], method = "bilinear")
+#ICT = raster::projectRaster(ICT, layers[[1]], method = "bilinear")
+#
+#ICC[is.na(ICC[])] <- 0 
+#ICT[is.na(ICT[])] <- 0 
+#
+#writeRaster(NWC,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/NWC/NWC_mean_area.tif" )
+#writeRaster(EWC,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/EWC/EWC_mean_area.tif" )
+#writeRaster(SSS,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SSS/SSS_mean_area.tif" )
+#writeRaster(SST,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SST/SST_mean_area.tif" )
+#writeRaster(SBT,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SBT/SBT_mean_area.tif" )
+#writeRaster(ICC,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/ICE_CON/ICC_mean_area.tif" )
+#writeRaster(ICT,"C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/ICE_THICK/ICT_mean_area.tif" )
+#
 
 
-acf(residuals(simple_gam_cor_area_sst$lme))
-acf(residuals(simple_gam_cor_area_sst_2$lme))
+# Exctract the data from Copernicus per each trawl and year # 
 
-summary(simple_gam_cor_area_sst$gam)
-summary(simple_gam_cor_area_sst$lme)
+results = list()
 
-par(mfrow = c(2,2))
-gam.check(simple_gam_cor_area_sst$gam, type = "pearson")
-gam.check(simple_gam_1, type = "pearson")
+for (i in 1:28){
+  data  = richness_data %>% filter(Year == (i+1992))
+  data$SST = raster::extract(SST[[i]],data[,c("Longitude","Latitude")])
+  data$SBT = raster::extract(SBT[[i]],data[,c("Longitude","Latitude")])
+  data$SSS = raster::extract(SSS[[i]],data[,c("Longitude","Latitude")])
+  data$NWC = raster::extract(NWC[[i]],data[,c("Longitude","Latitude")])
+  data$EWC = raster::extract(EWC[[i]],data[,c("Longitude","Latitude")])
+  data$ICC = raster::extract(ICC[[i]],data[,c("Longitude","Latitude")])
+  data$ICT = raster::extract(ICT[[i]],data[,c("Longitude","Latitude")])
+  
+  results[[i]] = data
+  print(paste("Iteration ", i, " out of ", 27 , sep = ""))
+}
 
-anova(simple_gam_cor_area_sst$gam)
+df_alpha = do.call(rbind, results)
+
+# df_alpha contains environmental data with temporal resolution, and layers_p contains environmental data
+# from Bio Oracle
+
+data <-  data.frame(raster::extract(layers_p,df_alpha[,c("Longitude", "Latitude")]),
+                    Species    = df_alpha$richness,
+                    Year       = df_alpha$Year,
+                    Depth      = df_alpha$Bot_depth,
+                    Longitude  = df_alpha$Longitude,
+                    Latitude   = df_alpha$Latitude,
+                    swept_area = df_alpha$swept_area,
+                    SST        = df_alpha$SST, 
+                    SBT        = df_alpha$SBT,
+                    SSS        = df_alpha$SSS,
+                    NWC        = df_alpha$NWC,
+                    EWC        = df_alpha$EWC,
+                    ICC        = df_alpha$ICC,
+                    ICT        = df_alpha$ICT)
+data = na.omit(data)
+data$Depth = -data$Depth # Bathymetry layer is with the negative sign. 
+head(data)
+
+### 2. I check correlation between variables to avoid multicollinearity ### ####
+
+# I divide the dataset in halves, to calibrate and validate the model #
+
+index <- sample(c(1,0), nrow(data), replace = T)
+data_model <- data[which(index == 1),]
+data_val <- data[which(index != 1),]
+
+bXY = geoXY( latitude = data_model$Latitude, longitude = data_model$Longitude, 
+             lat0 = mean( data_model$Latitude ), lon0 = mean( data_model$Longitude ), unit = 1000 )
+data_model_1 = cbind( data_model, bXY )
+
+dim(data_model_1)
+
+matrix_1 <- rcorr(as.matrix(data_model_1[,c(1:28)]))
+pdf("corplot_matrix.pdf", width = 25, height = 15)
+corrplot( matrix_1$r, type = "lower", tl.col = "black", method = "number", title = "Correlations") #### "X" indicates that the correlation is not significant
+dev.off()
+head(data)
 
 
-# Temporal autocorrelation is hard to check here, because not all my points are 
-# different in time... (many points for 1 year, because of spatial variation)
-# In any case, I try with acf() with a model without this component, and with a model with
-# a temporal autocorrelation component. The difference is almost inexistent. 
+### 3. Fit the BRT model  ### ####
 
-acf(residuals(simple_gam_cor_area_sst$lme)) 
-acf(residuals(simple_gam_1))
-pacf(residuals(simple_gam_1))
-pacf(residuals(simple_gam_cor_area_sst$gam))
+size = data_model
+eval = data_val
+head(size)
+n.boot <- 20
+rows <- 10000 # Subsample of the total data frame
 
-# Visualisation of the GAM model 
+imp.vars <- sort(c(#"Salinity",
+                   #"Currents",
+                   #"DO",
+                   "Iron",
+                   "Nitrate",
+                   "Prod.Bottom",
+                   "Prod.Surface", 
+                   #"Temp.Bottom",
+                   #"Temp.Range", 
+                   #"Surface.Temp",
+                   "Depth",
+                   "Year",
+                   "Latitude",
+                   #"SST",
+                   "SBT",
+                   "SSS",
+                   "NWC",
+                   "EWC",
+                   #"ICC",
+                   #"ICT",
+                   "swept_area",
+                   "distance_to_coast"))
 
-plot_model(simple_gam_1,type = "pred", 
-           terms = c("Year"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
-  scale_colour_continuous() + ggtitle("Richness across time")
+deviance_mat <- array(0, c(n.boot,4)) # for saving model fit metrics
+colnames(deviance_mat) <- c("Dev.Train", "Dev.Eval", "Cor.Train", "Cor.Eval")
+time_1 = Sys.time()
+influence_mat <- array(0,c(length(imp.vars),n.boot)) # for saving information on predictors 
+rownames(influence_mat) <- imp.vars
+hist(data$Species)
+# create environemtnal gradient files for each taxa
+PredMins <- apply(size[,imp.vars],2,min)
+PredMaxs <- apply(size[,imp.vars],2,max)
+PredMins;PredMaxs
+EnvRanges <- as.data.frame(array(0,c(100,length(imp.vars))))
+names(EnvRanges) <- imp.vars
 
-plot_model(simple_gam_1, type = "pred", 
-           terms = c("SST"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
-  scale_colour_continuous() + ggtitle("Richness across temperature")
+for (i in c(1:length(imp.vars))) {
+  EnvRanges[,i] <- seq(PredMins[imp.vars[i]],PredMaxs[imp.vars[i]],length = 100)
+}
+EnvRanges
+# create 3D array for saving env preds from boots
+PD <- array(0,c(length(EnvRanges[[1]]),length(EnvRanges),n.boot))
+dimnames(PD)[[2]] <- imp.vars
+dimnames(PD)[[3]] <- paste('Rep_',seq(1,n.boot),sep="")
+PD
+# Region_PD <-array(0,c(3,n.boot))
+# dimnames(Region_PD)[[1]] <- c("Manukau", "Tauranga", "Kaipara")
 
-plot_model(simple_gam_1, type = "pred", 
-           terms = c("area"), show.data = T, dot.alpha = 0.05, dot.size = 0.3) +
-  scale_colour_continuous() + ggtitle("Richness across temperature")
+# eval <- 4000 samples
+imp.vars
+head(size)
+dim(size)
+results = list()
+# MAIN FOR LOOP
+head(size)
 
-pdf("gam_temp_year_richness.pdf", height = 3.5, width = 7)
-plot_model(simple_gam_1,type = "pred", 
-           terms = c("Year","SST"), show.data = T, dot.alpha = 1) +
-  scale_colour_continuous() + ggtitle("Richness across time")
+for (i in 1:n.boot){
+  # split data into training and eval data (stratified by estuary = Region in DF)
+  train <- size[sample(nrow(size), (rows), replace = T),]
+  head(train)
+  # Model - decide wether to keep models as partial - or interactor models
+  # RUN A BRT
+  M1 <- gbm.step(data = train, gbm.x = imp.vars, gbm.y = "Species",
+                 family = "poisson", tree.complexity = 2,learning.rate = 0.5, max.trees = 20000)
+
+  results[[i]] = M1
+  # Saving partial dependance plots
+  for (j in 1:length(imp.vars)){
+    grid <- plot.gbm(M1, i.var = c(paste(imp.vars[[j]])), return.grid = T)
+    PD[,imp.vars[j],i] <- loess(grid$y~EnvRanges[,imp.vars[[j]]])$y
+    #Region_PD[,i] <- gbm::plot.gbm(M1, i.var = c("Region"), return.grid = T)$y
+  }
+  
+  # model fit metrics 
+  #DEVIANCE EXPLAINED
+  int.null.deviance <- M1$self.statistics$mean.null 
+  int.residual.deviance <- M1$cv.statistics$deviance.mean 
+  deviance_mat[i,"Dev.Train"] <- (int.null.deviance-int.residual.deviance)/int.null.deviance
+  
+  pred <- predict.gbm(M1, eval, n.trees = M1$gbm.call$best.trees, type = "response", family = poisson) 
+  ext.residual.deviance <- calc.deviance(eval$Species, pred, family = "poisson" ,calc.mean=T) 
+  ext.null.deviance <- calc.deviance(eval$Species, family = "poisson", rep(mean(eval$Species),nrow(eval)), calc.mean=T) 
+  deviance_mat[i,"Dev.Eval"] <-(ext.null.deviance - ext.residual.deviance)/ext.null.deviance
+  
+  # CORRELATION
+  deviance_mat[i,"Cor.Train"] <- M1$self.statistics$correlation
+  deviance_mat[i,"Cor.Eval"] <- cor(pred, eval$Species)
+  
+  # Env pred contribution
+  M1_contrib <- as.data.frame(M1$contributions) # M1 = your BRT model object
+  env_var_ord <- M1_contrib[order(M1_contrib$var),]
+  influence_mat[,i]<-env_var_ord[,2]
+  
+  print(paste("Iteration ", i, " out of ", n.boot, sep = ""))
+}
+time_2 = Sys.time()
+# model fits
+M.Fits <-round(apply(deviance_mat, 2, function(x) c(Mean = mean(x), SD = sd(x))), 2)
+write.csv(M.Fits, file =  "BOOTSTRAP_no_sa.csv")
+
+# variable importance +- SD
+pred_inf <-t(round(apply(influence_mat, 1, function(x) c(Mean = mean(x), SD = sd(x))), 1))
+
+# plot PDs + 95 PI and save to file
+emf(file = "BOOTSTRAP2_no_sa.emf", emfPlus = T)
+par(mar=c(4, 3, 1, 1))
+par(mfrow=c(4,4))
+
+# change this value to fit all env range or change tp have order of var importance
+for (i in c(1:length(imp.vars))) {
+  plot(EnvRanges[,i],apply(expm1(PD[,i,]),1,mean), col = "black",type='l',
+       xlab = paste(imp.vars[i], " (",pred_inf[imp.vars[i],1], "% ? ",pred_inf[imp.vars[i],2],")", sep = ""), 
+       ylab = '',
+       ylim = c(min(expm1(PD[,,])), max(expm1(PD[,,])))) #max(boot_array_EnvTran[,,])))
+  # 95% PI
+  UC <- na.omit(cbind(EnvRanges[,imp.vars[i]],
+                      apply(expm1(PD[,i,]),1, quantile, probs= c(0.05)),
+                      apply(expm1(PD[,i,]),1, quantile, probs= c(0.95))))
+  polygon(c(UC[,1], rev(UC[,1])),c(UC[,2], rev(UC[,3])), col = rgb(0,0,0, 0.25), border = NA)
+  # 95% CI
+  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) + 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
+  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) - 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
+  # lines(EnvRanges[,i],apply(boot_array_EnvTran[,i,],1,mean),col = 2)
+  rug(quantile(size[,imp.vars[i]],seq(0,1,0.1), na.rm = T), ticksize = 0.05, side = 1, lwd = 0.75)
+  # if (i == 1) title('Sample size - 1000')
+}
 
 dev.off()
 
-plot_model(simple_gam_1,type = "pred", 
-           terms = c("Year","area[50,100]"), show.data = T, dot.alpha = 1) +
-  scale_colour_continuous() + ggtitle("Richness across time")
+
+### 4. Model predictions and projections  ### ####
+
+# I need to add a layer for Longitude, a Layer for Latitude and a Layer for Swept Area in the stack layers
+
+# Create Longitude, Latitude and Swept area layers, to be able to predict with the model afterwards
+
+max(richness_data$swept_area)
+swept_area = layers_p[[1]]
+values(swept_area) = 28.45
+plot(swept_area)
+names(swept_area)  = "swept_area"
+
+Latitude = layers_p[[1]]
+values(Latitude) = coordinates(Latitude)[,2]
+plot(Latitude)
+names(Latitude) = "Latitude"
+
+Longitude = layers_p[[1]]
+values(Longitude) = coordinates(Longitude)[,1]
+plot(Longitude)
+names(Longitude) = "Longitude"
+
+Year <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Years/years.grd")
+
+names(layers) = c("Depth","Salinity","Currents","DO"," Sea.Ice","Iron","Nitrate","Prod.Bottom","Prod.Surface", "Temp.Bottom", "Surface.Temp","Temp.Range")
+
+#layers = layers[[c(1,6,7,8,9)]]
+
+total_results = list()
+
+for (k in 1:n.boot){
+  annual_models = list()
+
+  for (i in 1:27){
+    layers_preds <- stack(layers, Year[[i+3]],SST[[i]],SBT[[i]],SSS[[i]],NWC[[i]],EWC[[i]],ICC[[i]],dis, Latitude, Longitude, swept_area)
+    names(layers_preds)[13:20] = c("Year","SST","SBT","SSS","NWC","EWC","ICC","distance_to_coast")
+    gbm1_val <- predict(layers_preds, results[[k]], type = "response",se = T)
+  
+    names(gbm1_val) = paste("Species in", c(i+1992))
+    annual_models[[i]] = gbm1_val
+    print( paste(i,"out of", 27))
+  }
+  total_results[[k]] = annual_models
+}
+total_results
+setwd("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/All seas/Results_BRT/50 times Bootstrapp")
+
+for (i in 1:27){
+  species <- mean(total_results[[1]][[i]] , total_results[[2]][[i]], total_results[[3]][[i]],total_results[[4]][[i]] ,total_results[[5]][[i]] ,
+                  total_results[[6]][[i]] ,total_results[[7]][[i]] ,total_results[[8]][[i]] ,total_results[[9]][[i]] ,total_results[[10]][[i]],
+                  total_results[[11]][[i]],total_results[[12]][[i]],total_results[[13]][[i]],total_results[[14]][[i]],total_results[[15]][[i]],
+                  total_results[[16]][[i]],total_results[[17]][[i]],total_results[[18]][[i]],total_results[[19]][[i]],total_results[[20]][[i]])
+  #                total_results[[21]][[i]],total_results[[22]][[i]],total_results[[23]][[i]],total_results[[24]][[i]],total_results[[25]][[i]],
+  #                total_results[[26]][[i]],total_results[[27]][[i]],total_results[[28]][[i]],total_results[[29]][[i]],total_results[[30]][[i]],
+  #                total_results[[31]][[i]],total_results[[32]][[i]],total_results[[33]][[i]],total_results[[34]][[i]],total_results[[35]][[i]],
+  #                total_results[[36]][[i]],total_results[[37]][[i]],total_results[[38]][[i]],total_results[[39]][[i]],total_results[[40]][[i]],
+  #                total_results[[41]][[i]],total_results[[42]][[i]],total_results[[43]][[i]],total_results[[44]][[i]],total_results[[45]][[i]],
+  #                total_results[[46]][[i]],total_results[[47]][[i]],total_results[[48]][[i]],total_results[[49]][[i]],total_results[[50]][[i]])
+  
+  #sd_year <- calc(stack(total_results[[1]][[i]],
+  #                      total_results[[2]][[i]],
+  #                      total_results[[3]][[i]],
+  #                      total_results[[4]][[i]],
+  #                      total_results[[5]][[i]],
+  #                      total_results[[6]][[i]],
+  #                      total_results[[7]][[i]],
+  #                      total_results[[8]][[i]],
+  #                      total_results[[9]][[i]],
+  #                      total_results[[10]][[i]]),sd)
+  
+  writeRaster(species, paste("Richness_", i))
+  #writeRaster(sd_year, paste("Richness_sd", i))
+  jpeg(filename = paste("BRT_",c(i+1992),".jpg", sep = ""))
+  plot(species, main = paste("BRT", c(i+1992)))
+  dev.off()
+  print(paste("1 out of", i))
+}
+
+time_3 = Sys.time()
+
+raster_1993 <- raster("Richness_ 1.grd")
+raster_1994 <- raster("Richness_ 2.grd")
+raster_1995 <- raster("Richness_ 3.grd")
+raster_1996 <- raster("Richness_ 4.grd")
+raster_1997 <- raster("Richness_ 5.grd")
+raster_1998 <- raster("Richness_ 6.grd")
+raster_1999 <- raster("Richness_ 7.grd")
+raster_2000 <- raster("Richness_ 8.grd")
+raster_2001 <- raster("Richness_ 9.grd")
+raster_2002 <- raster("Richness_ 10.grd")
+raster_2003 <- raster("Richness_ 11.grd")
+raster_2004 <- raster("Richness_ 12.grd")
+raster_2005 <- raster("Richness_ 13.grd")
+raster_2006 <- raster("Richness_ 14.grd")
+raster_2007 <- raster("Richness_ 15.grd")
+raster_2008 <- raster("Richness_ 16.grd")
+raster_2009 <- raster("Richness_ 17.grd")
+raster_2010 <- raster("Richness_ 18.grd")
+raster_2011 <- raster("Richness_ 19.grd")
+raster_2012 <- raster("Richness_ 20.grd")
+raster_2013 <- raster("Richness_ 21.grd")
+raster_2014 <- raster("Richness_ 22.grd")
+raster_2015 <- raster("Richness_ 23.grd")
+raster_2016 <- raster("Richness_ 24.grd")
+raster_2017 <- raster("Richness_ 25.grd")
+raster_2018 <- raster("Richness_ 26.grd")
+raster_2019 <- raster("Richness_ 27.grd")
+
+plot(raster_1993)
+plot(raster_1994)
+plot(raster_1995)
+plot(raster_1996)
+plot(raster_1997)
+plot(raster_1998)
+plot(raster_1999)
+plot(raster_2000)
+plot(raster_2001)
+plot(raster_2002)
+plot(raster_2003)
+plot(raster_2004)
+plot(raster_2005)
+plot(raster_2006)
+plot(raster_2007)
+plot(raster_2008)
+plot(raster_2009)
+plot(raster_2010)
+plot(raster_2011)
+plot(raster_2012)
+plot(raster_2013)
+plot(raster_2014)
+plot(raster_2015)
+plot(raster_2016)
+plot(raster_2017)
+plot(raster_2018)
+plot(raster_2019)
+
+
+raster_mean = mean(raster_1993,
+                   raster_1994,
+                   raster_1995,
+                   raster_1996,
+                   raster_1997,
+                   raster_1998,
+                   raster_1999,
+                   raster_2000,
+                   raster_2001,
+                   raster_2002,
+                   raster_2003,
+                   raster_2004,
+                   raster_2005,
+                   raster_2006,
+                   raster_2007,
+                   raster_2008,
+                   raster_2009,
+                   raster_2010,
+                   raster_2011,
+                   raster_2012,
+                   raster_2013,
+                   raster_2014,
+                   raster_2015,
+                   raster_2016,
+                   raster_2017,
+                   raster_2018,
+                   raster_2019)
+                   
+plot(raster_mean)
+plot(raster::mask(raster_mean, pres_buff))
+points(Latitude ~ Longitude, data = richness_data)
+
+plot(mean())
+range(values(raster_1993))
+points = data.frame(Longitude = richness_data$Longitude, Latitude = richness_data$Latitude)
+coordinates(points) = points[,1:2]; crs(points) <- "+proj=longlat"
+
+pres_buff <- raster::buffer(points, width = 100000, dissolve = TRUE)
+
+a = mean(raster_2015, raster_2016,raster_2017, raster_2018,raster_2019)
+b = mean(raster_1993, raster_1994, raster_1995, raster_1996, raster_1997)
+c = raster::mask(a, pres_buff)
+d = raster::mask(b, pres_buff)
+
+plot(b)
+plot(a-b, main = "Difference between mean richness 1993-1997 and 2013-2017")
+plot(c-d, main = "Difference between mean richness 1993-1997 and 2013-2017")
+plot(raster_2000 - raster_1993)
+c = a-b
+
+writeRaster(c, "Difference_between_mean_richness_1993-1997_and_2013-2017", overwrite = TRUE)
