@@ -38,4 +38,4 @@ distance_to_coast[is.na(distance_to_coast)] <-0
 # SAVE LAYERS WITHOUT TEMPORAL RESOLUTION
 
 atemporal_layers = stack(layers, swept_area, Latitude, Longitude, distance_to_coast)
-writeRaster(atemporal_layers, "atemporal_layers.tif", overwrite = T)
+writeRaster(atemporal_layers, "atemporal_layers.grd", format="raster")
