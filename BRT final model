@@ -1,0 +1,151 @@
+## PACKAGES REQUIRED
+
+library(tidyverse)
+library(raster)
+library(parallel)
+library(foreach)
+
+## ENVIRONMENTAL VARIABLES 
+
+SST  <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SST/SST_mean_area.tif")
+SBT  <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SBT/SBT_mean_area.tif")
+SSS  <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/SSS/SSS_mean_area.tif")
+NWC  <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/NWC/NWC_mean_area.tif")
+EWC  <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/EWC/EWC_mean_area.tif")
+Year <- stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Years/years.grd")
+
+atemporal_layers
+atemporal_layers = stack("C:/Users/06061016/Documents/Treball/Costello/IMR1980-2017/Envars/Envars github/atemporal_layers.grd")
+
+# LOOP TO GENERATE A LIST OF ANNUAL VARIABLES
+
+layers_list = list()
+
+for (i in 1:27){layers_list[[i]] = stack(atemporal_layers, SST[[i]], SBT[[i]], SSS[[i]],NWC[[i]],EWC[[i]],Year[[i+3]])}
+
+# SELECTED ENVIRONMENTAL VARIABLES 
+
+imp.vars <- sort(c(  "DO", "Iron", "Nitrate", "Prod.Surface", "Depth", "Year",
+                     "Latitude", "SST", "SBT", "SSS", "NWC", "EWC", "swept_area", "distance_to_coast"))
+
+
+## RICHNESS AND ENVIRONMENTAL DATA DATAFRAME 
+
+data = read_csv("data_ready_for_brt.csv")
+
+
+## DATA PARTITIONING: 75% CALIBRATION / 25% vALIDATION
+
+index <- sample(c(1,0), nrow(data), replace = T, prob = c(3,1))
+data_model <- data.frame(data[which(index == 1),])
+data_val <- data[which(index != 1),]
+
+
+
+### MAIN LOOP ###
+n.boot = 20
+
+Sys.time()
+
+cl <- parallel::makeCluster(2)
+doParallel::registerDoParallel(cl)
+
+models = foreach(i = 1:20) %dopar% {
+  
+  library(dismo)
+  library(gbm)
+  #RANDOM SAMPLE FOR BOOTSTRAP
+  train =  data_model[sample(1:nrow(data_model),nrow(data_model), replace = T),]
+  
+  # STORAGE FOR MODEL RESULTS
+  result <- multiResultClass()
+  
+  M1 <- dismo::gbm.step(data = train, gbm.x = imp.vars, gbm.y = "Species",
+                        family = "poisson", tree.complexity = 4,learning.rate = 0.05, max.trees = 20000,
+                        bag.fraction = 0.5, n.trees = 10)
+  
+  result$model.BRT <- M1
+  
+  result$SpeR2.BRT <- Eval_Metrics(model = M1, train = train , eval = data_val)
+  
+  # SPATIAL PREDICTION OF 27 YEARS
+  predictions = list()
+  
+  for (j in 1:27){
+    predictions[[j]] = round(predict.gbm(M1, layers_list[[j]], type = "response", n.trees = M1$gbm.call$best.trees, family = "poisson"),2)
+  }
+  
+  predictions_final = do.call(cbind, predictions)
+  result$SpPred.BRT = predictions_final
+  
+  return(result)
+}
+
+parallel::stopCluster(cl)
+rm(cl)
+
+Sys.time()
+saveRDS(models, "model.RData")
+
+
+## OUTPUT GENERATION 
+
+## REORGANISATION TO HAVE A LIST OF 27 PREDICTIONS WITH THE DIFFERENT REPLICATES
+
+predictions = list()
+
+for (i in 1:27){
+  predictions_list = list()
+  
+  for (k in 1:20){
+    predictions_list[[k]] = models[[k]]$SpPred.BRT[,i]
+  }
+  
+  predictions[[i]] = do.call(cbind, predictions_list)
+}
+predictions
+
+# ANNUAL MEAN
+
+annual_mean_predictions = sapply(predictions,rowMeans) 
+annual_mean_deviation = sapply(predictions,rowSds) 
+
+## DIAGNOSTICS
+
+validation = list()
+for (i in 1:20) {
+  validation[[i]] = data.frame(cor = models[[i]]$SpeR2.BRT[3,1], dev.exp.train = models[[i]]$SpeR2.BRT[1,1],dev.exp.val = models[[i]]$SpeR2.BRT[2,1])
+}
+
+validation = do.call(rbind, validation)
+colMeans(validation)
+
+# Mean spatial predictions 
+boot_mat <- array(0, dim = c(length.map, n.boot))
+for (M in 1:n.boot){boot_mat[,M] <- tmp3[[M]]$SpPred.BRT}
+boot.mean.BRT <-apply(boot_mat,1,mean)
+boot.sd.BRT <-apply(boot_mat,1,sd)
+
+# RASTER OF MEAN SPATIAL PREDICTIONS
+mean.BRT_1993 <- rasterFromXYZ(data.frame(x =layers_list[[1]][,1], 
+                                          y =layers_list[[1]][,2], 
+                                          z = annual_mean_predictions[,1]),
+                               crs = "+proj=utm +zone=10 +datum=WGS84") 
+
+# DIFFERENCE BETWEEN 1993-1997 AND 2015-2020
+
+richness_dif = rowMeans(annual_mean_predictions[,c(22:27)]) - rowMeans(annual_mean_predictions[,c(1:5)])
+richness_sd = rowMeans(annual_mean_deviation)
+richness_dif_raster <- rasterFromXYZ(data.frame(x =layers_list[[1]][,1], 
+                                                y =layers_list[[1]][,2], 
+                                                z = richness_dif),
+                                     crs = "+proj=utm +zone=10 +datum=WGS84") 
+
+richness_sd_raster <- rasterFromXYZ(data.frame(x =layers_list[[1]][,1], 
+                                               y =layers_list[[1]][,2], 
+                                               z = richness_sd),
+                                    crs = "+proj=utm +zone=10 +datum=WGS84") 
+
+plot(richness_dif_raster)
+writeRaster(richness_dif_raster, "richness_dif_raster_93-97 vs 15-20.tiff")
+writeRaster(richness_sd_raster, "richness_sd_raster_93-20.tiff")
