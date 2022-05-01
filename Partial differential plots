@@ -1,0 +1,68 @@
+
+
+# PARTIAL DIFF PLOTS
+
+
+# create environemtnal gradient files for each taxa
+PredMins <- apply(data_model[,imp.vars],2,min)
+PredMaxs <- apply(data_model[,imp.vars],2,max)
+PredMins;PredMaxs
+EnvRanges <- as.data.frame(array(0,c(100,length(imp.vars))))
+names(EnvRanges) <- imp.vars
+
+for (i in c(1:length(imp.vars))) {
+  EnvRanges[,i] <- seq(PredMins[imp.vars[i]],PredMaxs[imp.vars[i]],length = 100)
+}
+EnvRanges
+# create 3D array for saving env preds from boots
+PD <- array(0,c(length(EnvRanges[[1]]),length(EnvRanges),n.boot))
+dimnames(PD)[[2]] <- imp.vars
+dimnames(PD)[[3]] <- paste('Rep_',seq(1,n.boot),sep="")
+PD
+
+
+
+
+
+
+# Saving partial dependance plots for each model of the bootstrapping 
+
+for (i in 1:20){
+  M1 = models[[i]]$model.BRT 
+  
+  for (j in 1:length(imp.vars)){
+    grid <- plot.gbm(M1, i.var = c(paste(imp.vars[[j]])), return.grid = T)
+    PD[,imp.vars[j],i] <- loess(grid$y~EnvRanges[,imp.vars[[j]]])$y
+    #Region_PD[,i] <- gbm::plot.gbm(M1, i.var = c("Region"), return.grid = T)$y
+  }
+}
+
+pred_inf <-t(round(apply(influence_mat, 1, function(x) c(Mean = mean(x), SD = sd(x))), 1))
+
+## CREATE THE PARTIAL DIF PLOTS
+
+emf(file = "BOOTSTRAP2_no_sa_2.emf", emfPlus = T)
+par(mar=c(4, 3, 1, 1))
+par(mfrow=c(4,4))
+
+# change this value to fit all env range or change tp have order of var importance
+for (i in c(1:length(imp.vars))) {
+  plot(EnvRanges[,i],apply(expm1(PD[,i,]),1,mean), col = "black",type='l',
+       xlab = paste(imp.vars[i], " (",pred_inf[imp.vars[i],1], "% ± ",pred_inf[imp.vars[i],2],")", sep = ""), 
+       ylab = '',
+       ylim = c(min(expm1(PD[,,])), max(expm1(PD[,,])))) #max(boot_array_EnvTran[,,])))
+  # 95% PI
+  UC <- na.omit(cbind(EnvRanges[,imp.vars[i]],
+                      apply(expm1(PD[,i,]),1, quantile, probs= c(0.05)),
+                      apply(expm1(PD[,i,]),1, quantile, probs= c(0.95))))
+  polygon(c(UC[,1], rev(UC[,1])),c(UC[,2], rev(UC[,3])), col = rgb(0,0,0, 0.25), border = NA)
+  # 95% CI
+  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) + 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
+  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) - 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
+  # lines(EnvRanges[,i],apply(boot_array_EnvTran[,i,],1,mean),col = 2)
+  rug(quantile(data_model[,imp.vars[i]],seq(0,1,0.1), na.rm = T), ticksize = 0.05, side = 1, lwd = 0.75)
+  # if (i == 1) title('Sample size - 1000')
+}
+
+dev.off()
+
