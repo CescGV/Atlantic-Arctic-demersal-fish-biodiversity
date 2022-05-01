@@ -1,0 +1,41 @@
+library(rgdal)
+library(raster)
+
+## BIO-ORACLE LAYERS## 
+layers <- stack("~/layers.grd")
+names(layers) = c("Depth","Salinity","Currents","DO"," Sea.Ice","Iron","Nitrate","Prod.Bottom","Prod.Surface", "Temp.Bottom", "Surface.Temp","Temp.Range")
+values(layers$Depth)[which(values(layers$Depth) > -1)] = -1 # All positive values in the coast transformed to -1
+
+# MANUALLY CREATED LAYERS
+distance_to_coast <- stack("~/distance_to_coast.tif")
+no_balt <- readOGR("study_area.shp") # Mannualy created shapefile to eliminate the Baltic Sea 
+
+# All layers to same extent
+
+layers <- crop(layers, no_balt)
+layers <- raster::mask(layers, no_balt)
+
+# EXTRA LAYERS CREATED FROM PRE EXISTING LAYERS
+
+swept_area <- layers[[1]]
+values(swept_area) = 28.45 # This is the maximum value of swept area in the trawling dataset.
+plot(swept_area)
+names(swept_area) = "swept_area"
+
+Latitude <- layers[[1]]
+values(Latitude) = coordinates(Latitude)[,2]
+plot(Latitude)
+names(Latitude) = "Latitude"
+
+Longitude <- layers[[1]]
+values(Longitude) = coordinates(Longitude)[,1]
+plot(Longitude)
+names(Longitude) = "Longitude"
+
+distance_to_coast <- raster::projectRaster(distance_to_coast, layers[[1]], method = "bilinear")
+distance_to_coast[is.na(distance_to_coast)] <-0
+
+# SAVE LAYERS WITHOUT TEMPORAL RESOLUTION
+
+atemporal_layers = stack(layers, swept_area, Latitude, Longitude, distance_to_coast)
+writeRaster(atemporal_layers, "atemporal_layers.tif", overwrite = T)
