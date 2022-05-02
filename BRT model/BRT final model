@@ -38,6 +38,7 @@ data = read_csv("data_ready_for_brt.csv")
 
 index <- sample(c(1,0), nrow(data), replace = T, prob = c(3,1))
 data_model <- data.frame(data[which(index == 1),])
+write.csv(data_model, "data_model.csv")
 data_val <- data[which(index != 1),]
 
 
