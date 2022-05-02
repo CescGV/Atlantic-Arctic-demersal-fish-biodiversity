@@ -1,0 +1,25 @@
+[general]
+creator=R package 'raster'
+created=2021-08-27 14:25:12
+[georeference]
+nrows=2160
+ncols=4320
+xmin=-180
+ymin=-90
+xmax=180
+ymax=90
+projection=+proj=longlat +datum=WGS84 +no_defs
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=12
+bandorder=BIL
+minvalue=-9906:0.0593037977814674:0:0.000127808365505189:0:6.03119588049594e-06:1.33648438804812e-06:0:6.04899687459692e-05:-1.83989953994751:-1.79773330688477:0.000787986442446709
+maxvalue=2682:40.6512985229492:1.44777417182922:415.497131347656:0.974730432033539:0.0186775140464306:92.7282409667969:0.379611760377884:0.257880866527557:31.4539413452148:30.1786289215088:28.9803333282471
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=BO_bathymax:BO2_salinitymean_ss:BO21_curvelmin_bdmax:BO21_dissoxmean_bdmax:BO21_icecovermean_ss:BO21_ironmean_bdmax:BO21_nitratemean_bdmax:BO21_ppmean_bdmax:BO21_ppmean_ss:BO21_tempmean_bdmax:BO21_tempmean_ss:BO21_temprange_bdmax
