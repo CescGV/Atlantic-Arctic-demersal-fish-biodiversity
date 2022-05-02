@@ -1,31 +1,40 @@
+library(gbm)
 
+imp.vars =sort(c( "Iron", "Nitrate", "Prod.Surface", "Depth", "Year", "Latitude",
+             "SBT", "SSS", "SST","DO", "NWC", "EWC", "swept_area", "distance_to_coast"))
 
-# PARTIAL DIFF PLOTS
+data_model =  read.csv("data_model.csv") # Output from "BRT final model.R"
+
+# PARTIAL DEPENDANCE PLOTS
+n.boot = 20
+
+influence_mat <- array(0,c(length(imp.vars),n.boot)) # for saving information on predictors 
+rownames(influence_mat) <- imp.vars
 
 
 # create environemtnal gradient files for each taxa
+
 PredMins <- apply(data_model[,imp.vars],2,min)
 PredMaxs <- apply(data_model[,imp.vars],2,max)
 PredMins;PredMaxs
+
 EnvRanges <- as.data.frame(array(0,c(100,length(imp.vars))))
 names(EnvRanges) <- imp.vars
 
 for (i in c(1:length(imp.vars))) {
   EnvRanges[,i] <- seq(PredMins[imp.vars[i]],PredMaxs[imp.vars[i]],length = 100)
 }
-EnvRanges
+
 # create 3D array for saving env preds from boots
 PD <- array(0,c(length(EnvRanges[[1]]),length(EnvRanges),n.boot))
 dimnames(PD)[[2]] <- imp.vars
 dimnames(PD)[[3]] <- paste('Rep_',seq(1,n.boot),sep="")
-PD
-
-
-
 
 
 
 # Saving partial dependance plots for each model of the bootstrapping 
+
+models = readRDS("model.RData") # Output from "BRT final model.R"
 
 for (i in 1:20){
   M1 = models[[i]]$model.BRT 
@@ -34,14 +43,26 @@ for (i in 1:20){
     grid <- plot.gbm(M1, i.var = c(paste(imp.vars[[j]])), return.grid = T)
     PD[,imp.vars[j],i] <- loess(grid$y~EnvRanges[,imp.vars[[j]]])$y
     #Region_PD[,i] <- gbm::plot.gbm(M1, i.var = c("Region"), return.grid = T)$y
+    
+
+    
   }
+  
+  # Env pred contribution
+  M1_contrib <- as.data.frame(M1$contributions) # M1 = your BRT model object
+  env_var_ord <- M1_contrib[order(M1_contrib$var),]
+  influence_mat[,i]<-env_var_ord[,2]
+  
 }
 
 pred_inf <-t(round(apply(influence_mat, 1, function(x) c(Mean = mean(x), SD = sd(x))), 1))
 
+
+
+
 ## CREATE THE PARTIAL DIF PLOTS
 
-emf(file = "BOOTSTRAP2_no_sa_2.emf", emfPlus = T)
+pdf(file = "Partial_dependence_plots.pdf", height = 10, width = 10)
 par(mar=c(4, 3, 1, 1))
 par(mfrow=c(4,4))
 
