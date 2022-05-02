@@ -5,14 +5,14 @@ imp.vars =sort(c( "Iron", "Nitrate", "Prod.Surface", "Depth", "Year", "Latitude"
 
 data_model =  read.csv("data_model.csv") # Output from "BRT final model.R"
 
-# PARTIAL DEPENDANCE PLOTS
+# ARRAY FOR SAVING RESULTS
+
 n.boot = 20
 
 influence_mat <- array(0,c(length(imp.vars),n.boot)) # for saving information on predictors 
 rownames(influence_mat) <- imp.vars
 
-
-# create environemtnal gradient files for each taxa
+# Create environemtnal gradient files for each taxa
 
 PredMins <- apply(data_model[,imp.vars],2,min)
 PredMaxs <- apply(data_model[,imp.vars],2,max)
@@ -32,7 +32,7 @@ dimnames(PD)[[3]] <- paste('Rep_',seq(1,n.boot),sep="")
 
 
 
-# Saving partial dependance plots for each model of the bootstrapping 
+# SAVING VARIABLE IMPORTANCE WITHIN EACH MODEL OF BOOTSTRAP 
 
 models = readRDS("model.RData") # Output from "BRT final model.R"
 
@@ -57,10 +57,7 @@ for (i in 1:20){
 
 pred_inf <-t(round(apply(influence_mat, 1, function(x) c(Mean = mean(x), SD = sd(x))), 1))
 
-
-
-
-## CREATE THE PARTIAL DIF PLOTS
+## CREATE THE PARTIAL DEPENDANCE PLOTS
 
 pdf(file = "Partial_dependence_plots.pdf", height = 10, width = 10)
 par(mar=c(4, 3, 1, 1))
@@ -77,12 +74,9 @@ for (i in c(1:length(imp.vars))) {
                       apply(expm1(PD[,i,]),1, quantile, probs= c(0.05)),
                       apply(expm1(PD[,i,]),1, quantile, probs= c(0.95))))
   polygon(c(UC[,1], rev(UC[,1])),c(UC[,2], rev(UC[,3])), col = rgb(0,0,0, 0.25), border = NA)
-  # 95% CI
-  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) + 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
-  # lines(EnvRanges.DF[,i],apply(boot_array_EnvTran.DF[,i,],1,mean) - 2 * (sqrt(apply(boot_array_EnvTran.DF[,i,],1,var))/sqrt(5)), lty = 'dashed')
-  # lines(EnvRanges[,i],apply(boot_array_EnvTran[,i,],1,mean),col = 2)
+ 
+ # Data distribution within each variable range (rugs)
   rug(quantile(data_model[,imp.vars[i]],seq(0,1,0.1), na.rm = T), ticksize = 0.05, side = 1, lwd = 0.75)
-  # if (i == 1) title('Sample size - 1000')
 }
 
 dev.off()
