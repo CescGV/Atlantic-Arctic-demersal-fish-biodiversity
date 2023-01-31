@@ -4,10 +4,11 @@ These are the different scripts used for the analysis of the Norwegian bottom tr
 
 The final R scripts used in this work are updated on the 1st February 2023. 
 
-There are 5 scripts:
+There are 6 scripts:
 
 
-0. Data cleaning --> Before the anaysis, I cleaned the data to exclude broken gear, non-fish species, etc. 
+0. Data gathering and cleaning --> Here I collect all the raw data, check for taxon names correctess and mistakes in the data. Output --> Full dataset
+0.1 Data cleaning --> Before the anaysis, I cleaned the data to exclude broken gear, non-fish species, etc. 
 
 1. Alpha diversity GAM -->  The first script to look at is the "Data exploration" --> In it, I investigate the characteristics of the database 
 in terms of potential biases of the data and calculation of richness at each site. I check the temporal distribution of longitude and latitude, as well as the number of trawls per year and the effort at each trawl, per year. There is a negative trend of swept_effort per trawl, with time, which needs to be accounted. I fit a GAM model to study how has the species richness changed with time, considering that the effort is different at each trawl, with a negative trend with time. 
