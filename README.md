@@ -7,7 +7,7 @@ The final R scripts used in this work are updated on the 1st February 2023.
 There are 6 scripts:
 
 
-0. Data gathering and cleaning --> Here I collect all the raw data, check for taxon names correctess and mistakes in the data. Output --> Full dataset
+0. Data gathering and cleaning --> Here I collect all the raw data, check for taxon names correctness and mistakes in the data. Output --> Full dataset
 0.1 Data cleaning --> Before the anaysis, I cleaned the data to exclude broken gear, non-fish species, etc. 
 
 1. Alpha diversity GAM -->  The first script to look at is the "Data exploration" --> In it, I investigate the characteristics of the database 
