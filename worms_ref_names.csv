@@ -1,0 +1,1071 @@
+,AphiaID,scientificname,valid_name,valid_AphiaID,kingdom,phylum,class,order,family,genus
+1,117225,Abietinaria,Abietinaria,117225,Animalia,Cnidaria,Hydrozoa,Leptothecata,Sertulariidae,Abietinaria
+2,137732,Acanthocardia,Acanthocardia,137732,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Acanthocardia
+3,104108,Acartia,Acartia,104108,Animalia,Arthropoda,Hexanauplia,Calanoida,Acartiidae,Acartia
+4,100694,Actinia,Actinia,100694,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Actinia
+5,100803,Actinia equina,Actinia equina,100803,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Actinia
+6,1360,Actiniaria,Actiniaria,1360,Animalia,Cnidaria,Anthozoa,Actiniaria,NA,NA
+7,100653,Actiniidae,Actiniidae,100653,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,NA
+8,10194,Actinopterygii,Actinopterygii,10194,Animalia,Chordata,Actinopterygii,NA,NA,NA
+9,100709,Actinostola,Actinostola,100709,Animalia,Cnidaria,Anthozoa,Actiniaria,Actinostolidae,Actinostola
+10,100655,Actinostolidae,Actinostolidae,100655,Animalia,Cnidaria,Anthozoa,Actiniaria,Actinostolidae,NA
+11,100751,Adamsia,Adamsia,100751,Animalia,Cnidaria,Anthozoa,Actiniaria,Hormathiidae,Adamsia
+12,118394,Aega,Aega,118394,Animalia,Arthropoda,Malacostraca,Isopoda,Aegidae,Aega
+13,118827,Aega psora,Aega psora,118827,Animalia,Arthropoda,Malacostraca,Isopoda,Aegidae,Aega
+14,138313,Aequipecten,Aequipecten,138313,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Aequipecten
+15,140687,Aequipecten opercularis,Aequipecten opercularis,140687,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Aequipecten
+16,116998,Aequorea,Aequorea,116998,Animalia,Cnidaria,Hydrozoa,Leptothecata,Aequoreidae,Aequorea
+17,1605,Aglaopheniidae,Aglaopheniidae,1605,Animalia,Cnidaria,Hydrozoa,Leptothecata,Aglaopheniidae,NA
+18,125588,Agonidae,Agonidae,125588,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Agonidae,NA
+19,127190,Agonus cataphractus,Agonus cataphractus,127190,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Agonidae,Agonus
+20,1365,Alcyonacea,Alcyonacea,1365,Animalia,Cnidaria,Anthozoa,Alcyonacea,NA,NA
+21,110783,Alcyonidiidae,Alcyonidiidae,110783,Animalia,Bryozoa,Gymnolaemata,Ctenostomatida,Alcyonidiidae,NA
+22,110993,Alcyonidium,Alcyonidium,110993,Animalia,Bryozoa,Gymnolaemata,Ctenostomatida,Alcyonidiidae,Alcyonidium
+23,125269,Alcyoniidae,Alcyoniidae,125269,Animalia,Cnidaria,Anthozoa,Alcyonacea,Alcyoniidae,NA
+24,125284,Alcyonium,Alcyonium,125284,Animalia,Cnidaria,Anthozoa,Alcyonacea,Alcyoniidae,Alcyonium
+25,125333,Alcyonium digitatum,Alcyonium digitatum,125333,Animalia,Cnidaria,Anthozoa,Alcyonacea,Alcyoniidae,Alcyonium
+26,138138,Alloteuthis,Alloteuthis,138138,Animalia,Mollusca,Cephalopoda,Myopsida,Loliginidae,Alloteuthis
+27,126413,Alosa alosa,Alosa alosa,126413,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Alosa
+28,106776,Alpheidae,Alpheidae,106776,Animalia,Arthropoda,Malacostraca,Decapoda,Alpheidae,NA
+29,105863,Amblyraja hyperborea,Amblyraja hyperborea,105863,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Amblyraja
+30,105865,Amblyraja radiata,Amblyraja radiata,105865,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Amblyraja
+31,125909,Ammodytes,Ammodytes,125909,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Ammodytes
+32,126751,Ammodytes marinus,Ammodytes marinus,126751,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Ammodytes
+33,126752,Ammodytes tobianus,Ammodytes tobianus,126752,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Ammodytes
+34,125516,Ammodytidae,Ammodytidae,125516,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,NA
+35,101445,Ampelisca,Ampelisca,101445,Animalia,Arthropoda,Malacostraca,Amphipoda,Ampeliscidae,Ampelisca
+36,129155,Ampharete,Ampharete,129155,Animalia,Annelida,Polychaeta,Terebellida,Ampharetidae,Ampharete
+37,981,Ampharetidae,Ampharetidae,981,Animalia,Annelida,Polychaeta,Terebellida,Ampharetidae,NA
+38,1135,Amphipoda,Amphipoda,1135,Animalia,Arthropoda,Malacostraca,Amphipoda,NA,NA
+39,122323,Amphiporidae,Amphiporidae,122323,Animalia,Nemertea,Hoplonemertea,Monostilifera,Amphiporidae,NA
+40,123613,Amphiura,Amphiura,123613,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Amphiuridae,Amphiura
+41,125073,Amphiura chiajei,Amphiura chiajei,125073,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Amphiuridae,Amphiura
+42,125080,Amphiura filiformis,Amphiura filiformis,125080,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Amphiuridae,Amphiura
+43,125100,Amphiura sundevalli,Amphiura sundevalli,125100,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Amphiuridae,Amphiura
+44,123206,Amphiuridae,Amphiuridae,123206,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Amphiuridae,NA
+45,101366,Ampithoidae,Ampithoidae,101366,Animalia,Arthropoda,Malacostraca,Amphipoda,Ampithoidae,NA
+46,125517,Anarhichadidae,Anarhichadidae,125517,Animalia,Chordata,Actinopterygii,Perciformes,Anarhichadidae,NA
+47,125912,Anarhichas,Anarhichas,125912,Animalia,Chordata,Actinopterygii,Perciformes,Anarhichadidae,Anarhichas
+48,126757,Anarhichas denticulatus,Anarhichas denticulatus,126757,Animalia,Chordata,Actinopterygii,Perciformes,Anarhichadidae,Anarhichas
+49,126758,Anarhichas lupus,Anarhichas lupus,126758,Animalia,Chordata,Actinopterygii,Perciformes,Anarhichadidae,Anarhichas
+50,126759,Anarhichas minor,Anarhichas minor,126759,Animalia,Chordata,Actinopterygii,Perciformes,Anarhichadidae,Anarhichas
+51,126281,Anguilla anguilla,Anguilla anguilla,126281,Animalia,Chordata,Actinopterygii,Anguilliformes,Anguillidae,Anguilla
+52,2,Animalia,Animalia,2,Animalia,NA,NA,NA,NA,NA
+53,127070,Anisarchus medius,Anisarchus medius,127070,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,Anisarchus
+54,882,Annelida,Annelida,882,Animalia,Annelida,NA,NA,NA,NA
+55,214,Anomiidae,Anomiidae,214,Animalia,Mollusca,Bivalvia,Pectinida,Anomiidae,NA
+56,106671,Anomura,Anomura,106671,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+57,101592,Anonyx,Anonyx,101592,Animalia,Arthropoda,Malacostraca,Amphipoda,Uristidae,Anonyx
+58,123280,Anseropoda,Anseropoda,123280,Animalia,Echinodermata,Asteroidea,Valvatida,Asterinidae,Anseropoda
+59,123985,Anseropoda placenta,Anseropoda placenta,123985,Animalia,Echinodermata,Asteroidea,Valvatida,Asterinidae,Anseropoda
+60,132982,Antho dichotoma,Antho (Antho) dichotoma,167882,Animalia,Porifera,Demospongiae,Poecilosclerida,Microcionidae,Antho
+61,1292,Anthozoa,Anthozoa,1292,Animalia,Cnidaria,Anthozoa,NA,NA,NA
+62,127085,Aphanopus carbo,Aphanopus carbo,127085,Animalia,Chordata,Actinopterygii,Perciformes,Trichiuridae,Aphanopus
+63,126868,Aphia minuta,Aphia minuta,126868,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Aphia
+64,129194,Aphrodita,Aphrodita,129194,Animalia,Annelida,Polychaeta,Phyllodocida,Aphroditidae,Aphrodita
+65,129840,Aphrodita aculeata,Aphrodita aculeata,129840,Animalia,Annelida,Polychaeta,Phyllodocida,Aphroditidae,Aphrodita
+66,938,Aphroditidae,Aphroditidae,938,Animalia,Annelida,Polychaeta,Phyllodocida,Aphroditidae,NA
+67,927,Aphroditiformia,Aphroditiformia,927,Animalia,Annelida,Polychaeta,Phyllodocida,NA,NA
+68,411,Aplacophora,Aplacophora,411,Animalia,Mollusca,Aplacophora,NA,NA,NA
+69,103471,Aplidium,Aplidium,103471,Animalia,Chordata,Ascidiacea,Aplousobranchia,Polyclinidae,Aplidium
+70,172,Aplysiidae,Aplysiidae,172,Animalia,Mollusca,Gastropoda,Aplysiida,Aplysiidae,NA
+71,22988,Aporrhaidae,Aporrhaidae,22988,Animalia,Mollusca,Gastropoda,Littorinimorpha,Aporrhaidae,NA
+72,137656,Aporrhais,Aporrhais,137656,Animalia,Mollusca,Gastropoda,Littorinimorpha,Aporrhaidae,Aporrhais
+73,590947,Aporrhais pespelicani,Aporrhais pespelecani,138760,Animalia,Mollusca,Gastropoda,Littorinimorpha,Aporrhaidae,Aporrhais
+74,138761,Aporrhais serresiana,Aporrhais serresiana,138761,Animalia,Mollusca,Gastropoda,Littorinimorpha,Aporrhaidae,Aporrhais
+75,137658,Archidoris,Doris,137914,Animalia,Mollusca,Gastropoda,Nudibranchia,Dorididae,Archidoris
+76,138802,Arctica islandica,Arctica islandica,138802,Animalia,Mollusca,Bivalvia,Venerida,Arcticidae,Arctica
+77,140688,Arctinula greenlandica,Similipecten greenlandicus,181299,Animalia,Mollusca,Bivalvia,Pectinida,Propeamussiidae,Arctinula
+78,126432,Arctogadus glacialis,Arctogadus glacialis,126432,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Arctogadus
+79,126352,Arctozenus risso,Arctozenus risso,126352,Animalia,Chordata,Actinopterygii,Aulopiformes,Paralepididae,Arctozenus
+80,125885,Argentina,Argentina,125885,Animalia,Chordata,Actinopterygii,Argentiniformes,Argentinidae,Argentina
+81,126715,Argentina silus,Argentina silus,126715,Animalia,Chordata,Actinopterygii,Argentiniformes,Argentinidae,Argentina
+82,126716,Argentina sphyraena,Argentina sphyraena,126716,Animalia,Chordata,Actinopterygii,Argentiniformes,Argentinidae,Argentina
+83,125508,Argentinidae,Argentinidae,125508,Animalia,Chordata,Actinopterygii,Argentiniformes,Argentinidae,NA
+84,127309,Argyropelecus hemigymnus,Argyropelecus hemigymnus,127309,Animalia,Chordata,Actinopterygii,Stomiiformes,Sternoptychidae,Argyropelecus
+85,274967,Argyropelecus olfersii,Argyropelecus olfersii,274967,Animalia,Chordata,Actinopterygii,Stomiiformes,Sternoptychidae,Argyropelecus
+86,127126,Arnoglossus laterna,Arnoglossus laterna,127126,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Arnoglossus
+87,102870,Arrhis phyllonyx,Arrhis phyllonyx,102870,Animalia,Arthropoda,Malacostraca,Amphipoda,Oedicerotidae,Arrhis
+88,127193,Artediellus atlanticus,Artediellus atlanticus,127193,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Artediellus
+89,1065,Arthropoda,Arthropoda,1065,Animalia,Arthropoda,NA,NA,NA,NA
+90,103483,Ascidia,Ascidia,103483,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,Ascidia
+91,103714,Ascidia prunum,Ascidia prunum,103714,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,Ascidia
+92,103717,Ascidia virginea,Ascidia virginea,103717,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,Ascidia
+93,1839,Ascidiacea,Ascidiacea,1839,Animalia,Chordata,Ascidiacea,NA,NA,NA
+94,103484,Ascidiella,Ascidiella,103484,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,Ascidiella
+95,103719,Ascidiella scabra,Ascidiella scabra,103719,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,Ascidiella
+96,103443,Ascidiidae,Ascidiidae,103443,Animalia,Chordata,Ascidiacea,Phlebobranchia,Ascidiidae,NA
+97,145541,Ascophyllum nodosum,Ascophyllum nodosum,145541,Chromista,Ochrophyta,Phaeophyceae,Fucales,Fucaceae,Ascophyllum
+98,309268,Aspidophoroides olrikii,Aspidophoroides olrikii,309268,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Agonidae,Aspidophoroides
+99,118445,Astacilla,Astacilla,118445,Animalia,Arthropoda,Malacostraca,Isopoda,Arcturidae,Astacilla
+100,119024,Astacilla longicornis,Astacilla longicornis,119024,Animalia,Arthropoda,Malacostraca,Isopoda,Arcturidae,Astacilla
+101,137683,Astarte,Astarte,137683,Animalia,Mollusca,Bivalvia,Carditida,Astartidae,Astarte
+102,138820,Astarte crenata,Astarte crenata,138820,Animalia,Mollusca,Bivalvia,Carditida,Astartidae,Astarte
+103,138824,Astarte sulcata,Astarte sulcata,138824,Animalia,Mollusca,Bivalvia,Carditida,Astartidae,Astarte
+104,228,Astartidae,Astartidae,228,Animalia,Mollusca,Bivalvia,Carditida,Astartidae,NA
+105,123219,Asterias,Asterias,123219,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Asterias
+106,123776,Asterias rubens,Asterias rubens,123776,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Asterias
+107,123121,Asteriidae,Asteriidae,123121,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,NA
+108,123080,Asteroidea,Asteroidea,123080,Animalia,Echinodermata,Asteroidea,NA,NA,NA
+109,124951,Asteronyx loveni,Asteronyx loveni,124951,Animalia,Echinodermata,Ophiuroidea,Euryalida,Asteronychidae,Asteronyx
+110,123245,Astropecten,Astropecten,123245,Animalia,Echinodermata,Asteroidea,Paxillosida,Astropectinidae,Astropecten
+111,123127,Astropectinidae,Astropectinidae,123127,Animalia,Echinodermata,Asteroidea,Paxillosida,Astropectinidae,NA
+112,106875,Atelecyclus,Atelecyclus,106875,Animalia,Arthropoda,Malacostraca,Decapoda,Atelecyclidae,Atelecyclus
+113,149864,Atelostomata,Atelostomata,149864,Animalia,Echinodermata,Echinoidea,NA,NA,NA
+114,158350,Atlantopandalus,Atlantopandalus,158350,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Atlantopandalus
+115,135248,Atolla,Atolla,135248,Animalia,Cnidaria,Scyphozoa,Coronatae,Atollidae,Atolla
+116,135263,Aurelia,Aurelia,135263,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Ulmaridae,Aurelia
+117,135306,Aurelia aurita,Aurelia aurita,135306,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Ulmaridae,Aurelia
+118,1393118,Aureliinae,Aureliinae,1393118,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Ulmaridae,NA
+119,106798,Axiidae,Axiidae,106798,Animalia,Arthropoda,Malacostraca,Decapoda,Axiidae,NA
+120,131774,Axinella,Axinella,131774,Animalia,Porifera,Demospongiae,Axinellida,Axinellidae,Axinella
+121,132480,Axinella infundibuliformis,Axinella infundibuliformis,132480,Animalia,Porifera,Demospongiae,Axinellida,Axinellidae,Axinella
+122,131629,Axinellidae,Axinellidae,131629,Animalia,Porifera,Demospongiae,Axinellida,Axinellidae,NA
+123,106057,Balanidae,Balanidae,106057,Animalia,Arthropoda,Thecostraca,Balanomorpha,Balanidae,NA
+124,106041,Balanoidea,Balanoidea,106041,Animalia,Arthropoda,Thecostraca,Balanomorpha,NA,NA
+125,106039,Balanomorpha,Balanomorpha,106039,Animalia,Arthropoda,Thecostraca,Balanomorpha,NA,NA
+126,106122,Balanus,Balanus,106122,Animalia,Arthropoda,Thecostraca,Balanomorpha,Balanidae,Balanus
+127,106215,Balanus crenatus,Balanus crenatus,106215,Animalia,Arthropoda,Thecostraca,Balanomorpha,Balanidae,Balanus
+128,137673,Bathyarca,Bathyarca,137673,Animalia,Mollusca,Bivalvia,Arcida,Arcidae,Bathyarca
+129,138797,Bathyarca glacialis,Bathyarca glacialis,138797,Animalia,Mollusca,Bivalvia,Arcida,Arcidae,Bathyarca
+130,123246,Bathybiaster,Bathybiaster,123246,Animalia,Echinodermata,Asteroidea,Paxillosida,Astropectinidae,Bathybiaster
+131,834051,Bathypolypodidae,Bathypolypodidae,834051,Animalia,Mollusca,Cephalopoda,Octopoda,Bathypolypodidae,NA
+132,138265,Bathypolypus,Bathypolypus,138265,Animalia,Mollusca,Cephalopoda,Octopoda,Bathypolypodidae,Bathypolypus
+133,105868,Bathyraja spinicauda,Bathyraja spinicauda,105868,Animalia,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,Bathyraja
+134,126375,Belone belone,Belone belone,126375,Animalia,Chordata,Actinopterygii,Beloniformes,Belonidae,Belone
+135,125451,Belonidae,Belonidae,125451,Animalia,Chordata,Actinopterygii,Beloniformes,Belonidae,NA
+136,138266,Benthoctopus,Bathypolypus,138265,Animalia,Mollusca,Cephalopoda,Octopoda,Bathypolypodidae,Benthoctopus
+137,126580,Benthosema glaciale,Benthosema glaciale,126580,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Benthosema
+138,137699,Beringius,Beringius,137699,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Beringius
+139,1434803,Beroe,Beroe,1434803,Animalia,Ctenophora,Nuda,Beroida,Beroidae,Beroe
+140,105,Bivalvia,Bivalvia,105,Animalia,Mollusca,Bivalvia,NA,NA,NA
+141,106393,Bolinopsis infundibulum,Bolinopsis infundibulum,106393,Animalia,Ctenophora,Tentaculata,Lobata,Bolinopsidae,Bolinopsis
+142,100698,Bolocera,Bolocera,100698,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Bolocera
+143,100817,Bolocera tuediae,Bolocera tuediae,100817,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Bolocera
+144,126433,Boreogadus saida,Boreogadus saida,126433,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Boreogadus
+145,119842,Boreomysis,Boreomysis,119842,Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Boreomysis
+146,119962,Boreomysis arctica,Boreomysis arctica,119962,Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Boreomysis
+147,523706,Boreoscala greenlandica,Boreoscala greenlandica,523706,Animalia,Mollusca,Gastropoda,[unassigned] Caenogastropoda,Epitoniidae,Boreoscala
+148,125576,Bothidae,Bothidae,125576,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,NA
+149,103862,Botryllus schlosseri,Botryllus schlosseri,103862,Animalia,Chordata,Ascidiacea,Stolidobranchia,Styelidae,Botryllus
+150,1803,Brachiopoda,Brachiopoda,1803,Animalia,Brachiopoda,NA,NA,NA,NA
+151,137697,Brachioteuthis,Brachioteuthis,137697,Animalia,Mollusca,Cephalopoda,Oegopsida,Brachioteuthidae,Brachioteuthis
+152,106673,Brachyura,Brachyura,106673,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+153,129289,Brada,Brada,129289,Animalia,Annelida,Polychaeta,Terebellida,Flabelligeridae,Brada
+154,130095,Brada granulosa,Brada granulosa,130095,Animalia,Annelida,Polychaeta,Terebellida,Flabelligeridae,Brada
+155,130097,Brada inhabilis,Brada inhabilis,130097,Animalia,Annelida,Polychaeta,Terebellida,Flabelligeridae,Brada
+156,130099,Brada villosa,Bradabyssa villosa,1355594,Animalia,Annelida,Polychaeta,Terebellida,Flabelligeridae,Brada
+157,126783,Brama brama,Brama brama,126783,Animalia,Chordata,Actinopterygii,Perciformes,Bramidae,Brama
+158,1069,Branchiopoda,Branchiopoda,1069,Animalia,Arthropoda,Branchiopoda,NA,NA,NA
+159,124404,Brisaster fragilis,Brisaster fragilis,124404,Animalia,Echinodermata,Echinoidea,Spatangoida,Schizasteridae,Brisaster
+160,124373,Brissopsis lyrifera,Brissopsis lyrifera,124373,Animalia,Echinodermata,Echinoidea,Spatangoida,Brissidae,Brissopsis
+161,126447,Brosme brosme,Brosme brosme,126447,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Brosme
+162,146142,Bryozoa,Bryozoa,146142,Animalia,Bryozoa,NA,NA,NA,NA
+163,149,Buccinidae,Buccinidae,149,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,NA
+164,137701,Buccinum,Buccinum,137701,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+165,138859,Buccinum belcheri,Buccinum belcheri,138859,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+166,160141,Buccinum fragile,Buccinum fragile,160141,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+167,138864,Buccinum glaciale,Buccinum glaciale,138864,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+168,138866,Buccinum hydrophanum,Buccinum hydrophanum,138866,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+169,160129,Buccinum polaris,Buccinum polare,138873,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+170,138878,Buccinum undatum,Buccinum undatum,138878,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Buccinum
+171,126872,Buenia jeffreysii,Buenia jeffreysii,126872,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Buenia
+172,127153,Buglossidium luteum,Buglossidium luteum,127153,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Soleidae,Buglossidium
+173,111152,Bugula flabellata,Bugulina flabellata,834002,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Bugulidae,Bugula
+174,140524,Bulbus smithii,Bulbus smithii,140524,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Bulbus
+175,106983,Bythocaris,Bythocaris,106983,Animalia,Arthropoda,Malacostraca,Decapoda,Bythocarididae,Bythocaris
+176,118497,Calathura brachiata,Calathura brachiata,118497,Animalia,Arthropoda,Malacostraca,Isopoda,Leptanthuridae,Calathura
+177,559,Calcarea,Calcarea,559,Animalia,Porifera,Calcarea,NA,NA,NA
+178,125522,Callionymidae,Callionymidae,125522,Animalia,Chordata,Actinopterygii,Perciformes,Callionymidae,NA
+179,151722,Callionymoidei,Callionymoidei,151722,Animalia,Chordata,Actinopterygii,Perciformes,NA,NA
+180,125930,Callionymus,Callionymus,125930,Animalia,Chordata,Actinopterygii,Perciformes,Callionymidae,Callionymus
+181,126792,Callionymus lyra,Callionymus lyra,126792,Animalia,Chordata,Actinopterygii,Perciformes,Callionymidae,Callionymus
+182,126793,Callionymus maculatus,Callionymus maculatus,126793,Animalia,Chordata,Actinopterygii,Perciformes,Callionymidae,Callionymus
+183,126795,Callionymus reticulatus,Callionymus reticulatus,126795,Animalia,Chordata,Actinopterygii,Perciformes,Callionymidae,Callionymus
+184,107071,Calocaris,Calocaris,107071,Animalia,Arthropoda,Malacostraca,Decapoda,Axiidae,Calocaris
+185,107726,Calocaris macandreae,Calocaris macandreae,107726,Animalia,Arthropoda,Malacostraca,Decapoda,Axiidae,Calocaris
+186,1606,Campanulariidae,Campanulariidae,1606,Animalia,Cnidaria,Hydrozoa,Leptothecata,Campanulariidae,NA
+187,107275,Cancer bellianus,Cancer bellianus,107275,Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer
+188,107276,Cancer pagurus,Cancer pagurus,107276,Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer
+189,125613,Caproidae,Caproidae,125613,Animalia,Chordata,Actinopterygii,Perciformes,Caproidae,NA
+190,127419,Capros aper,Capros aper,127419,Animalia,Chordata,Actinopterygii,Perciformes,Caproidae,Capros
+191,125504,Carapidae,Carapidae,125504,Animalia,Chordata,Actinopterygii,Ophidiiformes,Carapidae,NA
+192,107381,Carcinus maenas,Carcinus maenas,107381,Animalia,Arthropoda,Malacostraca,Decapoda,Carcinidae,Carcinus
+193,229,Cardiidae,Cardiidae,229,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,NA
+194,178527,Cardium echinatum,Acanthocardia echinata,138992,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Cardium
+195,126156,Careproctus,Careproctus,126156,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+196,274422,Careproctus derjugini,Careproctus derjugini,274422,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+197,274423,Careproctus dubius,Careproctus dubius,274423,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+198,274441,Careproctus macrophthalmus,Careproctus macrophthalmus,274441,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+199,127211,Careproctus micropus,Careproctus micropus,127211,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+200,159523,Careproctus ranula,Careproctus ranula,159523,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+201,127212,Careproctus reinhardti,Careproctus reinhardti,127212,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+202,274478,Careproctus tapirus,Careproctus tapirus,274478,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+203,274479,Careproctus telescopus,Careproctus telescopus,274479,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Careproctus
+204,106674,Caridea,Caridea,106674,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+205,135085,Caryophyllia,Caryophyllia,135085,Animalia,Cnidaria,Anthozoa,Scleractinia,Caryophylliidae,Caryophyllia
+206,112120,Cassidulina,Cassidulina,112120,Chromista,Foraminifera,Globothalamea,Rotaliida,Cassidulinidae,Cassidulina
+207,117180,Catablema,Catablema,117180,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Pandeidae,Catablema
+208,126961,Centrolabrus exoletus,Centrolabrus exoletus,126961,Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Centrolabrus
+209,126831,Centrolophus niger,Centrolophus niger,126831,Animalia,Chordata,Actinopterygii,Perciformes,Centrolophidae,Centrolophus
+210,105901,Centrophorus squamosus,Centrophorus squamosus,105901,Animalia,Chordata,Elasmobranchii,Squaliformes,Centrophoridae,Centrophorus
+211,11707,Cephalopoda,Cephalopoda,11707,Animalia,Mollusca,Cephalopoda,NA,NA,NA
+212,123291,Ceramaster,Ceramaster,123291,Animalia,Echinodermata,Asteroidea,Valvatida,Goniasteridae,Ceramaster
+213,124020,Ceramaster granularis,Ceramaster granularis,124020,Animalia,Echinodermata,Asteroidea,Valvatida,Goniasteridae,Ceramaster
+214,122348,Cerebratulus,Cerebratulus,122348,Animalia,Nemertea,Pilidiophora,Heteronemertea,Lineidae,Cerebratulus
+215,100782,Cerianthus,Cerianthus,100782,Animalia,Cnidaria,Anthozoa,Spirularia,Cerianthidae,Cerianthus
+216,2688,Cetacea,Cetacea,2688,Animalia,Chordata,Mammalia,Cetartiodactyla,NA,NA
+217,107369,Chaceon affinis,Chaceon affinis,107369,Animalia,Arthropoda,Malacostraca,Decapoda,Geryonidae,Chaceon
+218,129229,Chaetopterus,Chaetopterus,129229,Animalia,Annelida,Polychaeta,NA,Chaetopteridae,Chaetopterus
+219,111365,Chartella papyracea,Chartella papyracea,111365,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Flustridae,Chartella
+220,110722,Cheilostomatida,Cheilostomatida,110722,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,NA,NA
+221,127259,Chelidonichthys cuculus,Chelidonichthys cuculus,127259,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Triglidae,Chelidonichthys
+222,274877,Chelidonichthys lucernus,Chelidonichthys lucerna,127262,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Triglidae,Chelidonichthys
+223,105824,Chimaera monstrosa,Chimaera monstrosa,105824,Animalia,Chordata,Holocephali,Chimaeriformes,Chimaeridae,Chimaera
+224,107315,Chionoecetes opilio,Chionoecetes opilio,107315,Animalia,Arthropoda,Malacostraca,Decapoda,Oregoniidae,Chionoecetes
+225,127071,Chirolophis ascanii,Chirolophis ascanii,127071,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,Chirolophis
+226,138315,Chlamys,Chlamys,138315,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Chlamys
+227,140692,Chlamys islandica,Chlamys islandica,140692,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Chlamys
+228,140696,Chlamys varia,Mimachlamys varia,236719,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Chlamys
+229,801,Chlorophyta,Chlorophyta,801,Plantae,Chlorophyta,NA,NA,NA,NA
+230,144197,Chorda,Chorda,144197,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Chordaceae,Chorda
+231,135304,Chrysaora hysoscella,Chrysaora hysoscella,135304,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Pelagiidae,Chrysaora
+232,106059,Chthamalidae,Chthamalidae,106059,Animalia,Arthropoda,Thecostraca,Balanomorpha,Chthamalidae,NA
+233,123158,Cidaridae,Cidaridae,123158,Animalia,Echinodermata,Echinoidea,Cidaroida,Cidaridae,NA
+234,124257,Cidaris cidaris,Cidaris cidaris,124257,Animalia,Echinodermata,Echinoidea,Cidaroida,Cidaridae,Cidaris
+235,125741,Ciliata,Ciliata,125741,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Ciliata
+236,126448,Ciliata mustela,Ciliata mustela,126448,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Ciliata
+237,126449,Ciliata septentrionalis,Ciliata septentrionalis,126449,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Ciliata
+238,103488,Ciona,Ciona,103488,Animalia,Chordata,Ascidiacea,Phlebobranchia,Cionidae,Ciona
+239,103732,Ciona intestinalis,Ciona intestinalis,103732,Animalia,Chordata,Ascidiacea,Phlebobranchia,Cionidae,Ciona
+240,118399,Cirolana,Cirolana,118399,Animalia,Arthropoda,Malacostraca,Isopoda,Cirolanidae,Cirolana
+241,118273,Cirolanidae,Cirolanidae,118273,Animalia,Arthropoda,Malacostraca,Isopoda,Cirolanidae,NA
+242,1082,Cirripedia,Cirripedia,1082,Animalia,Arthropoda,Thecostraca,NA,NA,NA
+243,11776,Cirroteuthidae,Cirroteuthidae,11776,Animalia,Mollusca,Cephalopoda,Octopoda,Cirroteuthidae,NA
+244,153091,Cirroteuthis,Cirroteuthis,153091,Animalia,Mollusca,Cephalopoda,Octopoda,Cirroteuthidae,Cirroteuthis
+245,131644,Cladorhizidae,Cladorhizidae,131644,Animalia,Porifera,Demospongiae,Poecilosclerida,Cladorhizidae,NA
+246,102181,Cleippides quadricuspis,Cleippides quadricuspis,102181,Animalia,Arthropoda,Malacostraca,Amphipoda,Calliopiidae,Cleippides
+247,156818,Clinocardium,Clinocardium,156818,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Clinocardium
+248,156819,Clinocardium ciliatum,Ciliatocardium ciliatum,139000,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Clinocardium
+249,137793,Clione,Clione,137793,Animalia,Mollusca,Gastropoda,Pteropoda,Clionidae,Clione
+250,139178,Clione limacina,Clione limacina,139178,Animalia,Mollusca,Gastropoda,Pteropoda,Clionidae,Clione
+251,126417,Clupea harengus,Clupea harengus,126417,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Clupea
+252,293567,Clupea harengus harengus,Clupea harengus,126417,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Clupea
+253,125464,Clupeidae,Clupeidae,125464,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,NA
+254,1267,Cnidaria,Cnidaria,1267,Animalia,Cnidaria,NA,NA,NA,NA
+255,398381,Coelorinchus caelorhincus,Coelorinchus caelorhincus,398381,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,Coelorinchus
+256,280299,Coelorinchus labiatus,Coelorinchus labiatus,280299,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,Coelorinchus
+257,11709,Coleoidea,Coleoidea,11709,Animalia,Mollusca,Cephalopoda,NA,NA,NA
+258,134586,Colossendeis,Colossendeis,134586,Animalia,Arthropoda,Pycnogonida,Pantopoda,Colossendeidae,Colossendeis
+259,137704,Colus,Colus,137704,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Colus
+260,138899,Colus gracilis,Colus gracilis,138899,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Colus
+261,138902,Colus islandicus,Colus islandicus,138902,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Colus
+262,160212,Colus pubescens,Colus pubescens,160212,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Colus
+263,138906,Colus sabini,Colus sabini,138906,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Colus
+264,126285,Conger conger,Conger conger,126285,Animalia,Chordata,Actinopterygii,Anguilliformes,Congridae,Conger
+265,1080,Copepoda,Copepoda,1080,Animalia,Arthropoda,Hexanauplia,NA,NA,NA
+266,103743,Corella parallelogramma,Corella parallelogramma,103743,Animalia,Chordata,Ascidiacea,Phlebobranchia,Corellidae,Corella
+267,158960,Coryphaenoides rupestris,Coryphaenoides rupestris,158960,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,Coryphaenoides
+268,138018,Coryphella,Coryphella,138018,Animalia,Mollusca,Gastropoda,Nudibranchia,Coryphellidae,Coryphella
+269,107277,Corystes cassivelaunus,Corystes cassivelaunus,107277,Animalia,Arthropoda,Malacostraca,Decapoda,Corystidae,Corystes
+270,125589,Cottidae,Cottidae,125589,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,NA
+271,127235,Cottunculus microps,Cottunculus microps,127235,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Psychrolutidae,Cottunculus
+272,127236,Cottunculus sadko,Cottunculus sadko,127236,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Psychrolutidae,Cottunculus
+273,107007,Crangon,Crangon,107007,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Crangon
+274,246272,Crangon affinis,Crangon affinis,246272,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Crangon
+275,107551,Crangon allmanni,Crangon allmanni,107551,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Crangon
+276,107552,Crangon crangon,Crangon crangon,107552,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Crangon
+277,106782,Crangonidae,Crangonidae,106782,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,NA
+278,106712,Crangonoidea,Crangonoidea,106712,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+279,123081,Crinoidea,Crinoidea,123081,Animalia,Echinodermata,Crinoidea,NA,NA,NA
+280,123336,Crossaster,Crossaster,123336,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Crossaster
+281,124154,Crossaster papposus,Crossaster papposus,124154,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Crossaster
+282,1066,Crustacea,Crustacea,1066,Animalia,Arthropoda,NA,NA,NA,NA
+283,138238,Cryptonatica,Cryptonatica,138238,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Cryptonatica
+284,126878,Crystallogobius linearis,Crystallogobius linearis,126878,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Crystallogobius
+285,123128,Ctenodiscidae,Ctenodiscidae,123128,Animalia,Echinodermata,Asteroidea,Paxillosida,Ctenodiscidae,NA
+286,123258,Ctenodiscus,Ctenodiscus,123258,Animalia,Echinodermata,Asteroidea,Paxillosida,Ctenodiscidae,Ctenodiscus
+287,123915,Ctenodiscus crispatus,Ctenodiscus crispatus,123915,Animalia,Echinodermata,Asteroidea,Paxillosida,Ctenodiscidae,Ctenodiscus
+288,126964,Ctenolabrus rupestris,Ctenolabrus rupestris,126964,Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Ctenolabrus
+289,163921,Ctenophora,Ctenophora,163921,Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Ctenophora
+290,123479,Cucumaria,Cucumaria,123479,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Cucumariidae,Cucumaria
+291,124612,Cucumaria frondosa,Cucumaria frondosa,124612,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Cucumariidae,Cucumaria
+292,123187,Cucumariidae,Cucumariidae,123187,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Cucumariidae,NA
+293,1137,Cumacea,Cumacea,1137,Animalia,Arthropoda,Malacostraca,Cumacea,NA,NA
+294,137858,Cuspidaria,Cuspidaria,137858,Animalia,Mollusca,Bivalvia,NA,Cuspidariidae,Cuspidaria
+295,139437,Cuspidaria arctica,Cuspidaria arctica,139437,Animalia,Mollusca,Bivalvia,NA,Cuspidariidae,Cuspidaria
+296,135259,Cyanea,Cyanea,135259,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Cyaneidae,Cyanea
+297,135301,Cyanea capillata,Cyanea capillata,135301,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Cyaneidae,Cyanea
+298,135302,Cyanea lamarckii,Cyanea lamarckii,135302,Animalia,Cnidaria,Scyphozoa,Semaeostomeae,Cyaneidae,Cyanea
+299,125590,Cyclopteridae,Cyclopteridae,125590,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cyclopteridae,NA
+300,127213,Cyclopteropsis mcalpini,Cyclopteropsis mcalpini,127213,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cyclopteridae,Cyclopteropsis
+301,127214,Cyclopterus lumpus,Cyclopterus lumpus,127214,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cyclopteridae,Cyclopterus
+302,104057,Dallina septigera,Dallina septigera,104057,Animalia,Brachiopoda,Rhynchonellata,Terebratulida,Dallinidae,Dallina
+303,105851,Dasyatis pastinaca,Dasyatis pastinaca,105851,Animalia,Chordata,Elasmobranchii,Myliobatiformes,Dasyatidae,Dasyatis
+304,1130,Decapoda,Decapoda,1130,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+305,140702,Delectopecten vitreus,Delectopecten vitreus,140702,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Delectopecten
+306,164811,Demospongiae,Demospongiae,164811,Animalia,Porifera,Demospongiae,NA,NA,NA
+307,110842,Dendrobeania,Dendrobeania,110842,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Bugulidae,Dendrobeania
+308,106669,Dendrobranchiata,Dendrobranchiata,106669,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+309,137885,Dendronotus,Dendronotus,137885,Animalia,Mollusca,Gastropoda,Nudibranchia,Dendronotidae,Dendronotus
+310,139523,Dendronotus frondosus,Dendronotus frondosus,139523,Animalia,Mollusca,Gastropoda,Nudibranchia,Dendronotidae,Dendronotus
+311,158655,Diastobranchus,Diastobranchus,158655,Animalia,Chordata,Actinopterygii,Anguilliformes,Synaphobranchidae,Diastobranchus
+312,110398,Diastylis,Diastylis,110398,Animalia,Arthropoda,Malacostraca,Cumacea,Diastylidae,Diastylis
+313,126975,Dicentrarchus labrax,Dicentrarchus labrax,126975,Animalia,Chordata,Actinopterygii,Perciformes,Moronidae,Dicentrarchus
+314,107041,Dichelopandalus,Dichelopandalus,107041,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Dichelopandalus
+315,103439,Didemnidae,Didemnidae,103439,Animalia,Chordata,Ascidiacea,Aplousobranchia,Didemnidae,NA
+316,103456,Didemnum,Didemnum,103456,Animalia,Chordata,Ascidiacea,Aplousobranchia,Didemnidae,Didemnum
+317,117228,Diphasia,Diphasia,117228,Animalia,Cnidaria,Hydrozoa,Leptothecata,Sertulariidae,Diphasia
+318,111037,Diplosolen,Diplosolen,111037,Animalia,Bryozoa,Stenolaemata,Cyclostomatida,Plagioeciidae,Diplosolen
+319,470799,Diplosolen intricarium,Diplosolen intricarium,470799,Animalia,Bryozoa,Stenolaemata,Cyclostomatida,Plagioeciidae,Diplosolen
+320,105762,Dipturus,Dipturus,105762,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Dipturus
+321,105869,Dipturus batis,Dipturus batis,105869,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Dipturus
+322,105871,Dipturus nidarosiensis,Dipturus nidarosiensis,105871,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Dipturus
+323,105872,Dipturus oxyrinchus,Dipturus oxyrinchus,105872,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Dipturus
+324,129561,Ditrupa,Ditrupa,129561,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Ditrupa
+325,130987,Ditrupa arietina,Ditrupa arietina,130987,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Ditrupa
+326,9904,Dorididae,Dorididae,9904,Animalia,Mollusca,Gastropoda,Nudibranchia,Dorididae,NA
+327,173,Doridoidea,Doridoidea,173,Animalia,Mollusca,Gastropoda,Nudibranchia,NA,NA
+328,106148,Dosima fascicularis,Dosima fascicularis,106148,Animalia,Arthropoda,Thecostraca,Scalpellomorpha,Lepadidae,Dosima
+329,141911,Dosinia exoleta,Dosinia exoleta,141911,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Dosinia
+330,146940,Drifa,Drifa,146940,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,Drifa
+331,146941,Drifa glomerata,Drifa glomerata,146941,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,Drifa
+332,107301,Ebalia tuberosa,Ebalia tuberosa,107301,Animalia,Arthropoda,Malacostraca,Decapoda,Leucosiidae,Ebalia
+333,107302,Ebalia tumefacta,Ebalia tumefacta,107302,Animalia,Arthropoda,Malacostraca,Decapoda,Leucosiidae,Ebalia
+334,150630,Echiichthys vipera,Echiichthys vipera,150630,Animalia,Chordata,Actinopterygii,Perciformes,Trachinidae,Echiichthys
+335,123160,Echinidae,Echinidae,123160,Animalia,Echinodermata,Echinoidea,Camarodonta,Echinidae,NA
+336,510534,Echinidea,Echinidea,510534,Animalia,Echinodermata,Echinoidea,Camarodonta,NA,NA
+337,123426,Echinocardium,Echinocardium,123426,Animalia,Echinodermata,Echinoidea,Spatangoida,Loveniidae,Echinocardium
+338,124392,Echinocardium cordatum,Echinocardium cordatum,124392,Animalia,Echinodermata,Echinoidea,Spatangoida,Loveniidae,Echinocardium
+339,1806,Echinodermata,Echinodermata,1806,Animalia,Echinodermata,NA,NA,NA,NA
+340,123082,Echinoidea,Echinoidea,123082,Animalia,Echinodermata,Echinoidea,NA,NA,NA
+341,123386,Echinus,Echinus,123386,Animalia,Echinodermata,Echinoidea,Camarodonta,Echinidae,Echinus
+342,124287,Echinus esculentus,Echinus esculentus,124287,Animalia,Echinodermata,Echinoidea,Camarodonta,Echinidae,Echinus
+343,126663,Echiodon drummondii,Echiodon drummondii,126663,Animalia,Chordata,Actinopterygii,Ophidiiformes,Carapidae,Echiodon
+344,1269,Echiura,Echiura,1269,Animalia,Annelida,Polychaeta,NA,NA,NA
+345,110349,Echiuridae,Echiuridae,110349,Animalia,Annelida,Polychaeta,Echiuroidea,Echiuridae,NA
+346,110342,Echiuroidea,Echiuroidea,110342,Animalia,Annelida,Polychaeta,Echiuroidea,NA,NA
+347,10193,Elasmobranchii,Elasmobranchii,10193,Animalia,Chordata,Elasmobranchii,NA,NA,NA
+348,111355,Electra pilosa,Electra pilosa,111355,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Electridae,Electra
+349,140600,Eledone cirrhosa,Eledone cirrhosa,140600,Animalia,Mollusca,Cephalopoda,Octopoda,Eledonidae,Eledone
+350,126450,Enchelyopus cimbrius,Enchelyopus cimbrius,126450,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Enchelyopus
+351,126426,Engraulis encrasicolus,Engraulis encrasicolus,126426,Animalia,Chordata,Actinopterygii,Clupeiformes,Engraulidae,Engraulis
+352,127379,Entelurus aequoreus,Entelurus aequoreus,127379,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Entelurus
+353,1820,Enteropneusta,Enteropneusta,1820,Animalia,Hemichordata,Enteropneusta,NA,NA,NA
+354,125967,Epigonus,Epigonus,125967,Animalia,Chordata,Actinopterygii,Perciformes,Epigonidae,Epigonus
+355,126858,Epigonus telescopus,Epigonus telescopus,126858,Animalia,Chordata,Actinopterygii,Perciformes,Epigonidae,Epigonus
+356,101506,Epimeria,Epimeria,101506,Animalia,Arthropoda,Malacostraca,Amphipoda,Epimeriidae,Epimeria
+357,102145,Epimeria cornigera,Epimeria (Epimeria) cornigera,1053398,Animalia,Arthropoda,Malacostraca,Amphipoda,Epimeriidae,Epimeria
+358,102146,Epimeria loricata,Epimeria (Epimeria) loricata,1053399,Animalia,Arthropoda,Malacostraca,Amphipoda,Epimeriidae,Epimeria
+359,137943,Epitonium,Epitonium,137943,Animalia,Mollusca,Gastropoda,[unassigned] Caenogastropoda,Epitoniidae,Epitonium
+360,100688,Epizoanthidae,Epizoanthidae,100688,Animalia,Cnidaria,Anthozoa,Zoantharia,Epizoanthidae,NA
+361,100790,Epizoanthus,Epizoanthus,100790,Animalia,Cnidaria,Anthozoa,Zoantharia,Epizoanthidae,Epizoanthus
+362,754174,Errantia,Errantia,754174,Animalia,Annelida,Polychaeta,NA,NA,NA
+363,105913,Etmopterus spinax,Etmopterus spinax,105913,Animalia,Chordata,Elasmobranchii,Squaliformes,Etmopteridae,Etmopterus
+364,107504,Eualus gaimardii,Eualus gaimardii,107504,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Eualus
+365,110908,Eucratea,Eucratea,110908,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Eucrateidae,Eucratea
+366,111361,Eucratea loricata,Eucratea loricata,111361,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Eucrateidae,Eucratea
+367,1600,Eudendriidae,Eudendriidae,1600,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Eudendriidae,NA
+368,117093,Eudendrium,Eudendrium,117093,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Eudendriidae,Eudendrium
+369,117555,Eudendrium ramosum,Eudendrium ramosum,117555,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Eudendriidae,Eudendrium
+370,149854,Euechinoidea,Euechinoidea,149854,Animalia,Echinodermata,Echinoidea,NA,NA,NA
+371,127215,Eumicrotremus derjugini,Eumicrotremus derjugini,127215,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cyclopteridae,Eumicrotremus
+372,127217,Eumicrotremus spinosus,Eumicrotremus spinosus,127217,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cyclopteridae,Eumicrotremus
+373,130057,Eunice harassii,Leodice harassii,742170,Animalia,Annelida,Polychaeta,Eunicida,Eunicidae,Eunice
+374,966,Eunicidae,Eunicidae,966,Animalia,Annelida,Polychaeta,Eunicida,Eunicidae,NA
+375,129487,Eunoe,Eunoe,129487,Animalia,Annelida,Polychaeta,Phyllodocida,Polynoidae,Eunoe
+376,1128,Euphausiacea,Euphausiacea,1128,Animalia,Arthropoda,Malacostraca,Euphausiacea,NA,NA
+377,110671,Euphausiidae,Euphausiidae,110671,Animalia,Arthropoda,Malacostraca,Euphausiacea,Euphausiidae,NA
+378,124782,Eupyrgus scaber,Eupyrgus scaber,124782,Animalia,Echinodermata,Holothuroidea,Molpadida,Eupyrgidae,Eupyrgus
+379,118401,Eurydice,Eurydice,118401,Animalia,Arthropoda,Malacostraca,Isopoda,Cirolanidae,Eurydice
+380,102563,Eurythenes gryllus,Eurythenes gryllus,102563,Animalia,Arthropoda,Malacostraca,Amphipoda,Eurytheneidae,Eurythenes
+381,101380,Eusiridae,Eusiridae,101380,Animalia,Arthropoda,Malacostraca,Amphipoda,Eusiridae,NA
+382,101519,Eusirus,Eusirus,101519,Animalia,Arthropoda,Malacostraca,Amphipoda,Eusiridae,Eusirus
+383,102200,Eusirus holmii,Eusirus holmii,102200,Animalia,Arthropoda,Malacostraca,Amphipoda,Eusiridae,Eusirus
+384,138239,Euspira,Euspira,138239,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Euspira
+385,140528,Euspira catena,Euspira catena,140528,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Euspira
+386,140536,Euspira pallida,Euspira pallida,140536,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Euspira
+387,150637,Eutrigla gurnardus,Eutrigla gurnardus,150637,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Triglidae,Eutrigla
+388,129563,Filograna,Filograna,129563,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Filograna
+389,130989,Filograna implexa,Filograna implexa,130989,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Filograna
+390,135114,Flabellum,Flabellum,135114,Animalia,Cnidaria,Anthozoa,Scleractinia,Flabellidae,Flabellum
+391,110911,Flustra,Flustra,110911,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Flustridae,Flustra
+392,111367,Flustra foliacea,Flustra foliacea,111367,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Flustridae,Flustra
+393,110749,Flustridae,Flustridae,110749,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Flustridae,NA
+394,844,Fucales,Fucales,844,Chromista,Ochrophyta,Phaeophyceae,Fucales,NA,NA
+395,144129,Fucus,Fucus,144129,Chromista,Ochrophyta,Phaeophyceae,Fucales,Fucaceae,Fucus
+396,145546,Fucus serratus,Fucus serratus,145546,Chromista,Ochrophyta,Phaeophyceae,Fucales,Fucaceae,Fucus
+397,145548,Fucus vesiculosus,Fucus vesiculosus,145548,Chromista,Ochrophyta,Phaeophyceae,Fucales,Fucaceae,Fucus
+398,137195,Fulmarus glacialis,Fulmarus glacialis,137195,Animalia,Chordata,Aves,Procellariiformes,Procellariidae,Fulmarus
+399,128490,Funiculina,Funiculina,128490,Animalia,Cnidaria,Anthozoa,Pennatulacea,Funiculinidae,Funiculina
+400,128506,Funiculina quadrangularis,Funiculina quadrangularis,128506,Animalia,Cnidaria,Anthozoa,Pennatulacea,Funiculinidae,Funiculina
+401,126435,Gadiculus argenteus,Gadiculus argenteus,126435,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Gadiculus
+402,125469,Gadidae,Gadidae,125469,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,NA
+403,10313,Gadiformes,Gadiformes,10313,Animalia,Chordata,Actinopterygii,Gadiformes,NA,NA
+404,300735,Gadus chalcogrammus,Gadus chalcogrammus,300735,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Gadus
+405,126436,Gadus morhua,Gadus morhua,126436,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Gadus
+406,125743,Gaidropsarus,Gaidropsarus,125743,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Gaidropsarus
+407,126451,Gaidropsarus argentatus,Gaidropsarus argentatus,126451,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Gaidropsarus
+408,126456,Gaidropsarus macrophthalmus,Gaidropsarus macrophthalmus,126456,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Gaidropsarus
+409,126457,Gaidropsarus mediterraneus,Gaidropsarus mediterraneus,126457,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Gaidropsarus
+410,126458,Gaidropsarus vulgaris,Gaidropsarus vulgaris,126458,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Gaidropsarus
+411,106834,Galathea,Galathea,106834,Animalia,Arthropoda,Malacostraca,Decapoda,Galatheidae,Galathea
+412,107148,Galathea dispersa,Galathea dispersa,107148,Animalia,Arthropoda,Malacostraca,Decapoda,Galatheidae,Galathea
+413,107152,Galathea nexa,Galathea nexa,107152,Animalia,Arthropoda,Malacostraca,Decapoda,Galatheidae,Galathea
+414,106733,Galatheidae,Galatheidae,106733,Animalia,Arthropoda,Malacostraca,Decapoda,Galatheidae,NA
+415,106685,Galatheoidea,Galatheoidea,106685,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+416,105820,Galeorhinus galeus,Galeorhinus galeus,105820,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Triakidae,Galeorhinus
+417,105812,Galeus melastomus,Galeus melastomus,105812,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Pentanchidae,Galeus
+418,101383,Gammaridae,Gammaridae,101383,Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,NA
+419,125476,Gasterosteidae,Gasterosteidae,125476,Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,NA
+420,126505,Gasterosteus aculeatus,Gasterosteus aculeatus,126505,Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Gasterosteus
+421,101,Gastropoda,Gastropoda,101,Animalia,Mollusca,Gastropoda,NA,NA,NA
+422,132005,Geodia,Geodia,132005,Animalia,Porifera,Demospongiae,Tetractinellida,Geodiidae,Geodia
+423,134022,Geodia atlantica,Geodia atlantica,134022,Animalia,Porifera,Demospongiae,Tetractinellida,Geodiidae,Geodia
+424,134023,Geodia barretti,Geodia barretti,134023,Animalia,Porifera,Demospongiae,Tetractinellida,Geodiidae,Geodia
+425,134033,Geodia macandrewii,Geodia macandrewii,134033,Animalia,Porifera,Demospongiae,Tetractinellida,Geodiidae,Geodia
+426,146953,Gersemia,Gersemia,146953,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,Gersemia
+427,156101,Gersemia fruticosa,Gersemia fruticosa,156101,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,Gersemia
+428,156103,Gersemia rubiformis,Gersemia rubiformis,156103,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,Gersemia
+429,106918,Geryon,Geryon,106918,Animalia,Arthropoda,Malacostraca,Decapoda,Geryonidae,Geryon
+430,107374,Geryon trispinosus,Geryon trispinosus,107374,Animalia,Arthropoda,Malacostraca,Decapoda,Geryonidae,Geryon
+431,106762,Geryonidae,Geryonidae,106762,Animalia,Arthropoda,Malacostraca,Decapoda,Geryonidae,NA
+432,127136,Glyptocephalus cynoglossus,Glyptocephalus cynoglossus,127136,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Glyptocephalus
+433,196221,Gnathophiurina,Gnathophiurina,196221,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,NA,NA
+434,125537,Gobiidae,Gobiidae,125537,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,NA
+435,151743,Gobioidei,Gobioidei,151743,Animalia,Chordata,Actinopterygii,Perciformes,NA,NA
+436,126892,Gobius niger,Gobius niger,126892,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Gobius
+437,126898,Gobiusculus flavescens,Gobiusculus flavescens,126898,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Gobiusculus
+438,136021,Golfingia,Golfingia,136021,Animalia,Sipuncula,Sipunculidea,Golfingiida,Golfingiidae,Golfingia
+439,136021,Golfingia,Golfingia,136021,Animalia,Sipuncula,Sipunculidea,Golfingiida,Golfingiidae,Golfingia
+440,11743,Gonatidae,Gonatidae,11743,Animalia,Mollusca,Cephalopoda,Oegopsida,Gonatidae,NA
+441,138036,Gonatus,Gonatus,138036,Animalia,Mollusca,Cephalopoda,Oegopsida,Gonatidae,Gonatus
+442,153097,Gonatus fabricii,Gonatus fabricii,153097,Animalia,Mollusca,Cephalopoda,Oegopsida,Gonatidae,Gonatus
+443,140027,Gonatus steenstrupi,Gonatus steenstrupi,140027,Animalia,Mollusca,Cephalopoda,Oegopsida,Gonatidae,Gonatus
+444,107292,Goneplax rhomboides,Goneplax rhomboides,107292,Animalia,Arthropoda,Malacostraca,Decapoda,Goneplacidae,Goneplax
+445,123203,Gorgonocephalidae,Gorgonocephalidae,123203,Animalia,Echinodermata,Ophiuroidea,Euryalida,Gorgonocephalidae,NA
+446,123586,Gorgonocephalus,Gorgonocephalus,123586,Animalia,Echinodermata,Ophiuroidea,Euryalida,Gorgonocephalidae,Gorgonocephalus
+447,124967,Gorgonocephalus caputmedusae,Gorgonocephalus caputmedusae,124967,Animalia,Echinodermata,Ophiuroidea,Euryalida,Gorgonocephalidae,Gorgonocephalus
+448,411391,Gracilechinus,Gracilechinus,411391,Animalia,Echinodermata,Echinoidea,Camarodonta,Echinidae,Gracilechinus
+449,532031,Gracilechinus acutus,Gracilechinus acutus,532031,Animalia,Echinodermata,Echinoidea,Camarodonta,Echinidae,Gracilechinus
+450,126754,Gymnammodytes semisquamatus,Gymnammodytes semisquamatus,126754,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Gymnammodytes
+451,126102,Gymnelus,Gymnelus,126102,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Gymnelus
+452,127095,Gymnelus retrodorsalis,Gymnelus retrodorsalis,127095,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Gymnelus
+453,127096,Gymnelus viridis,Gymnelus viridis,127096,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Gymnelus
+454,127198,Gymnocanthus tricuspis,Gymnocanthus tricuspis,127198,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Gymnocanthus
+455,1608,Haleciidae,Haleciidae,1608,Animalia,Cnidaria,Hydrozoa,Leptothecata,Haleciidae,NA
+456,117103,Halecium,Halecium,117103,Animalia,Cnidaria,Hydrozoa,Leptothecata,Haleciidae,Halecium
+457,117590,Halecium halecium,Halecium halecinum,231751,Animalia,Cnidaria,Hydrozoa,Leptothecata,Haleciidae,Halecium
+458,131834,Haliclona,Haliclona,131834,Animalia,Porifera,Demospongiae,Haplosclerida,Chalinidae,Haliclona
+459,144192,Halophila,Halophila,144192,Plantae,Tracheophyta,Magnoliopsida,Alismatales,Hydrocharitaceae,Halophila
+460,110364,Hamingia arctica,Hamingia arctica,110364,Animalia,Annelida,Polychaeta,Echiuroidea,Bonelliidae,Hamingia
+461,129491,Harmothoe,Harmothoe,129491,Animalia,Annelida,Polychaeta,Phyllodocida,Polynoidae,Harmothoe
+462,127251,Helicolenus dactylopterus,Helicolenus dactylopterus,127251,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Helicolenus
+463,123353,Heliometra,Heliometra,123353,Animalia,Echinodermata,Crinoidea,Comatulida,Antedonidae,Heliometra
+464,124223,Heliometra glacialis,Heliometra glacialis,124223,Animalia,Echinodermata,Crinoidea,Comatulida,Antedonidae,Heliometra
+465,104054,Hemithiris psittacea,Hemithiris psittacea,104054,Animalia,Brachiopoda,Rhynchonellata,Rhynchonellida,Hemithirididae,Hemithiris
+466,123276,Henricia,Henricia,123276,Animalia,Echinodermata,Asteroidea,Spinulosida,Echinasteridae,Henricia
+467,123970,Henricia oculata,Henricia oculata,123970,Animalia,Echinodermata,Asteroidea,Spinulosida,Echinasteridae,Henricia
+468,123974,Henricia sanguinolenta,Henricia sanguinolenta,123974,Animalia,Echinodermata,Asteroidea,Spinulosida,Echinasteridae,Henricia
+469,137651,Heteranomia,Heteranomia,137651,Animalia,Mollusca,Bivalvia,Pectinida,Anomiidae,Heteranomia
+470,1340,Hexacorallia,Hexacorallia,1340,Animalia,Cnidaria,Anthozoa,NA,NA,NA
+471,138068,Hiatella,Hiatella,138068,Animalia,Mollusca,Bivalvia,Adapedonta,Hiatellidae,Hiatella
+472,140103,Hiatella arctica,Hiatella arctica,140103,Animalia,Mollusca,Bivalvia,Adapedonta,Hiatellidae,Hiatella
+473,124043,Hippasteria phrygiana,Hippasteria phrygiana,124043,Animalia,Echinodermata,Asteroidea,Valvatida,Goniasteridae,Hippasteria
+474,127137,Hippoglossoides platessoides,Hippoglossoides platessoides,127137,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Hippoglossoides
+475,127138,Hippoglossus hippoglossus,Hippoglossus hippoglossus,127138,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Hippoglossus
+476,2041,Hirudinea,Hirudinea,2041,Animalia,Annelida,Clitellata,NA,NA,NA
+477,10196,Holocephali,Holocephali,10196,Animalia,Chordata,Holocephali,NA,NA,NA
+478,123456,Holothuria,Holothuria,123456,Animalia,Echinodermata,Holothuroidea,Holothuriida,Holothuriidae,Holothuria
+479,123083,Holothuroidea,Holothuroidea,123083,Animalia,Echinodermata,Holothuroidea,NA,NA,NA
+480,107253,Homarus gammarus,Homarus gammarus,107253,Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Homarus
+481,100757,Hormathia,Hormathia,100757,Animalia,Cnidaria,Anthozoa,Actiniaria,Hormathiidae,Hormathia
+482,100951,Hormathia digitata,Hormathia digitata,100951,Animalia,Cnidaria,Anthozoa,Actiniaria,Hormathiidae,Hormathia
+483,100954,Hormathia nodosa,Hormathia nodosa,100954,Animalia,Cnidaria,Anthozoa,Actiniaria,Hormathiidae,Hormathia
+484,111041,Hornera,Hornera,111041,Animalia,Bryozoa,Stenolaemata,Cyclostomatida,Horneridae,Hornera
+485,111723,Hornera lichenoides,Hornera lichenoides,111723,Animalia,Bryozoa,Stenolaemata,Cyclostomatida,Horneridae,Hornera
+486,129400,Hyalinoecia,Hyalinoecia,129400,Animalia,Annelida,Polychaeta,Eunicida,Onuphidae,Hyalinoecia
+487,106903,Hyas,Hyas,106903,Animalia,Arthropoda,Malacostraca,Decapoda,Oregoniidae,Hyas
+488,107322,Hyas araneus,Hyas araneus,107322,Animalia,Arthropoda,Malacostraca,Decapoda,Oregoniidae,Hyas
+489,107323,Hyas coarctatus,Hyas coarctatus,107323,Animalia,Arthropoda,Malacostraca,Decapoda,Oregoniidae,Hyas
+490,129566,Hydroides,Hydroides,129566,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Hydroides
+491,19494,Hydroidolina,Hydroidolina,19494,Animalia,Cnidaria,Hydrozoa,NA,NA,NA
+492,1337,Hydrozoa,Hydrozoa,1337,Animalia,Cnidaria,Hydrozoa,NA,NA,NA
+493,123333,Hymenaster,Hymenaster,123333,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Hymenaster
+494,124135,Hymenaster pellucidus,Hymenaster pellucidus,124135,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Hymenaster
+495,107590,Hymenodora glacialis,Hymenodora glacialis,107590,Animalia,Arthropoda,Malacostraca,Decapoda,Acanthephyridae,Hymenodora
+496,103251,Hyperia galba,Hyperia galba,103251,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyperiidae,Hyperia
+497,1205,Hyperiidea,Hyperiidea,1205,Animalia,Arthropoda,Malacostraca,Amphipoda,NA,NA
+498,125911,Hyperoplus,Hyperoplus,125911,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Hyperoplus
+499,126755,Hyperoplus immaculatus,Hyperoplus immaculatus,126755,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Hyperoplus
+500,126756,Hyperoplus lanceolatus,Hyperoplus lanceolatus,126756,Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Hyperoplus
+501,123796,Icasterias panopla,Icasterias panopla,123796,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Icasterias
+502,127199,Icelus bicornis,Icelus bicornis,127199,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Icelus
+503,127200,Icelus spatula,Icelus spatula,127200,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Icelus
+504,119039,Idotea balthica,Idotea balthica,119039,Animalia,Arthropoda,Malacostraca,Isopoda,Idoteidae,Idotea
+505,138278,Illex,Illex,138278,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,Illex
+506,140621,Illex coindetii,Illex coindetii,140621,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,Illex
+507,148427,Inachidae,Inachidae,148427,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,NA
+508,106905,Inachus,Inachus,106905,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,Inachus
+509,107327,Inachus dorsettensis,Inachus dorsettensis,107327,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,Inachus
+510,107330,Inachus leptochirus,Inachus leptochirus,107330,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,Inachus
+511,1131,Isopoda,Isopoda,1131,Animalia,Arthropoda,Malacostraca,Isopoda,NA,NA
+512,140166,Jorunna tomentosa,Jorunna tomentosa,140166,Animalia,Mollusca,Gastropoda,Nudibranchia,Discodorididae,Jorunna
+513,393809,Karnekampia,Karnekampia,393809,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Karnekampia
+514,123448,Labidoplax,Labidoplax,123448,Animalia,Echinodermata,Holothuroidea,Apodida,Synaptidae,Labidoplax
+515,126965,Labrus bergylta,Labrus bergylta,126965,Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Labrus
+516,151501,Labrus mixtus,Labrus mixtus,151501,Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Labrus
+517,140168,Lacuna pallidula,Lacuna pallidula,140168,Animalia,Mollusca,Gastropoda,Littorinimorpha,Littorinidae,Lacuna
+518,129196,Laetmonice,Laetmonice,129196,Animalia,Annelida,Polychaeta,Phyllodocida,Aphroditidae,Laetmonice
+519,117136,Lafoea,Lafoea,117136,Animalia,Cnidaria,Hydrozoa,Leptothecata,Lafoeidae,Lafoea
+520,1609,Lafoeidae,Lafoeidae,1609,Animalia,Cnidaria,Hydrozoa,Leptothecata,Lafoeidae,NA
+521,140173,Lamellaria perspicua,Lamellaria perspicua,140173,Animalia,Mollusca,Gastropoda,Littorinimorpha,Velutinidae,Lamellaria
+522,144199,Laminaria,Laminaria,144199,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,Laminaria
+523,145724,Laminaria digitata,Laminaria digitata,145724,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,Laminaria
+524,145725,Laminaria hyperborea,Laminaria hyperborea,145725,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,Laminaria
+525,145730,Laminaria saccharina,Saccharina latissima,234483,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,Laminaria
+526,143755,Laminariaceae,Laminariaceae,143755,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,NA
+527,105841,Lamna nasus,Lamna nasus,105841,Animalia,Chordata,Elasmobranchii,Lamniformes,Lamnidae,Lamna
+528,126612,Lampanyctus crocodilus,Lampanyctus crocodilus,126612,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Lampanyctus
+529,126617,Lampanyctus macdonaldi,Lampanyctus macdonaldi,126617,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Lampanyctus
+530,129697,Lanice,Lanice,129697,Animalia,Annelida,Polychaeta,Terebellida,Terebellidae,Lanice
+531,131495,Lanice conchilega,Lanice conchilega,131495,Animalia,Annelida,Polychaeta,Terebellida,Terebellidae,Lanice
+532,106989,Lebbeus,Lebbeus,106989,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Lebbeus
+533,107521,Lebbeus polaris,Lebbeus polaris,107521,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Lebbeus
+534,106048,Lepadidae,Lepadidae,106048,Animalia,Arthropoda,Thecostraca,Scalpellomorpha,Lepadidae,NA
+535,106149,Lepas anatifera,Lepas (Anatifa) anatifera,733346,Animalia,Arthropoda,Thecostraca,Scalpellomorpha,Lepadidae,Lepas
+536,149684,Lepas fascicularis,Dosima fascicularis,106148,Animalia,Arthropoda,Thecostraca,Scalpellomorpha,Lepadidae,Lepas
+537,1733,Lepetidae,Lepetidae,1733,Animalia,Mollusca,Gastropoda,NA,Lepetidae,NA
+538,130801,Lepidonotus squamatus,Lepidonotus squamatus,130801,Animalia,Annelida,Polychaeta,Phyllodocida,Polynoidae,Lepidonotus
+539,127145,Lepidorhombus boscii,Lepidorhombus boscii,127145,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Lepidorhombus
+540,127146,Lepidorhombus whiffiagonis,Lepidorhombus whiffiagonis,127146,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Lepidorhombus
+541,127191,Leptagonus decagonus,Leptagonus decagonus,127191,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Agonidae,Leptagonus
+542,379749,Leptasterias muelleri,Leptasterias (Leptasterias) muelleri,125158,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Leptasterias
+543,127072,Leptoclinus maculatus,Leptoclinus maculatus,127072,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,Leptoclinus
+544,136229,Leptognathia,Leptognathia,136229,Animalia,Arthropoda,Malacostraca,Tanaidacea,Leptognathiidae,Leptognathia
+545,13552,Leptothecata,Leptothecata,13552,Animalia,Cnidaria,Hydrozoa,Leptothecata,NA,NA
+546,126907,Lesueurigobius suerii,Lesueurigobius suerii,126907,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Lesueurigobius
+547,101173,Lethenteron camtschaticum,Lethenteron camtschaticum,101173,Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,Lethenteron
+548,105873,Leucoraja circularis,Leucoraja circularis,105873,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Leucoraja
+549,105874,Leucoraja fullonica,Leucoraja fullonica,105874,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Leucoraja
+550,105876,Leucoraja naevus,Leucoraja naevus,105876,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Leucoraja
+551,138122,Limacina,Limacina,138122,Animalia,Mollusca,Gastropoda,Pteropoda,Limacinidae,Limacina
+552,127139,Limanda limanda,Limanda limanda,127139,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Limanda
+553,1778,Limidae,Limidae,1778,Animalia,Mollusca,Bivalvia,Limida,Limidae,NA
+554,118420,Limnoria,Limnoria,118420,Animalia,Arthropoda,Malacostraca,Isopoda,Limnoriidae,Limnoria
+555,106925,Liocarcinus,Liocarcinus,106925,Animalia,Arthropoda,Malacostraca,Decapoda,Polybiidae,Liocarcinus
+556,107387,Liocarcinus depurator,Liocarcinus depurator,107387,Animalia,Arthropoda,Malacostraca,Decapoda,Polybiidae,Liocarcinus
+557,234519,Liparidae,Liparidae,234519,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,NA
+558,126160,Liparis,Liparis,126160,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+559,867958,Liparis bathyarcticus,Liparis bathyarcticus,867958,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+560,127218,Liparis fabricii,Liparis fabricii,127218,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+561,127219,Liparis liparis,Liparis liparis,127219,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+562,127220,Liparis montagui,Liparis montagui,127220,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+563,154825,Liparis tunicatus,Liparis tunicatus,154825,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Liparis
+564,593072,Liponema multicorne,Liponema multicorne,593072,Animalia,Cnidaria,Anthozoa,Actiniaria,Liponematidae,Liponema
+565,106845,Lithodes,Lithodes,106845,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Lithodes
+566,107205,Lithodes maja,Lithodes maja,107205,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Lithodes
+567,106737,Lithodidae,Lithodidae,106737,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,NA
+568,11734,Loliginidae,Loliginidae,11734,Animalia,Mollusca,Cephalopoda,Myopsida,Loliginidae,NA
+569,138139,Loligo,Loligo,138139,Animalia,Mollusca,Cephalopoda,Myopsida,Loliginidae,Loligo
+570,140270,Loligo forbesii,Loligo forbesii,140270,Animalia,Mollusca,Cephalopoda,Myopsida,Loliginidae,Loligo
+571,140271,Loligo vulgaris,Loligo vulgaris,140271,Animalia,Mollusca,Cephalopoda,Myopsida,Loliginidae,Loligo
+572,124156,Lophaster furcifer,Lophaster furcifer,124156,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Lophaster
+573,125493,Lophiidae,Lophiidae,125493,Animalia,Chordata,Actinopterygii,Lophiiformes,Lophiidae,NA
+574,126554,Lophius budegassa,Lophius budegassa,126554,Animalia,Chordata,Actinopterygii,Lophiiformes,Lophiidae,Lophius
+575,126555,Lophius piscatorius,Lophius piscatorius,126555,Animalia,Chordata,Actinopterygii,Lophiiformes,Lophiidae,Lophius
+576,123260,Luidia,Luidia,123260,Animalia,Echinodermata,Asteroidea,Paxillosida,Luidiidae,Luidia
+577,123920,Luidia ciliaris,Luidia ciliaris,123920,Animalia,Echinodermata,Asteroidea,Paxillosida,Luidiidae,Luidia
+578,123922,Luidia sarsii,Luidia sarsii,123922,Animalia,Echinodermata,Asteroidea,Paxillosida,Luidiidae,Luidia
+579,127073,Lumpenus fabricii,Lumpenus fabricii,127073,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,Lumpenus
+580,154675,Lumpenus lampretaeformis,Lumpenus lampretaeformis,154675,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,Lumpenus
+581,137076,Lutra lutra,Lutra lutra,137076,Animalia,Chordata,Mammalia,Carnivora,Mustelidae,Lutra
+582,126103,Lycenchelys,Lycenchelys,126103,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycenchelys
+583,127098,Lycenchelys kolthoffi,Lycenchelys kolthoffi,127098,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycenchelys
+584,127099,Lycenchelys muraena,Lycenchelys muraena,127099,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycenchelys
+585,127101,Lycenchelys sarsii,Lycenchelys sarsii,127101,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycenchelys
+586,126104,Lycodes,Lycodes,126104,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+587,127102,Lycodes adolfi,Lycodes adolfi,127102,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+588,127103,Lycodes esmarkii,Lycodes esmarkii,127103,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+589,127104,Lycodes eudipleurostictus,Lycodes eudipleurostictus,127104,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+590,127105,Lycodes frigidus,Lycodes frigidus,127105,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+591,274100,Lycodes gracilis,Lycodes gracilis,274100,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+592,127108,Lycodes luetkenii,Lycodes luetkenii,127108,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+593,159262,Lycodes paamiuti,Lycodes paamiuti,159262,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+594,127110,Lycodes pallidus,Lycodes pallidus,127110,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+595,127111,Lycodes polaris,Lycodes polaris,127111,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+596,127112,Lycodes reticulatus,Lycodes reticulatus,127112,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+597,127113,Lycodes rossi,Lycodes rossi,127113,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+598,127115,Lycodes seminudus,Lycodes seminudus,127115,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+599,127116,Lycodes squamiventer,Lycodes squamiventer,127116,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodes
+600,127119,Lycodonus flagellicauda,Lycodonus flagellicauda,127119,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Lycodonus
+601,1055690,Lysianassida,Lysianassida,1055690,Animalia,Arthropoda,Malacostraca,Amphipoda,NA,NA
+602,117302,Lytocarpia myriophyllum,Lytocarpia myriophyllum,117302,Animalia,Cnidaria,Hydrozoa,Leptothecata,Aglaopheniidae,Lytocarpia
+603,104046,Macandrevia,Macandrevia,104046,Animalia,Brachiopoda,Rhynchonellata,Terebratulida,Zeilleriidae,Macandrevia
+604,141580,Macoma calcarea,Macoma calcarea,141580,Animalia,Mollusca,Bivalvia,Cardiida,Tellinidae,Macoma
+605,106926,Macropipus,Macropipus,106926,Animalia,Arthropoda,Malacostraca,Decapoda,Polybiidae,Macropipus
+606,107397,Macropipus tuberculatus,Macropipus tuberculatus,107397,Animalia,Arthropoda,Malacostraca,Decapoda,Polybiidae,Macropipus
+607,107345,Macropodia rostrata,Macropodia rostrata,107345,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,Macropodia
+608,107346,Macropodia tenuirostris,Macropodia tenuirostris,107346,Animalia,Arthropoda,Malacostraca,Decapoda,Inachidae,Macropodia
+609,127378,Macroramphosus scolopax,Macroramphosus scolopax,127378,Animalia,Chordata,Actinopterygii,Syngnathiformes,Centriscidae,Macroramphosus
+610,125471,Macrouridae,Macrouridae,125471,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,NA
+611,126472,Macrourus berglax,Macrourus berglax,126472,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,Macrourus
+612,140299,Mactra stultorum,Mactra stultorum,140299,Animalia,Mollusca,Bivalvia,Venerida,Mactridae,Mactra
+613,764237,Magnosiopsis,Eucosmus,764236,Animalia,Echinodermata,Echinoidea,Arbacioida,NA,Magnosiopsis
+614,272392,Malacocephalus laevis,Malacocephalus laevis,272392,Animalia,Chordata,Actinopterygii,Gadiformes,Macrouridae,Malacocephalus
+615,1071,Malacostraca,Malacostraca,1071,Animalia,Arthropoda,Malacostraca,NA,NA,NA
+616,130305,Maldane sarsi,Maldane sarsi,130305,Animalia,Annelida,Polychaeta,NA,Maldanidae,Maldane
+617,923,Maldanidae,Maldanidae,923,Animalia,Annelida,Polychaeta,NA,Maldanidae,NA
+618,126735,Mallotus villosus,Mallotus villosus,126735,Animalia,Chordata,Actinopterygii,Osmeriformes,Osmeridae,Mallotus
+619,138592,Margarites,Margarites,138592,Animalia,Mollusca,Gastropoda,Trochida,Margaritidae,Margarites
+620,141820,Margarites groenlandicus,Margarites groenlandicus,141820,Animalia,Mollusca,Gastropoda,Trochida,Margaritidae,Margarites
+621,123803,Marthasterias glacialis,Marthasterias glacialis,123803,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Marthasterias
+622,127312,Maurolicus muelleri,Maurolicus muelleri,127312,Animalia,Chordata,Actinopterygii,Stomiiformes,Sternoptychidae,Maurolicus
+623,110674,Meganyctiphanes,Meganyctiphanes,110674,Animalia,Arthropoda,Malacostraca,Euphausiacea,Euphausiidae,Meganyctiphanes
+624,110690,Meganyctiphanes norvegica,Meganyctiphanes norvegica,110690,Animalia,Arthropoda,Malacostraca,Euphausiacea,Euphausiidae,Meganyctiphanes
+625,126437,Melanogrammus aeglefinus,Melanogrammus aeglefinus,126437,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Melanogrammus
+626,101397,Melitidae,Melitidae,101397,Animalia,Arthropoda,Malacostraca,Amphipoda,Melitidae,NA
+627,110938,Membranipora,Membranipora,110938,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Membraniporidae,Membranipora
+628,126438,Merlangius merlangus,Merlangius merlangus,126438,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Merlangius
+629,126484,Merluccius merluccius,Merluccius merluccius,126484,Animalia,Chordata,Actinopterygii,Gadiformes,Merlucciidae,Merluccius
+630,106377,Mertensia ovum,Mertensia ovum,106377,Animalia,Ctenophora,Tentaculata,Cydippida,Mertensiidae,Mertensia
+631,816800,Mesothuria intestinalis,Mesothuria intestinalis,816800,Animalia,Echinodermata,Holothuroidea,Holothuriida,Mesothuriidae,Mesothuria
+632,100678,Metridiidae,Metridiidae,100678,Animalia,Cnidaria,Anthozoa,Actiniaria,Metridiidae,NA
+633,100982,Metridium senile,Metridium senile,100982,Animalia,Cnidaria,Anthozoa,Actiniaria,Metridiidae,Metridium
+634,127201,Micrenophrys lilljeborgii,Micrenophrys lilljeborgii,127201,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Micrenophrys
+635,274304,Microchirus variegatus,Microchirus variegatus,274304,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Soleidae,Microchirus
+636,126439,Micromesistius poutassou,Micromesistius poutassou,126439,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Micromesistius
+637,127140,Microstomus kitt,Microstomus kitt,127140,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Microstomus
+638,140467,Modiolus modiolus,Modiolus modiolus,140467,Animalia,Mollusca,Bivalvia,Mytilida,Mytilidae,Modiolus
+639,103509,Molgula,Molgula,103509,Animalia,Chordata,Ascidiacea,Stolidobranchia,Molgulidae,Molgula
+640,51,Mollusca,Mollusca,51,Animalia,Mollusca,NA,NA,NA,NA
+641,123540,Molpadia,Molpadia,123540,Animalia,Echinodermata,Holothuroidea,Molpadida,Molpadiidae,Molpadia
+642,254710,Molpadia arctica,Molpadia arctica,254710,Animalia,Echinodermata,Holothuroidea,Molpadida,Molpadiidae,Molpadia
+643,124798,Molpadia borealis,Molpadia borealis,124798,Animalia,Echinodermata,Holothuroidea,Molpadida,Molpadiidae,Molpadia
+644,126459,Molva dypterygia,Molva dypterygia,126459,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Molva
+645,126461,Molva molva,Molva molva,126461,Animalia,Chordata,Actinopterygii,Gadiformes,Lotidae,Molva
+646,125474,Moridae,Moridae,125474,Animalia,Chordata,Actinopterygii,Gadiformes,Moridae,NA
+647,126986,Mullus surmuletus,Mullus surmuletus,126986,Animalia,Chordata,Actinopterygii,Perciformes,Mullidae,Mullus
+648,106835,Munida,Munida,106835,Animalia,Arthropoda,Malacostraca,Decapoda,Munididae,Munida
+649,107160,Munida rugosa,Munida rugosa,107160,Animalia,Arthropoda,Malacostraca,Decapoda,Munididae,Munida
+650,107163,Munida sarsi,Munida sarsi,107163,Animalia,Arthropoda,Malacostraca,Decapoda,Munididae,Munida
+651,107166,Munida tenuimana,Munida tenuimana,107166,Animalia,Arthropoda,Malacostraca,Decapoda,Munididae,Munida
+652,118264,Munnopsidae,Munnopsidae,118264,Animalia,Arthropoda,Malacostraca,Isopoda,Munnopsidae,NA
+653,105821,Mustelus asterias,Mustelus asterias,105821,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Triakidae,Mustelus
+654,105822,Mustelus mustelus,Mustelus mustelus,105822,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Triakidae,Mustelus
+655,138211,Mya,Mya,138211,Animalia,Mollusca,Bivalvia,Myida,Myidae,Mya
+656,140430,Mya arenaria,Mya arenaria,140430,Animalia,Mollusca,Bivalvia,Myida,Myidae,Mya
+657,125498,Myctophidae,Myctophidae,125498,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,NA
+658,10309,Myctophiformes,Myctophiformes,10309,Animalia,Chordata,Actinopterygii,Myctophiformes,NA,NA
+659,126627,Myctophum punctatum,Myctophum punctatum,126627,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Myctophum
+660,254529,Myoxocephalus quadricornis,Myoxocephalus quadricornis,254529,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Myoxocephalus
+661,127203,Myoxocephalus scorpius,Myoxocephalus scorpius,127203,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Myoxocephalus
+662,1277,Myriapoda,Myriapoda,1277,Animalia,Arthropoda,NA,NA,NA,NA
+663,123441,Myriotrochus,Myriotrochus,123441,Animalia,Echinodermata,Holothuroidea,Apodida,Myriotrochidae,Myriotrochus
+664,147023,Myriozoella,Myriozoella,147023,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Myriaporidae,Myriozoella
+665,149668,Mysida,Mysida,149668,Animalia,Arthropoda,Malacostraca,Mysida,NA,NA
+666,119822,Mysidae,Mysidae,119822,Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,NA
+667,140480,Mytilus edulis,Mytilus edulis,140480,Animalia,Mollusca,Bivalvia,Mytilida,Mytilidae,Mytilus
+668,101170,Myxine glutinosa,Myxine glutinosa,101170,Animalia,Chordata,Myxini,Myxiniformes,Myxinidae,Myxine
+669,10197,Myxiniformes,Myxiniformes,10197,Animalia,Chordata,Myxini,Myxiniformes,NA,NA
+670,126725,Nansenia groenlandica,Nansenia groenlandica,126725,Animalia,Chordata,Actinopterygii,Argentiniformes,Microstomatidae,Nansenia
+671,145,Naticidae,Naticidae,145,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,NA
+672,162564,Nematomorpha,Nematomorpha,162564,Animalia,Nematomorpha,NA,NA,NA,NA
+673,152391,Nemertea,Nemertea,152391,Animalia,Nemertea,NA,NA,NA,NA
+674,117195,Nemertesia,Nemertesia,117195,Animalia,Cnidaria,Hydrozoa,Leptothecata,Plumulariidae,Nemertesia
+675,117809,Nemertesia antennina,Nemertesia antennina,117809,Animalia,Cnidaria,Hydrozoa,Leptothecata,Plumulariidae,Nemertesia
+676,117815,Nemertesia ramosa,Nemertesia ramosa,117815,Animalia,Cnidaria,Hydrozoa,Leptothecata,Plumulariidae,Nemertesia
+677,125432,Nemichthyidae,Nemichthyidae,125432,Animalia,Chordata,Actinopterygii,Anguilliformes,Nemichthyidae,NA
+678,146,Neogastropoda,Neogastropoda,146,Animalia,Mollusca,Gastropoda,Neogastropoda,NA,NA
+679,106863,Nephrops,Nephrops,106863,Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Nephrops
+680,107254,Nephrops norvegicus,Nephrops norvegicus,107254,Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Nephrops
+681,146762,Nephtheidae,Nephtheidae,146762,Animalia,Cnidaria,Anthozoa,Alcyonacea,Nephtheidae,NA
+682,956,Nephtyidae,Nephtyidae,956,Animalia,Annelida,Polychaeta,Phyllodocida,Nephtyidae,NA
+683,129370,Nephtys,Nephtys,129370,Animalia,Annelida,Polychaeta,Phyllodocida,Nephtyidae,Nephtys
+684,137710,Neptunea,Neptunea,137710,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Neptunea
+685,138920,Neptunea antiqua,Neptunea antiqua,138920,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Neptunea
+686,254656,Neptunea communis,Neptunea communis,254656,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Neptunea
+687,423556,Neptunea denselirata,Neptunea denselirata,423556,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Neptunea
+688,138923,Neptunea despecta,Neptunea despecta,138923,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Neptunea
+689,22496,Nereididae,Nereididae,22496,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,NA
+690,127385,Nerophis ophidion,Nerophis ophidion,127385,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Nerophis
+691,129402,Nothria,Nothria,129402,Animalia,Annelida,Polychaeta,Eunicida,Onuphidae,Nothria
+692,130467,Nothria conchylega,Nothria conchylega,130467,Animalia,Annelida,Polychaeta,Eunicida,Onuphidae,Nothria
+693,272728,Notoscopelus kroyeri,Notoscopelus kroyeri,272728,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Notoscopelus
+694,181368,Nototeredo norvagica,Nototeredo norvagica,181368,Animalia,Mollusca,Bivalvia,Myida,Teredinidae,Nototeredo
+695,138262,Nucula,Nucula,138262,Animalia,Mollusca,Bivalvia,Nuculida,Nuculidae,Nucula
+696,1250,Nuda,Nuda,1250,Animalia,Ctenophora,Nuda,NA,NA,NA
+697,1762,Nudibranchia,Nudibranchia,1762,Animalia,Mollusca,Gastropoda,Nudibranchia,NA,NA
+698,134591,Nymphon,Nymphon,134591,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,Nymphon
+699,134687,Nymphon gracile,Nymphon gracile,134687,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,Nymphon
+700,134691,Nymphon hirtum,Nymphon hirtum,134691,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,Nymphon
+701,134711,Nymphon stroemi,Nymphon stroemi,134711,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,Nymphon
+702,1566,Nymphonidae,Nymphonidae,1566,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,NA
+703,1341,Octocorallia,Octocorallia,1341,Animalia,Cnidaria,Anthozoa,NA,NA,NA
+704,11718,Octopoda,Octopoda,11718,Animalia,Mollusca,Cephalopoda,Octopoda,NA,NA
+705,11782,Octopodidae,Octopodidae,11782,Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,NA
+706,138268,Octopus,Octopus,138268,Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus
+707,140605,Octopus vulgaris,Octopus vulgaris,140605,Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus
+708,101400,Oedicerotidae,Oedicerotidae,101400,Animalia,Arthropoda,Malacostraca,Amphipoda,Oedicerotidae,NA
+709,225824,Oegopsina,Oegopsida,11730,Animalia,Mollusca,Cephalopoda,Oegopsida,NA,NA
+710,11760,Ommastrephidae,Ommastrephidae,11760,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,NA
+711,149765,Oncaea borealis,Triconia borealis,128956,Animalia,Arthropoda,Hexanauplia,Cyclopoida,Oncaeidae,Oncaea
+712,175,Onchidorididae,Onchidorididae,175,Animalia,Mollusca,Gastropoda,Nudibranchia,Onchidorididae,NA
+713,138288,Onchidoris,Onchidoris,138288,Animalia,Mollusca,Gastropoda,Nudibranchia,Onchidorididae,Onchidoris
+714,127182,Oncorhynchus gorbuscha,Oncorhynchus gorbuscha,127182,Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Oncorhynchus
+715,965,Onuphidae,Onuphidae,965,Animalia,Annelida,Polychaeta,Eunicida,Onuphidae,NA
+716,129414,Ophelina,Ophelina,129414,Animalia,Annelida,Polychaeta,NA,Opheliidae,Ophelina
+717,130500,Ophelina acuminata,Ophelina acuminata,130500,Animalia,Annelida,Polychaeta,NA,Opheliidae,Ophelina
+718,123587,Ophiacantha,Ophiacantha,123587,Animalia,Echinodermata,Ophiuroidea,Ophiacanthida,Ophiacanthidae,Ophiacantha
+719,125027,Ophiocomina nigra,Ophiocomina nigra,125027,Animalia,Echinodermata,Ophiuroidea,Ophiacanthida,Ophiotomidae,Ophiocomina
+720,123561,Ophiocten,Ophiocten,123561,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiocten
+721,124860,Ophiocten sericeum,Ophiocten sericeum,124860,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiocten
+722,123622,Ophiopholis,Ophiopholis,123622,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Ophiopholidae,Ophiopholis
+723,125125,Ophiopholis aculeata,Ophiopholis aculeata,125125,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Ophiopholidae,Ophiopholis
+724,123568,Ophiopleura,Ophiopleura,123568,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiopyrgidae,Ophiopleura
+725,123633,Ophioscolex,Ophioscolex,123633,Animalia,Echinodermata,Ophiuroidea,Ophioscolecida,Ophioscolecidae,Ophioscolex
+726,125131,Ophiothrix fragilis,Ophiothrix fragilis,125131,Animalia,Echinodermata,Ophiuroidea,Amphilepidida,Ophiotrichidae,Ophiothrix
+727,123574,Ophiura,Ophiura,123574,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiura
+728,124913,Ophiura albida,Ophiura albida,124913,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiura
+729,124929,Ophiura ophiura,Ophiura ophiura,124929,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiura
+730,124933,Ophiura robusta,Ophiura robusta,124933,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiura
+731,245736,Ophiura sarsi,Ophiura sarsii,124934,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,Ophiura
+732,123117,Ophiurida,Ophiurida,123117,Animalia,Echinodermata,Ophiuroidea,Ophiurida,NA,NA
+733,123200,Ophiuridae,Ophiuridae,123200,Animalia,Echinodermata,Ophiuroidea,Ophiurida,Ophiuridae,NA
+734,123084,Ophiuroidea,Ophiuroidea,123084,Animalia,Echinodermata,Ophiuroidea,NA,NA,NA
+735,975,Oweniidae,Oweniidae,975,Animalia,Annelida,Polychaeta,NA,Oweniidae,NA
+736,106738,Paguridae,Paguridae,106738,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,NA
+737,106687,Paguroidea,Paguroidea,106687,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+738,106854,Pagurus,Pagurus,106854,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+739,107230,Pagurus alatus,Pagurus alatus,107230,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+740,107232,Pagurus bernhardus,Pagurus bernhardus,107232,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+741,107235,Pagurus cuanensis,Pagurus cuanensis,107235,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+742,208731,Pagurus prideauxi,Pagurus prideaux,107239,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+743,107240,Pagurus pubescens,Pagurus pubescens,107240,Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus
+744,107613,Palaemon adspersus,Palaemon adspersus,107613,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon
+745,140710,Palliolum tigerinum,Palliolum tigerinum,140710,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Palliolum
+746,106789,Pandalidae,Pandalidae,106789,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,NA
+747,107044,Pandalus,Pandalus,107044,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus
+748,107649,Pandalus borealis,Pandalus borealis,107649,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus
+749,107651,Pandalus montagui,Pandalus montagui,107651,Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus
+750,196874,Paraeuchaeta,Paraeuchaeta,196874,Animalia,Arthropoda,Hexanauplia,Calanoida,Euchaetidae,Paraeuchaeta
+751,125418,Paragorgia arborea,Paragorgia arborea,125418,Animalia,Cnidaria,Anthozoa,Alcyonacea,Paragorgiidae,Paragorgia
+752,125447,Paralepididae,Paralepididae,125447,Animalia,Chordata,Actinopterygii,Aulopiformes,Paralepididae,NA
+753,126361,Paralepis coregonoides,Paralepis coregonoides,126361,Animalia,Chordata,Actinopterygii,Aulopiformes,Paralepididae,Paralepis
+754,127222,Paraliparis bathybius,Paraliparis bathybius,127222,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Paraliparis
+755,233889,Paralithodes camtschaticus,Paralithodes camtschaticus,233889,Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Paralithodes
+756,125390,Paramuricea placomus,Paramuricea placomus,125390,Animalia,Cnidaria,Anthozoa,Alcyonacea,Plexauridae,Paramuricea
+757,123458,Parastichopus,Parastichopus,123458,Animalia,Echinodermata,Holothuroidea,Synallactida,Stichopodidae,Parastichopus
+758,124535,Parastichopus tremulus,Parastichopus tremulus,124535,Animalia,Echinodermata,Holothuroidea,Synallactida,Stichopodidae,Parastichopus
+759,100793,Parazoanthus,Parazoanthus,100793,Animalia,Cnidaria,Anthozoa,Zoantharia,Parazoanthidae,Parazoanthus
+760,107264,Paromola cuvieri,Paromola cuvieri,107264,Animalia,Arthropoda,Malacostraca,Decapoda,Homolidae,Paromola
+761,107052,Pasiphaea,Pasiphaea,107052,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,Pasiphaea
+762,514209,Pasiphaea affinis,Pasiphaea affinis,514209,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,Pasiphaea
+763,107676,Pasiphaea multidentata,Pasiphaea multidentata,107676,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,Pasiphaea
+764,107677,Pasiphaea sivado,Pasiphaea sivado,107677,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,Pasiphaea
+765,107678,Pasiphaea tarda,Pasiphaea tarda,107678,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,Pasiphaea
+766,106790,Pasiphaeidae,Pasiphaeidae,106790,Animalia,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,NA
+767,138323,Pecten,Pecten,138323,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Pecten
+768,129437,Pectinaria,Pectinaria,129437,Animalia,Annelida,Polychaeta,Terebellida,Pectinariidae,Pectinaria
+769,213,Pectinidae,Pectinidae,213,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,NA
+770,103894,Pelonaia corrugata,Pelonaia corrugata,103894,Animalia,Chordata,Ascidiacea,Stolidobranchia,Styelidae,Pelonaia
+771,128517,Pennatula phosphorea,Pennatula phosphorea,128517,Animalia,Cnidaria,Anthozoa,Pennatulacea,Pennatulidae,Pennatula
+772,1367,Pennatulacea,Pennatulacea,1367,Animalia,Cnidaria,Anthozoa,Pennatulacea,NA,NA
+773,124655,Pentamera calcigera,Pentamera calcigera,124655,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Phyllophoridae,Pentamera
+774,135252,Periphylla,Periphylla,135252,Animalia,Cnidaria,Scyphozoa,Coronatae,Periphyllidae,Periphylla
+775,135294,Periphylla periphylla,Periphylla periphylla,135294,Animalia,Cnidaria,Scyphozoa,Coronatae,Periphyllidae,Periphylla
+776,135233,Periphyllidae,Periphyllidae,135233,Animalia,Cnidaria,Scyphozoa,Coronatae,Periphyllidae,NA
+777,101174,Petromyzon marinus,Petromyzon marinus,101174,Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,Petromyzon
+778,101163,Petromyzontidae,Petromyzontidae,101163,Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,NA
+779,10201,Petromyzontiformes,Petromyzontiformes,10201,Animalia,Chordata,Petromyzonti,Petromyzontiformes,NA,NA
+780,115072,Phaeocystaceae,Phaeocystaceae,115072,Chromista,Haptophyta,Prymnesiophyceae,Phaeocystales,Phaeocystaceae,NA
+781,830,Phaeophyceae,Phaeophyceae,830,Chromista,Ochrophyta,Phaeophyceae,NA,NA,NA
+782,131779,Phakellia,Phakellia,131779,Animalia,Porifera,Demospongiae,Axinellida,Axinellidae,Phakellia
+783,132511,Phakellia ventilabrum,Phakellia ventilabrum,132511,Animalia,Porifera,Demospongiae,Axinellida,Axinellidae,Phakellia
+784,423901,Phascoliidae,Golfingiidae,2032,Animalia,Sipuncula,Sipunculidea,Golfingiida,Phascoliidae,NA
+785,136025,Phascolion,Phascolion,136025,Animalia,Sipuncula,Sipunculidea,Golfingiida,Golfingiidae,Phascolion
+786,266489,Phascolion strombus,Phascolion (Phascolion) strombus strombus,410749,Animalia,Sipuncula,Sipunculidea,Golfingiida,Golfingiidae,Phascolion
+787,129293,Pherusa,Pherusa,129293,Animalia,Annelida,Polychaeta,Terebellida,Flabelligeridae,Pherusa
+788,138339,Philine,Philine,138339,Animalia,Mollusca,Gastropoda,Cephalaspidea,Philinidae,Philine
+789,140744,Philine aperta,Philine aperta,140744,Animalia,Mollusca,Gastropoda,Cephalaspidea,Philinidae,Philine
+790,156345,Philine finmarchica,Praephiline finmarchica,574605,Animalia,Mollusca,Gastropoda,Cephalaspidea,Philinidae,Philine
+791,107010,Philocheras,Philocheras,107010,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Philocheras
+792,126996,Pholis gunnellus,Pholis gunnellus,126996,Animalia,Chordata,Actinopterygii,Perciformes,Pholidae,Pholis
+793,134741,Phoxichilidium femoratum,Phoxichilidium femoratum,134741,Animalia,Arthropoda,Pycnogonida,Pantopoda,Phoxichilidiidae,Phoxichilidium
+794,127147,Phrynorhombus norvegicus,Phrynorhombus norvegicus,127147,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Phrynorhombus
+795,126501,Phycis blennoides,Phycis blennoides,126501,Animalia,Chordata,Actinopterygii,Gadiformes,Phycidae,Phycis
+796,123188,Phyllophoridae,Phyllophoridae,123188,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Phyllophoridae,NA
+797,106766,Pilumnidae,Pilumnidae,106766,Animalia,Arthropoda,Malacostraca,Decapoda,Pilumnidae,NA
+798,127141,Platichthys flesus,Platichthys flesus,127141,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Platichthys
+799,793,Platyhelminthes,Platyhelminthes,793,Animalia,Platyhelminthes,NA,NA,NA,NA
+800,106386,Pleurobrachia pileus,Pleurobrachia pileus,106386,Animalia,Ctenophora,Tentaculata,Cydippida,Pleurobrachiidae,Pleurobrachia
+801,127143,Pleuronectes platessa,Pleuronectes platessa,127143,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Pleuronectes
+802,125579,Pleuronectidae,Pleuronectidae,125579,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,NA
+803,10331,Pleuronectiformes,Pleuronectiformes,10331,Animalia,Chordata,Actinopterygii,Pleuronectiformes,NA,NA
+804,1613,Plumulariidae,Plumulariidae,1613,Animalia,Cnidaria,Hydrozoa,Leptothecata,Plumulariidae,NA
+805,147109,Polinices,Polinices,147109,Animalia,Mollusca,Gastropoda,Littorinimorpha,Naticidae,Polinices
+806,126440,Pollachius pollachius,Pollachius pollachius,126440,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Pollachius
+807,126441,Pollachius virens,Pollachius virens,126441,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Pollachius
+808,883,Polychaeta,Polychaeta,883,Animalia,Annelida,Polychaeta,NA,NA,NA
+809,103441,Polyclinidae,Polyclinidae,103441,Animalia,Chordata,Ascidiacea,Aplousobranchia,Polyclinidae,NA
+810,103674,Polyclinum aurantium,Polyclinum aurantium,103674,Animalia,Chordata,Ascidiacea,Aplousobranchia,Polyclinidae,Polyclinum
+811,132046,Polymastia,Polymastia,132046,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Polymastia
+812,134199,Polymastia grimaldii,Polymastia grimaldii,134199,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Polymastia
+813,134204,Polymastia mamillaris,Polymastia mamillaris,134204,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Polymastia
+814,845494,Polymastiida,Polymastiida,845494,Animalia,Porifera,Demospongiae,Polymastiida,NA,NA
+815,939,Polynoidae,Polynoidae,939,Animalia,Annelida,Polychaeta,Phyllodocida,Polynoidae,NA
+816,129553,Polyphysia,Polyphysia,129553,Animalia,Annelida,Polychaeta,NA,Scalibregmatidae,Polyphysia
+817,55,Polyplacophora,Polyplacophora,55,Animalia,Mollusca,Polyplacophora,NA,NA,NA
+818,126928,Pomatoschistus minutus,Pomatoschistus minutus,126928,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Pomatoschistus
+819,126929,Pomatoschistus norvegicus,Pomatoschistus norvegicus,126929,Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Pomatoschistus
+820,123244,Pontaster,Pontaster,123244,Animalia,Echinodermata,Asteroidea,Notomyotida,Benthopectinidae,Pontaster
+821,123851,Pontaster tenuispinus,Pontaster tenuispinus,123851,Animalia,Echinodermata,Asteroidea,Notomyotida,Benthopectinidae,Pontaster
+822,107011,Pontophilus,Pontophilus,107011,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Pontophilus
+823,107563,Pontophilus norvegicus,Pontophilus norvegicus,107563,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Pontophilus
+824,107564,Pontophilus spinosus,Pontophilus spinosus,107564,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Pontophilus
+825,123320,Porania,Porania,123320,Animalia,Echinodermata,Asteroidea,Valvatida,Poraniidae,Porania
+826,123320,Porania,Porania,123320,Animalia,Echinodermata,Asteroidea,Valvatida,Poraniidae,Porania
+827,123321,Poraniomorpha,Poraniomorpha,123321,Animalia,Echinodermata,Asteroidea,Valvatida,Poraniidae,Poraniomorpha
+828,558,Porifera,Porifera,558,Animalia,Porifera,NA,NA,NA,NA
+829,106763,Portunidae,Portunidae,106763,Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,NA
+830,106702,Portunoidea,Portunoidea,106702,Animalia,Arthropoda,Malacostraca,Decapoda,NA,NA
+831,101063,Priapulida,Priapulida,101063,Animalia,Priapulida,NA,NA,NA,NA
+832,101078,Priapulidae,Priapulidae,101078,Animalia,Priapulida,NA,Priapulomorpha,Priapulidae,NA
+833,101095,Priapulus,Priapulus,101095,Animalia,Priapulida,NA,Priapulomorpha,Priapulidae,Priapulus
+834,101160,Priapulus caudatus,Priapulus caudatus,101160,Animalia,Priapulida,NA,Priapulomorpha,Priapulidae,Priapulus
+835,102,Prosobranchia,Prosobranchia,102,Animalia,Mollusca,Gastropoda,NA,NA,NA
+836,158917,Protomyctophum arcticum,Protomyctophum arcticum,158917,Animalia,Chordata,Actinopterygii,Myctophiformes,Myctophidae,Protomyctophum
+837,237,Psammobiidae,Psammobiidae,237,Animalia,Mollusca,Bivalvia,Cardiida,Psammobiidae,NA
+838,140717,Pseudamussium peslutrae,Pseudamussium peslutrae,140717,Animalia,Mollusca,Bivalvia,Pectinida,Pectinidae,Pseudamussium
+839,123304,Pseudarchaster,Pseudarchaster,123304,Animalia,Echinodermata,Asteroidea,Paxillosida,Pseudarchasteridae,Pseudarchaster
+840,123255,Psilaster,Psilaster,123255,Animalia,Echinodermata,Asteroidea,Paxillosida,Astropectinidae,Psilaster
+841,123908,Psilaster andromeda,Psilaster andromeda,123908,Animalia,Echinodermata,Asteroidea,Paxillosida,Astropectinidae,Psilaster
+842,146121,Psolus,Psolus,146121,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Psolidae,Psolus
+843,124710,Psolus phantapus,Psolus phantapus,124710,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Psolidae,Psolus
+844,123335,Pteraster,Pteraster,123335,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Pteraster
+845,124147,Pteraster militaris,Pteraster militaris,124147,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Pteraster
+846,124149,Pteraster obscurus,Pteraster obscurus,124149,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Pteraster
+847,124151,Pteraster pulvillus,Pteraster pulvillus,124151,Animalia,Echinodermata,Asteroidea,Velatida,Pterasteridae,Pteraster
+848,126785,Pterycombus brama,Pterycombus brama,126785,Animalia,Chordata,Actinopterygii,Perciformes,Bramidae,Pterycombus
+849,117143,Ptychogena,Ptychogena,117143,Animalia,Cnidaria,Hydrozoa,Leptothecata,Laodiceidae,Ptychogena
+850,117728,Ptychogena lactea,Ptychogena lactea,117728,Animalia,Cnidaria,Hydrozoa,Leptothecata,Laodiceidae,Ptychogena
+851,138015,Puncturella,Puncturella,138015,Animalia,Mollusca,Gastropoda,Lepetellida,Fissurellidae,Puncturella
+852,126507,Pungitius pungitius,Pungitius pungitius,126507,Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Pungitius
+853,1302,Pycnogonida,Pycnogonida,1302,Animalia,Arthropoda,Pycnogonida,NA,NA,NA
+854,1567,Pycnogonidae,Pycnogonidae,1567,Animalia,Arthropoda,Pycnogonida,Pantopoda,Pycnogonidae,NA
+855,134595,Pycnogonum,Pycnogonum,134595,Animalia,Arthropoda,Pycnogonida,Pantopoda,Pycnogonidae,Pycnogonum
+856,239867,Pycnogonum litorale,Pycnogonum litorale,239867,Animalia,Arthropoda,Pycnogonida,Pantopoda,Pycnogonidae,Pycnogonum
+857,170671,Radiella,Radiella,170671,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Radiella
+858,170674,Radiella hemisphaerica,Polymastia hemisphaerica,134200,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Radiella
+859,105766,Raja,Raja,105766,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Raja
+860,367297,Raja brachyura,Raja brachyura,367297,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Raja
+861,105883,Raja clavata,Raja clavata,105883,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Raja
+862,105887,Raja montagui,Raja montagui,105887,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Raja
+863,105894,Rajella fyllae,Rajella fyllae,105894,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Rajella
+864,1019159,Rajella lintea,Rajella lintea,1019159,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,Rajella
+865,105711,Rajidae,Rajidae,105711,Animalia,Chordata,Elasmobranchii,Rajiformes,Rajidae,NA
+866,10216,Rajiformes,Rajiformes,10216,Animalia,Chordata,Elasmobranchii,Rajiformes,NA,NA
+867,126442,Raniceps raninus,Raniceps raninus,126442,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Raniceps
+868,127144,Reinhardtius hippoglossoides,Reinhardtius hippoglossoides,127144,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Reinhardtius
+869,110956,Reteporella,Reteporella,110956,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Phidoloporidae,Reteporella
+870,111448,Reteporella beaniana,Reteporella beaniana,111448,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Phidoloporidae,Reteporella
+871,138432,Retusa,Retusa,138432,Animalia,Mollusca,Gastropoda,Cephalaspidea,Retusidae,Retusa
+872,127231,Rhodichthys regina,Rhodichthys regina,127231,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Liparidae,Rhodichthys
+873,21263,Rhodophyceae,Rhodophyta,852,Plantae,Rhodophyta,Rhodophyceae,NA,NA,NA
+874,869079,Rhynchonella,Rhynchonella,869079,Animalia,Brachiopoda,Rhynchonellata,Rhynchonellida,Rhynchonellidae,Rhynchonella
+875,118396,Rocinela,Rocinela,118396,Animalia,Arthropoda,Malacostraca,Isopoda,Aegidae,Rocinela
+876,138480,Rondeletiola,Rondeletiola,138480,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rondeletiola
+877,138481,Rossia,Rossia,138481,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rossia
+878,153095,Rossia glaucopis,Rossia glaucopis,153095,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rossia
+879,141449,Rossia macrosoma,Rossia macrosoma,141449,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rossia
+880,156383,Rossia moelleri,Rossia moelleri,156383,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rossia
+881,153083,Rossia palpebrosa,Rossia palpebrosa,153083,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Rossia
+882,901,Sabellida,Sabellida,901,Animalia,Annelida,Polychaeta,Sabellida,NA,NA
+883,985,Sabellidae,Sabellidae,985,Animalia,Annelida,Polychaeta,Sabellida,Sabellidae,NA
+884,107012,Sabinea,Sabinea,107012,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sabinea
+885,107566,Sabinea sarsii,Sabinea sarsii,107566,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sabinea
+886,107567,Sabinea septemcarinata,Sabinea septemcarinata,107567,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sabinea
+887,118451,Saduria,Saduria,118451,Animalia,Arthropoda,Malacostraca,Isopoda,Chaetiliidae,Saduria
+888,119036,Saduria sabini,Saduria sabini,119036,Animalia,Arthropoda,Malacostraca,Isopoda,Chaetiliidae,Saduria
+889,100681,Sagartiidae,Sagartiidae,100681,Animalia,Cnidaria,Anthozoa,Actiniaria,Sagartiidae,NA
+890,105410,Sagitta,Sagitta,105410,Animalia,Chaetognatha,Sagittoidea,Aphragmophora,Sagittidae,Sagitta
+891,127186,Salmo salar,Salmo salar,127186,Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Salmo
+892,127187,Salmo trutta,Salmo trutta,127187,Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Salmo
+893,126421,Sardina pilchardus,Sardina pilchardus,126421,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Sardina
+894,117070,Sarsia,Sarsia,117070,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Corynidae,Sarsia
+895,117487,Sarsia princeps,Sarsia princeps,117487,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Corynidae,Sarsia
+896,106204,Scalpellum scalpellum,Scalpellum scalpellum,106204,Animalia,Arthropoda,Thecostraca,Scalpellomorpha,Scalpellidae,Scalpellum
+897,137871,Scaphander,Scaphander,137871,Animalia,Mollusca,Gastropoda,Cephalaspidea,Scaphandridae,Scaphander
+898,139488,Scaphander lignarius,Scaphander lignarius,139488,Animalia,Mollusca,Gastropoda,Cephalaspidea,Scaphandridae,Scaphander
+899,139490,Scaphander punctostriatus,Scaphander punctostriatus,139490,Animalia,Mollusca,Gastropoda,Cephalaspidea,Scaphandridae,Scaphander
+900,104,Scaphopoda,Scaphopoda,104,Animalia,Mollusca,Scaphopoda,NA,NA,NA
+901,126833,Schedophilus medusophagus,Schedophilus medusophagus,126833,Animalia,Chordata,Actinopterygii,Perciformes,Centrolophidae,Schedophilus
+902,1363,Scleractinia,Scleractinia,1363,Animalia,Cnidaria,Anthozoa,Scleractinia,NA,NA
+903,107013,Sclerocrangon,Sclerocrangon,107013,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sclerocrangon
+904,107568,Sclerocrangon boreas,Sclerocrangon boreas,107568,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sclerocrangon
+905,107569,Sclerocrangon ferox,Sclerocrangon ferox,107569,Animalia,Arthropoda,Malacostraca,Decapoda,Crangonidae,Sclerocrangon
+906,127023,Scomber scombrus,Scomber scombrus,127023,Animalia,Chordata,Actinopterygii,Perciformes,Scombridae,Scomber
+907,126124,Scophthalmus,Scophthalmus,126124,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Scophthalmus
+908,127149,Scophthalmus maximus,Scophthalmus maximus,127149,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Scophthalmus
+909,127150,Scophthalmus rhombus,Scophthalmus rhombus,127150,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Scophthalmus
+910,125595,Scorpaenidae,Scorpaenidae,125595,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,NA
+911,10329,Scorpaeniformes,Scorpaeniformes,10329,Animalia,Chordata,Actinopterygii,Scorpaeniformes,NA,NA
+912,105693,Scyliorhinidae,Scyliorhinidae,105693,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,NA
+913,105814,Scyliorhinus canicula,Scyliorhinus canicula,105814,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,Scyliorhinus
+914,105815,Scyliorhinus stellaris,Scyliorhinus stellaris,105815,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,Scyliorhinus
+915,135220,Scyphozoa,Scyphozoa,135220,Animalia,Cnidaria,Scyphozoa,NA,NA,NA
+916,126175,Sebastes,Sebastes,126175,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes
+917,127254,Sebastes mentella,Sebastes mentella,127254,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes
+918,151324,Sebastes norvegicus,Sebastes norvegicus,151324,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes
+919,127255,Sebastes viviparus,Sebastes viviparus,127255,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes
+920,110916,Securiflustra,Securiflustra,110916,Animalia,Bryozoa,Gymnolaemata,Cheilostomatida,Flustridae,Securiflustra
+921,754175,Sedentaria,Sedentaria,754175,Animalia,Annelida,Polychaeta,NA,NA,NA
+922,265027,Semaeognathia,Semaeognathia,265027,Animalia,Gnathostomulida,NA,Bursovaginoidea,Gnathostomulidae,Semaeognathia
+923,106210,Semibalanus balanoides,Semibalanus balanoides,106210,Animalia,Arthropoda,Thecostraca,Balanomorpha,Balanidae,Semibalanus
+924,138477,Sepia,Sepia,138477,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiidae,Sepia
+925,141443,Sepia elegans,Sepia elegans,141443,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiidae,Sepia
+926,141444,Sepia officinalis,Sepia officinalis,141444,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiidae,Sepia
+927,138482,Sepietta,Sepietta,138482,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepietta
+928,141450,Sepietta neglecta,Sepietta neglecta,141450,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepietta
+929,141452,Sepietta oweniana,Sepietta oweniana,141452,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepietta
+930,11713,Sepiida,Sepiida,11713,Animalia,Mollusca,Cephalopoda,Sepiida,NA,NA
+931,11723,Sepiidae,Sepiidae,11723,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiidae,NA
+932,138483,Sepiola,Sepiola,138483,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepiola
+933,141454,Sepiola atlantica,Sepiola atlantica,141454,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepiola
+934,141457,Sepiola ligulata,Adinaefiola ligulata,1437787,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepiola
+935,494117,Sepiola tridens,Sepiola tridens,494117,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,Sepiola
+936,11725,Sepiolidae,Sepiolidae,11725,Animalia,Mollusca,Cephalopoda,Sepiida,Sepiolidae,NA
+937,106829,Sergestes,Sergestes,106829,Animalia,Arthropoda,Malacostraca,Decapoda,Sergestidae,Sergestes
+938,107125,Sergestes arcticus,Eusergestes arcticus,515738,Animalia,Arthropoda,Malacostraca,Decapoda,Sergestidae,Sergestes
+939,131051,Serpula vermicularis,Serpula vermicularis,131051,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,Serpula
+940,988,Serpulidae,Serpulidae,988,Animalia,Annelida,Polychaeta,Sabellida,Serpulidae,NA
+941,117234,Sertularia,Sertularia,117234,Animalia,Cnidaria,Hydrozoa,Leptothecata,Sertulariidae,Sertularia
+942,147153,Similipecten,Similipecten,147153,Animalia,Mollusca,Bivalvia,Pectinida,Propeamussiidae,Similipecten
+943,254409,Siphonophora,Siphonophorae,1371,Animalia,Cnidaria,Hydrozoa,Siphonophora,NA,NA
+944,1268,Sipuncula,Sipuncula,1268,Animalia,Sipuncula,NA,NA,NA,NA
+945,1296,Sipunculidea,Sipunculidea,1296,Animalia,Sipuncula,Sipunculidea,NA,NA,NA
+946,123338,Solaster,Solaster,123338,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Solaster
+947,124160,Solaster endeca,Solaster endeca,124160,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Solaster
+948,124163,Solaster glacialis,Solaster glacialis,124163,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,Solaster
+949,123143,Solasteridae,Solasteridae,123143,Animalia,Echinodermata,Asteroidea,Valvatida,Solasteridae,NA
+950,127160,Solea solea,Solea solea,127160,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Soleidae,Solea
+951,125581,Soleidae,Soleidae,125581,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Soleidae,NA
+952,137074,Somateria mollissima,Somateria mollissima,137074,Animalia,Chordata,Aves,Anseriformes,Anatidae,Somateria
+953,105919,Somniosus microcephalus,Somniosus microcephalus,105919,Animalia,Chordata,Elasmobranchii,Squaliformes,Somniosidae,Somniosus
+954,123177,Spatangidae,Spatangidae,123177,Animalia,Echinodermata,Echinoidea,Spatangoida,Spatangidae,NA
+955,123106,Spatangoida,Spatangoida,123106,Animalia,Echinodermata,Echinoidea,Spatangoida,NA,NA
+956,123430,Spatangus,Spatangus,123430,Animalia,Echinodermata,Echinoidea,Spatangoida,Spatangidae,Spatangus
+957,124418,Spatangus purpureus,Spatangus purpureus,124418,Animalia,Echinodermata,Echinoidea,Spatangoida,Spatangidae,Spatangus
+958,126508,Spinachia spinachia,Spinachia spinachia,126508,Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Spinachia
+959,129233,Spiochaetopterus,Spiochaetopterus,129233,Animalia,Annelida,Polychaeta,NA,Chaetopteridae,Spiochaetopterus
+960,889,Spionida,Spionida,889,Animalia,Annelida,Polychaeta,Spionida,NA,NA
+961,106994,Spirontocaris,Spirontocaris,106994,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Spirontocaris
+962,107531,Spirontocaris liljeborgii,Spirontocaris liljeborgii,107531,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Spirontocaris
+963,126425,Sprattus sprattus,Sprattus sprattus,126425,Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Sprattus
+964,105716,Squalidae,Squalidae,105716,Animalia,Chordata,Elasmobranchii,Squaliformes,Squalidae,NA
+965,105782,Squalus,Squalus,105782,Animalia,Chordata,Elasmobranchii,Squaliformes,Squalidae,Squalus
+966,105923,Squalus acanthias,Squalus acanthias,105923,Animalia,Chordata,Elasmobranchii,Squaliformes,Squalidae,Squalus
+967,135226,Stauromedusae,Stauromedusae,135226,Animalia,Cnidaria,Staurozoa,Stauromedusae,NA,NA
+968,175921,Staurophora,Staurophora,175921,Chromista,Ochrophyta,Bacillariophyceae,Cymbellales,Anomoeoneidaceae,Staurophora
+969,101759,Stegocephalus,Stegocephalus,101759,Animalia,Arthropoda,Malacostraca,Amphipoda,Stegocephalidae,Stegocephalus
+970,125603,Sternoptychidae,Sternoptychidae,125603,Animalia,Chordata,Actinopterygii,Stomiiformes,Sternoptychidae,NA
+971,125566,Stichaeidae,Stichaeidae,125566,Animalia,Chordata,Actinopterygii,Perciformes,Stichaeidae,NA
+972,123813,Stichastrella rosea,Stichastrella rosea,123813,Animalia,Echinodermata,Asteroidea,Forcipulatida,Stichasteridae,Stichastrella
+973,100854,Stomphia coccinea,Stomphia coccinea,100854,Animalia,Cnidaria,Anthozoa,Actiniaria,Actinostolidae,Stomphia
+974,23123,Strombidae,Strombidae,23123,Animalia,Mollusca,Gastropoda,Littorinimorpha,Strombidae,NA
+975,124321,Strongylocentrotus droebachiensis,Strongylocentrotus droebachiensis,124321,Animalia,Echinodermata,Echinoidea,Camarodonta,Strongylocentrotidae,Strongylocentrotus
+976,124324,Strongylocentrotus pallidus,Strongylocentrotus pallidus,124324,Animalia,Echinodermata,Echinoidea,Camarodonta,Strongylocentrotidae,Strongylocentrotus
+977,567280,Strongylocera,Phos,205873,Animalia,Mollusca,Gastropoda,Neogastropoda,Nassariidae,Strongylocera
+978,103543,Styela,Styela,103543,Animalia,Chordata,Ascidiacea,Stolidobranchia,Styelidae,Styela
+979,103450,Styelidae,Styelidae,103450,Animalia,Chordata,Ascidiacea,Stolidobranchia,Styelidae,NA
+980,132072,Suberites,Suberites,132072,Animalia,Porifera,Demospongiae,Suberitida,Suberitidae,Suberites
+981,134285,Suberites ficus,Suberites ficus,134285,Animalia,Porifera,Demospongiae,Suberitida,Suberitidae,Suberites
+982,273571,Symphodus melops,Symphodus melops,273571,Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Symphodus
+983,125436,Synaphobranchidae,Synaphobranchidae,125436,Animalia,Chordata,Actinopterygii,Anguilliformes,Synaphobranchidae,NA
+984,123182,Synaptidae,Synaptidae,123182,Animalia,Echinodermata,Holothuroidea,Apodida,Synaptidae,NA
+985,125606,Syngnathidae,Syngnathidae,125606,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,NA
+986,205969,Syngnathoides,Syngnathoides,205969,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Syngnathoides
+987,126227,Syngnathus,Syngnathus,126227,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Syngnathus
+988,127387,Syngnathus acus,Syngnathus acus,127387,Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Syngnathus
+989,103479,Synoicum,Synoicum,103479,Animalia,Chordata,Ascidiacea,Aplousobranchia,Polyclinidae,Synoicum
+990,103692,Synoicum pulmonaria,Synoicum pulmonaria,103692,Animalia,Chordata,Ascidiacea,Aplousobranchia,Polyclinidae,Synoicum
+991,127204,Taurulus bubalis,Taurulus bubalis,127204,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Taurulus
+992,293496,Teleostei,Teleostei,293496,Animalia,Chordata,Actinopterygii,NA,NA,NA
+993,134224,Tentorium semisuberites,Tentorium semisuberites,134224,Animalia,Porifera,Demospongiae,Polymastiida,Polymastiidae,Tentorium
+994,900,Terebellida,Terebellida,900,Animalia,Annelida,Polychaeta,Terebellida,NA,NA
+995,982,Terebellidae,Terebellidae,982,Animalia,Annelida,Polychaeta,Terebellida,Terebellidae,NA
+996,869072,Terebratula,Terebratula,869072,Animalia,Brachiopoda,Rhynchonellata,Terebratulida,Terebratulidae,Terebratula
+997,132077,Tethya,Tethya,132077,Animalia,Porifera,Demospongiae,Tethyida,Tethyidae,Tethya
+998,134314,Tethya norvegica,Tethya norvegica,134314,Animalia,Porifera,Demospongiae,Tethyida,Tethyidae,Tethya
+999,132095,Tetilla,Tetilla,132095,Animalia,Porifera,Demospongiae,Tetractinellida,Tetillidae,Tetilla
+1000,134360,Tetilla cranium,Craniella cranium,171330,Animalia,Porifera,Demospongiae,Tetractinellida,Tetillidae,Tetilla
+1001,134366,Tetilla polyura,Craniella polyura,171347,Animalia,Porifera,Demospongiae,Tetractinellida,Tetillidae,Tetilla
+1002,131683,Tetillidae,Tetillidae,131683,Animalia,Porifera,Demospongiae,Tetractinellida,Tetillidae,NA
+1003,11716,Teuthida,Teuthida,11716,Animalia,Mollusca,Cephalopoda,Teuthida,NA,NA
+1004,22626,Thaliacea,Thaliacea,22626,Animalia,Chordata,Thaliacea,NA,NA,NA
+1005,101800,Themisto,Themisto,101800,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyperiidae,Themisto
+1006,103259,Themisto abyssorum,Themisto abyssorum,103259,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyperiidae,Themisto
+1007,156451,Themisto compressa,Themisto compressa,156451,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyperiidae,Themisto
+1008,156452,Themisto libellula,Themisto libellula,156452,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyperiidae,Themisto
+1009,134106,Thenea muricata,Thenea muricata,134106,Animalia,Porifera,Demospongiae,Tetractinellida,Theneidae,Thenea
+1010,1107,Thoracica,Thoracica,1107,Animalia,Arthropoda,Thecostraca,NA,NA,NA
+1011,117237,Thuiaria,Thuiaria,117237,Animalia,Cnidaria,Hydrozoa,Leptothecata,Sertulariidae,Thuiaria
+1012,117940,Thuiaria thuja,Thuiaria thuja,117940,Animalia,Cnidaria,Hydrozoa,Leptothecata,Sertulariidae,Thuiaria
+1013,124670,Thyone fusus,Thyone fusus,124670,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Phyllophoridae,Thyone
+1014,123503,Thyonidium,Thyonidium,123503,Animalia,Echinodermata,Holothuroidea,Dendrochirotida,Cucumariidae,Thyonidium
+1015,110679,Thysanoessa,Thysanoessa,110679,Animalia,Arthropoda,Malacostraca,Euphausiacea,Euphausiidae,Thysanoessa
+1016,138646,Timoclea,Timoclea,138646,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Timoclea
+1017,141929,Timoclea ovata,Timoclea ovata,141929,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Timoclea
+1018,138281,Todarodes,Todarodes,138281,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,Todarodes
+1019,140624,Todarodes sagittatus,Todarodes sagittatus,140624,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,Todarodes
+1020,140625,Todaropsis eblanae,Todaropsis eblanae,140625,Animalia,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,Todaropsis
+1021,127082,Trachinus draco,Trachinus draco,127082,Animalia,Chordata,Actinopterygii,Perciformes,Trachinidae,Trachinus
+1022,126527,Trachipterus arcticus,Trachipterus arcticus,126527,Animalia,Chordata,Actinopterygii,Lampriformes,Trachipteridae,Trachipterus
+1023,126822,Trachurus trachurus,Trachurus trachurus,126822,Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Trachurus
+1024,125598,Triglidae,Triglidae,125598,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Triglidae,NA
+1025,126154,Triglops,Triglops,126154,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Triglops
+1026,127205,Triglops murrayi,Triglops murrayi,127205,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Triglops
+1027,127206,Triglops nybelini,Triglops nybelini,127206,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Triglops
+1028,127207,Triglops pingelii,Triglops pingelii,127207,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Triglops
+1029,492171,Trigoniidae,Trigoniidae,492171,Animalia,Mollusca,Bivalvia,Trigoniida,Trigoniidae,NA
+1030,101659,Trischizostoma,Trischizostoma,101659,Animalia,Arthropoda,Malacostraca,Amphipoda,Trischizostomatidae,Trischizostoma
+1031,126444,Trisopterus esmarkii,Trisopterus esmarkii,126444,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Trisopterus
+1032,126445,Trisopterus luscus,Trisopterus luscus,126445,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Trisopterus
+1033,126446,Trisopterus minutus,Trisopterus minutus,126446,Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Trisopterus
+1034,443,Trochidae,Trochidae,443,Animalia,Mollusca,Gastropoda,Trochida,Trochidae,NA
+1035,138208,Trophon,Trophon,138208,Animalia,Mollusca,Gastropoda,Neogastropoda,Muricidae,Trophon
+1036,122626,Tubulanus annulatus,Tubulanus annulatus,122626,Animalia,Nemertea,Palaeonemertea,Tubulaniformes,Tubulanidae,Tubulanus
+1037,117258,Tubularia,Tubularia,117258,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Tubulariidae,Tubularia
+1038,117994,Tubularia indivisa,Tubularia indivisa,117994,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Tubulariidae,Tubularia
+1039,146420,Tunicata,Tunicata,146420,Animalia,Chordata,NA,NA,NA,NA
+1040,137714,Turrisipho,Turrisipho,137714,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Turrisipho
+1041,138933,Turrisipho lachesis,Turrisipho lachesis,138933,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Turrisipho
+1042,141872,Turritella communis,Turritellinella tricarinata,1381415,Animalia,Mollusca,Gastropoda,[unassigned] Caenogastropoda,Turritellidae,Turritella
+1043,127,Turritellidae,Turritellidae,127,Animalia,Mollusca,Gastropoda,[unassigned] Caenogastropoda,Turritellidae,NA
+1044,128529,Umbellula encrinus,Umbellula encrinus,128529,Animalia,Cnidaria,Anthozoa,Pennatulacea,Umbellulidae,Umbellula
+1045,123231,Urasterias,Urasterias,123231,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Urasterias
+1046,123815,Urasterias lincki,Urasterias lincki,123815,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Urasterias
+1047,126503,Urophycis chuss,Urophycis chuss,126503,Animalia,Chordata,Actinopterygii,Gadiformes,Phycidae,Urophycis
+1048,100706,Urticina,Urticina,100706,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Urticina
+1049,100834,Urticina felina,Urticina felina,100834,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Urticina
+1050,138631,Velutina,Velutina,138631,Animalia,Mollusca,Gastropoda,Littorinimorpha,Velutinidae,Velutina
+1051,141904,Velutina undata,Limneria undata,159903,Animalia,Mollusca,Gastropoda,Littorinimorpha,Velutinidae,Velutina
+1052,141905,Velutina velutina,Velutina velutina,141905,Animalia,Mollusca,Gastropoda,Littorinimorpha,Velutinidae,Velutina
+1053,128503,Virgularia,Virgularia,128503,Animalia,Cnidaria,Anthozoa,Pennatulacea,Virgulariidae,Virgularia
+1054,128539,Virgularia mirabilis,Virgularia mirabilis,128539,Animalia,Cnidaria,Anthozoa,Pennatulacea,Virgulariidae,Virgularia
+1055,137715,Volutopsius,Volutopsius,137715,Animalia,Mollusca,Gastropoda,Neogastropoda,Buccinidae,Volutopsius
+1056,106769,Xanthidae,Xanthidae,106769,Animalia,Arthropoda,Malacostraca,Decapoda,Xanthidae,NA
+1057,126714,Xenodermichthys copei,Xenodermichthys copei,126714,Animalia,Chordata,Actinopterygii,Osmeriformes,Alepocephalidae,Xenodermichthys
+1058,138672,Yoldia,Yoldia,138672,Animalia,Mollusca,Bivalvia,Nuculanida,Yoldiidae,Yoldia
+1059,141989,Yoldia hyperborea,Yoldia hyperborea,141989,Animalia,Mollusca,Bivalvia,Nuculanida,Yoldiidae,Yoldia
+1060,138673,Yoldiella,Yoldiella,138673,Animalia,Mollusca,Bivalvia,Nuculanida,Yoldiidae,Yoldiella
+1061,141999,Yoldiella intermedia,Yoldiella intermedia,141999,Animalia,Mollusca,Bivalvia,Nuculanida,Yoldiidae,Yoldiella
+1062,10919,Zeiformes,Zeiformes,10919,Animalia,Chordata,Actinopterygii,Zeiformes,NA,NA
+1063,127151,Zeugopterus punctatus,Zeugopterus punctatus,127151,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Zeugopterus
+1064,236488,Zeugopterus regius,Zeugopterus regius,236488,Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Zeugopterus
+1065,127427,Zeus faber,Zeus faber,127427,Animalia,Chordata,Actinopterygii,Zeiformes,Zeidae,Zeus
+1066,607338,Zoantharia,Zoantharia,607338,Animalia,Cnidaria,Anthozoa,Zoantharia,NA,NA
+1067,16327,Zoanthidea,Zoantharia,607338,Animalia,Cnidaria,Anthozoa,Zoanthidea,NA,NA
+1068,127123,Zoarces viviparus,Zoarces viviparus,127123,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,Zoarces
+1069,125575,Zoarcidae,Zoarcidae,125575,Animalia,Chordata,Actinopterygii,Perciformes,Zoarcidae,NA
+1070,151739,Zoarcoidei,Zoarcoidei,151739,Animalia,Chordata,Actinopterygii,Perciformes,NA,NA
