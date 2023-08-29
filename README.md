@@ -1,6 +1,6 @@
 # Atlantic Arctic demersal fish biodiversity
 
-(This paper was produced using an outdated version that has now restricted access. To obtain the raw data: http://metadata.nmdc.no/metadata-api/landingpage/f77112db062b5924d079a54b311260fb)
+(This paper was produced using data that is now available on demand only, at: http://metadata.nmdc.no/metadata-api/landingpage/f77112db062b5924d079a54b311260fb).
 
 These are the different scripts used for the analysis of the Norwegian bottom trawling database of the IMR, published in PNAS January 2023: https://doi.org/10.1073/pnas.2120869120 
 
